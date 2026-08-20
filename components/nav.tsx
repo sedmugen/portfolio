@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
@@ -46,14 +45,13 @@ function LiveTime() {
 
 export function Nav() {
   const pathname = usePathname();
-  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
 
   return (
-    <header className="w-full bg-canvas">
+    <header className="w-full bg-canvas select-none">
       {/* Top Banner: Minimal Margins, Large Typography, Time & Location on Left of Photo */}
       <div className="w-full px-2 sm:px-4 md:px-6 pt-3 sm:pt-4 pb-2 sm:pb-3 flex items-end justify-between gap-3 sm:gap-6">
         {/* Name Display */}
-        <Link href="/" className="group block select-none flex-1 min-w-0">
+        <Link href="/" className="group block flex-1 min-w-0">
           <h1 className="font-display text-[12vw] sm:text-[11vw] md:text-[10.5vw] lg:text-[10vw] font-normal uppercase tracking-[-0.04em] leading-[0.8] text-ink group-hover:text-accent transition-colors duration-300 truncate sm:overflow-visible">
             SAAD MUGHAL
           </h1>
@@ -91,11 +89,7 @@ export function Nav() {
       {/* Sub-Navigation Bar */}
       <div className="border-t border-border-subtle">
         <div className="w-full px-2 sm:px-4 md:px-6 py-2.5 sm:py-3 flex items-center justify-between">
-          <nav
-            aria-label="Main Navigation"
-            className="flex-1"
-            onMouseLeave={() => setHoveredLink(null)}
-          >
+          <nav aria-label="Main Navigation" className="flex-1">
             <ul className="flex items-center gap-8 sm:gap-16 md:gap-24 lg:gap-32 text-[11px] sm:text-xs font-medium tracking-[0.18em] uppercase text-ink">
               {NAV_ITEMS.map((item) => {
                 const isActive =
@@ -107,29 +101,23 @@ export function Nav() {
                   <li key={item.href} className="py-0.5">
                     <Link
                       href={item.href}
-                      onMouseEnter={() => setHoveredLink(item.href)}
                       className={cn(
-                        "relative inline-block py-0.5 transition-colors duration-200",
+                        "group relative inline-block py-1 transition-colors duration-200",
                         isActive ? "text-ink font-semibold" : "text-ink-muted hover:text-ink"
                       )}
                     >
-                      <span>{item.label}</span>
+                      <span className="relative z-10">{item.label}</span>
 
-                      {/* Animated underline on hover or active */}
-                      {(hoveredLink === item.href || (isActive && hoveredLink === null)) && (
-                        <motion.span
-                          layoutId="navUnderline"
-                          className="absolute left-0 bottom-0 block h-[1.5px] w-full bg-ink"
-                          initial={{ opacity: 0, scaleX: 0 }}
-                          animate={{ opacity: 1, scaleX: 1 }}
-                          exit={{ opacity: 0, scaleX: 0 }}
-                          transition={{
-                            type: "spring",
-                            stiffness: 380,
-                            damping: 30,
-                          }}
-                        />
-                      )}
+                      {/* Smooth Animated Underline on Hover and Active */}
+                      <span
+                        aria-hidden="true"
+                        className={cn(
+                          "absolute left-0 bottom-0 block h-[1.5px] w-full bg-ink origin-left transition-transform duration-300 ease-[cubic-bezier(0.25,1,0.5,1)]",
+                          isActive
+                            ? "scale-x-100"
+                            : "scale-x-0 group-hover:scale-x-100"
+                        )}
+                      />
                     </Link>
                   </li>
                 );
@@ -145,11 +133,14 @@ export function Nav() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative group py-0.5 hover:text-ink transition-colors duration-150"
+                className="group relative py-1 hover:text-ink transition-colors duration-150"
                 title={social.full}
               >
                 <span>{social.label}</span>
-                <span className="absolute left-0 bottom-0 block h-[1px] w-0 bg-ink group-hover:w-full transition-all duration-200 ease-out" />
+                <span
+                  aria-hidden="true"
+                  className="absolute left-0 bottom-0 block h-[1px] w-full bg-ink origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-250 ease-out"
+                />
               </a>
             ))}
           </div>
