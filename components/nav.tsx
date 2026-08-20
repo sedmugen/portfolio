@@ -44,18 +44,19 @@ function LiveTime() {
 export function Nav() {
   return (
     <header className="w-full bg-canvas select-none">
-      {/* Top Banner: Minimal Margins, Large Typography, Time & Location on Left of Photo */}
-      <div className="w-full px-2 sm:px-4 md:px-6 pt-3 sm:pt-4 pb-2 sm:pb-3 flex items-end justify-between gap-3 sm:gap-6">
-        {/* Name Display */}
-        <Link href="/" className="group block flex-1 min-w-0">
-          <h1 className="font-display text-[12vw] sm:text-[11vw] md:text-[10.5vw] lg:text-[10vw] font-normal uppercase tracking-[-0.04em] leading-[0.8] text-ink group-hover:text-accent transition-colors duration-300 truncate sm:overflow-visible">
-            SAAD MUGHAL
-          </h1>
-        </Link>
+      {/* Top Banner: Name on Left, Info Box on Right */}
+      <div className="w-full px-2 sm:px-4 md:px-6 pt-3 sm:pt-4 pb-2 sm:pb-3 flex items-end justify-between gap-4 sm:gap-8">
+        {/* Name Display: Defines the exact left-to-right boundary */}
+        <div className="flex-1 min-w-0">
+          <Link href="/" className="group inline-block w-full">
+            <h1 className="font-display text-[12vw] sm:text-[11vw] md:text-[10.5vw] lg:text-[10vw] font-normal uppercase tracking-[-0.04em] leading-[0.8] text-ink group-hover:text-accent transition-colors duration-300 truncate sm:overflow-visible">
+              SAAD MUGHAL
+            </h1>
+          </Link>
+        </div>
 
-        {/* Right Info Box: Bold Time & Bold Location on the LEFT of the Photo */}
+        {/* Right Info Box: Time & Location + Profile Photo */}
         <div className="flex items-end gap-3 sm:gap-4 shrink-0 self-end">
-          {/* Bold Time (top) & Bold Location (bottom) */}
           <div className="flex flex-col items-end justify-between self-stretch text-right py-0.5">
             <div className="text-[10px] sm:text-xs font-mono font-bold text-ink uppercase tracking-widest whitespace-nowrap">
               <LiveTime /> <span className="text-ink">PKT</span>
@@ -68,7 +69,6 @@ export function Nav() {
             </div>
           </div>
 
-          {/* Large Profile Picture on Far Right */}
           <div className="relative w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-sm overflow-hidden bg-border-subtle border border-border shrink-0 shadow-sm">
             <Image
               src="/images/profile-pictures/1.jpg"
@@ -82,11 +82,12 @@ export function Nav() {
         </div>
       </div>
 
-      {/* Sub-Navigation Bar: Bold Nav Items & Bold Social Items */}
+      {/* Sub-Navigation Bar: HOME aligned to 'S', CONTACT aligned to 'L', evenly distributed */}
       <div className="border-t border-border-subtle">
-        <div className="w-full px-2 sm:px-4 md:px-6 py-2.5 sm:py-3 flex items-center justify-between">
-          <nav aria-label="Main Navigation" className="flex-1">
-            <ul className="flex items-center gap-8 sm:gap-16 md:gap-24 lg:gap-32 text-[11px] sm:text-xs font-bold tracking-[0.18em] uppercase text-ink">
+        <div className="w-full px-2 sm:px-4 md:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-4 sm:gap-8">
+          {/* Navigation Items: Exactly matches the width of 'SAAD MUGHAL' above */}
+          <nav aria-label="Main Navigation" className="flex-1 min-w-0">
+            <ul className="flex items-center justify-between w-full text-[11px] sm:text-xs font-bold tracking-[0.18em] uppercase text-ink">
               {NAV_ITEMS.map((item) => (
                 <li key={item.href} className="py-0.5">
                   <Link
@@ -106,8 +107,8 @@ export function Nav() {
             </ul>
           </nav>
 
-          {/* Bold Socials abbreviation bar on the far right */}
-          <div className="flex items-center space-x-4 sm:space-x-6 text-[10px] sm:text-[11px] font-bold tracking-[0.16em] uppercase text-ink shrink-0">
+          {/* Socials abbreviation bar: Aligned with the right Info Box */}
+          <div className="flex items-center justify-end space-x-4 sm:space-x-6 text-[10px] sm:text-[11px] font-bold tracking-[0.16em] uppercase text-ink shrink-0">
             {SOCIAL_LINKS.map((social) => (
               <a
                 key={social.label}
