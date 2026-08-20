@@ -103,7 +103,7 @@ export function Nav() {
               transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
               className="w-full overflow-hidden flex flex-col"
             >
-              {/* Row 2: Pic on LEFT, Time & Location on RIGHT, '+' button top-right with solid black divider below */}
+              {/* Row 2: Pic on LEFT, Time & Location on RIGHT, '+' button top-right */}
               <div className="w-full border-t border-black pt-2 pb-2 flex items-start justify-between">
                 <div className="flex items-stretch gap-3">
                   {/* Profile Picture */}
@@ -196,7 +196,6 @@ export function Nav() {
 
       {/* ========================================================= */}
       {/* 2. DESKTOP & TABLET HEADER (Screens ≥ md)                 */}
-      {/* All secondary items strictly use text-xs font-bold        */}
       {/* ========================================================= */}
       <div className="hidden md:block w-full">
         {/* Top Banner: Name on Left, Info Box on Right */}
@@ -240,9 +239,9 @@ export function Nav() {
           </div>
         </div>
 
-        {/* Sub-Navigation Bar: Solid Black Divider matching footer with identical tight margins */}
-        <div className="border-t border-black">
-          <div className="w-full px-2 sm:px-4 md:px-6 pt-2 sm:pt-2.5 pb-2 sm:pb-2.5 flex items-center justify-between gap-4 sm:gap-8">
+        {/* Sub-Navigation Bar: Border positioned inside padding so it matches content margins and never touches the edges */}
+        <div className="w-full px-2 sm:px-4 md:px-6">
+          <div className="w-full border-t border-black pt-2 sm:pt-2.5 pb-2 sm:pb-2.5 flex items-center justify-between gap-4 sm:gap-8">
             {/* Navigation Items: text-xs font-bold */}
             <nav aria-label="Main Navigation" className="flex-1 min-w-0">
               <ul className="flex items-center justify-between w-full max-w-[70%] text-xs font-bold tracking-[0.16em] uppercase text-ink">
