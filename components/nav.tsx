@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -42,14 +42,39 @@ function LiveTime() {
 }
 
 export function Nav() {
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const [headingWidth, setHeadingWidth] = useState<number | null>(null);
+
+  useEffect(() => {
+    const el = headingRef.current;
+    if (!el) return;
+
+    const measure = () => {
+      setHeadingWidth(el.offsetWidth);
+    };
+
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(el);
+    window.addEventListener("resize", measure);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", measure);
+    };
+  }, []);
+
   return (
     <header className="w-full bg-canvas select-none">
       {/* Top Banner: Name on Left, Info Box on Right */}
       <div className="w-full px-2 sm:px-4 md:px-6 pt-3 sm:pt-4 pb-2 sm:pb-3 flex items-end justify-between gap-4 sm:gap-8">
-        {/* Name Display */}
+        {/* Name Display: We measure its exact text width */}
         <div className="flex-1 min-w-0">
-          <Link href="/" className="group inline-block">
-            <h1 className="font-display text-[12vw] sm:text-[11vw] md:text-[10.5vw] lg:text-[10vw] font-normal uppercase tracking-[-0.04em] leading-[0.8] text-ink group-hover:text-accent transition-colors duration-300 truncate sm:overflow-visible">
+          <Link href="/" className="inline-block">
+            <h1
+              ref={headingRef}
+              className="font-display text-[12vw] sm:text-[11vw] md:text-[10.5vw] lg:text-[10vw] font-normal uppercase tracking-[-0.04em] leading-[0.8] text-ink group-hover:text-accent transition-colors duration-300 inline-block"
+            >
               SAAD MUGHAL
             </h1>
           </Link>
@@ -82,12 +107,18 @@ export function Nav() {
         </div>
       </div>
 
-      {/* Sub-Navigation Bar: Refined, balanced spacing matching reference */}
+      {/* Sub-Navigation Bar: HOME starts at 'S', CONTACT ends exactly at 'L' */}
       <div className="border-t border-border-subtle">
         <div className="w-full px-2 sm:px-4 md:px-6 py-2.5 sm:py-3 flex items-center justify-between">
-          {/* Navigation Items: Balanced gaps without over-stretching */}
+          {/* Navigation Items: Exactly matches the measured width of 'SAAD MUGHAL' */}
           <nav aria-label="Main Navigation">
-            <ul className="flex items-center gap-8 sm:gap-12 md:gap-16 lg:gap-20 text-[11px] sm:text-xs font-bold tracking-[0.18em] uppercase text-ink">
+            <ul
+              className="flex items-center justify-between text-[11px] sm:text-xs font-bold tracking-[0.18em] uppercase text-ink"
+              style={{
+                width: headingWidth ? `${headingWidth}px` : "100%",
+                maxWidth: "100%",
+              }}
+            >
               {NAV_ITEMS.map((item) => (
                 <li key={item.href} className="py-0.5">
                   <Link
