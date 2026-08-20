@@ -6,10 +6,10 @@ export function Footer() {
   return (
     <footer className="w-full bg-[#0E0D0D] text-[#F7F6F3] mt-auto">
       <div className="w-full px-2 sm:px-4 md:px-6 pt-16 sm:pt-24 pb-8 sm:pb-12">
-        {/* Massive Artistic CTA Headline */}
+        {/* Massive Artistic CTA Headline: No red hover */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-12 sm:pb-16">
-          <Link href="/contact" className="group block select-none">
-            <h2 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[7.5rem] font-normal tracking-[-0.04em] uppercase leading-[0.88] text-white group-hover:text-accent transition-colors duration-300">
+          <Link href="/contact" className="inline-block select-none">
+            <h2 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[7.5rem] font-normal tracking-[-0.04em] uppercase leading-[0.88] text-white hover:opacity-85 transition-opacity duration-200">
               LET’S WORK TOGETHER.
             </h2>
           </Link>
@@ -21,14 +21,14 @@ export function Footer() {
 
         {/* Horizontal Divider */}
         <div className="w-full border-t border-white/10 pt-6 sm:pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-[11px] sm:text-xs font-medium tracking-[0.16em] uppercase text-[#8C8983]">
-          {/* Contact Details */}
+          {/* Contact Details: No red hover, clean white */}
           <div className="flex flex-wrap items-center gap-6 sm:gap-10">
             <a
               href="mailto:contact@saadmughal.dev"
-              className="relative group text-white hover:text-accent transition-colors duration-200"
+              className="relative group text-white transition-colors duration-200"
             >
               <span>CONTACT@SAADMUGHAL.DEV</span>
-              <span className="absolute left-0 bottom-0 block h-[1px] w-0 bg-accent group-hover:w-full transition-all duration-200 ease-out" />
+              <span className="absolute left-0 bottom-0 block h-[1px] w-0 bg-white group-hover:w-full transition-all duration-200 ease-out" />
             </a>
             <span className="text-[#5C5954] hidden sm:inline">LAHORE, PK</span>
           </div>
