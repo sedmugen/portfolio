@@ -53,53 +53,58 @@ export function Nav() {
   }, [pathname]);
 
   return (
-    <header className="w-full bg-canvas select-none border-b border-border-subtle md:border-b-0">
+    <header className="w-full bg-canvas border-b border-border-subtle md:border-b-0 relative z-50">
       {/* ========================================================= */}
       {/* 1. MOBILE HEADER (Visible on screens < md)                */}
       {/* ========================================================= */}
       <div className="md:hidden w-full">
-        {/* Collapsed Bar: "SAAD MUGHAL" + Animated "+" Button */}
-        <div className="w-full px-3 py-3 flex items-center justify-between">
+        {/* Collapsed Bar: "SAAD MUGHAL" + Borderless Animated "+" Button */}
+        <div className="w-full px-3 py-2.5 flex items-center justify-between">
           <Link href="/" className="inline-block" onClick={() => setIsOpen(false)}>
             <h1 className="font-display text-3xl xs:text-4xl font-normal uppercase tracking-[-0.03em] leading-none text-ink hover:opacity-85 transition-opacity">
               SAAD MUGHAL
             </h1>
           </Link>
 
-          {/* Animated Toggle Button (+ that rotates to ×) */}
+          {/* Borderless Animated Toggle Button (+ rotates to ×) */}
           <button
-            onClick={() => setIsOpen((prev) => !prev)}
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              setIsOpen((prev) => !prev);
+            }}
             aria-expanded={isOpen}
-            aria-label="Toggle navigation menu"
-            className="w-10 h-10 flex items-center justify-center text-ink rounded-sm border border-border bg-canvas-subtle/50 active:scale-95 transition-transform"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            className="p-2 -mr-1 flex items-center justify-center text-ink cursor-pointer hover:opacity-75 active:scale-90 transition-all focus:outline-none"
           >
             <motion.div
               animate={{ rotate: isOpen ? 45 : 0 }}
-              transition={{ type: "spring", stiffness: 300, damping: 25 }}
-              className="relative w-4 h-4 flex items-center justify-center"
+              transition={{ type: "spring", stiffness: 350, damping: 22 }}
+              className="relative w-5 h-5 flex items-center justify-center pointer-events-none"
             >
               {/* Horizontal line */}
-              <span className="absolute w-4 h-[1.5px] bg-ink" />
+              <span className="absolute w-4 h-[1.75px] bg-ink rounded-full" />
               {/* Vertical line */}
-              <span className="absolute h-4 w-[1.5px] bg-ink" />
+              <span className="absolute h-4 w-[1.75px] bg-ink rounded-full" />
             </motion.div>
           </button>
         </div>
 
         {/* Animated Extended Drawer for Mobile */}
-        <AnimatePresence>
+        <AnimatePresence initial={false}>
           {isOpen && (
             <motion.div
+              key="mobile-nav-drawer"
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
-              className="overflow-hidden border-t border-border-subtle bg-canvas"
+              transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
+              className="overflow-hidden border-t border-border-subtle bg-canvas w-full"
             >
               <div className="px-3 pt-4 pb-6 flex flex-col gap-6">
                 {/* Identity Block: Photo + Time & Location */}
                 <div className="flex items-center justify-between border-b border-border-subtle pb-4">
-                  <div className="flex flex-col gap-1">
+                  <div className="flex flex-col gap-1.5">
                     <div className="text-xs font-mono font-bold text-ink uppercase tracking-widest">
                       <LiveTime /> <span className="text-ink">PKT</span>
                     </div>
@@ -122,7 +127,7 @@ export function Nav() {
 
                 {/* Navigation Links */}
                 <nav aria-label="Mobile Navigation">
-                  <ul className="flex flex-col gap-3.5 text-sm font-bold tracking-[0.18em] uppercase text-ink">
+                  <ul className="flex flex-col gap-4 text-sm font-bold tracking-[0.18em] uppercase text-ink">
                     {NAV_ITEMS.map((item) => (
                       <li key={item.href}>
                         <Link
