@@ -5,7 +5,7 @@ export function Footer() {
 
   return (
     <footer className="w-full bg-[#0E0D0D] text-[#F7F6F3] mt-auto">
-      <div className="w-full px-3 sm:px-4 md:px-6 pt-16 sm:pt-24 pb-8 sm:pb-12">
+      <div className="w-full px-2 sm:px-4 md:px-6 pt-16 sm:pt-24 pb-8 sm:pb-12">
         {/* Massive Artistic CTA Headline */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-12 sm:pb-16">
           <Link href="/contact" className="group block select-none">

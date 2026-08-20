@@ -50,56 +50,54 @@ export function Nav() {
 
   return (
     <header className="w-full bg-canvas">
-      {/* Top Banner: Minimal Side Margins, Large Architectural Typography & Profile */}
-      <div className="w-full px-3 sm:px-4 md:px-6 pt-6 sm:pt-8 pb-4 sm:pb-6 flex flex-col md:flex-row md:items-end justify-between gap-6">
-        {/* Aesthetic Name Display */}
-        <Link href="/" className="group block select-none">
-          <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[9.5rem] font-normal uppercase tracking-[-0.04em] leading-[0.82] text-ink group-hover:text-accent transition-colors duration-300">
+      {/* Top Banner: Edge-to-Edge Minimal Margins, Large Typography & Large Profile */}
+      <div className="w-full px-2 sm:px-4 md:px-6 pt-3 sm:pt-4 pb-2 sm:pb-3 flex items-end justify-between gap-3 sm:gap-6">
+        {/* Name Display: Scaled to fit seamlessly alongside the photo */}
+        <Link href="/" className="group block select-none flex-1 min-w-0">
+          <h1 className="font-display text-[12vw] sm:text-[11vw] md:text-[10.5vw] lg:text-[10vw] font-normal uppercase tracking-[-0.04em] leading-[0.8] text-ink group-hover:text-accent transition-colors duration-300 truncate sm:overflow-visible">
             SAAD MUGHAL
           </h1>
         </Link>
 
-        {/* Right Info Box: Live PKT Time, Profile Picture, Location */}
-        <div className="flex flex-col items-end gap-2.5 shrink-0 self-start md:self-end">
+        {/* Right Info Box: Time, Large Photo, Location */}
+        <div className="flex flex-col items-end justify-between shrink-0 self-stretch gap-1.5 sm:gap-2">
+          {/* Live PKT Clock */}
           <div className="text-right">
-            <div className="text-[11px] font-mono font-medium text-ink-muted uppercase tracking-widest">
+            <div className="text-[10px] sm:text-xs font-mono font-medium text-ink-muted uppercase tracking-widest">
               <LiveTime /> <span className="text-ink-faint">PKT</span>
             </div>
           </div>
 
-          <div className="flex items-end gap-3.5">
-            <div className="text-right hidden sm:block pb-0.5">
-              <span className="block text-[10px] text-ink-muted tracking-widest uppercase">
-                Based in
-              </span>
-              <span className="block text-xs font-medium text-ink uppercase tracking-wider">
-                Lahore, PK
-              </span>
-            </div>
+          {/* Large Profile Picture */}
+          <div className="relative w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-sm overflow-hidden bg-border-subtle border border-border shrink-0 shadow-sm">
+            <Image
+              src="/images/profile-pictures/1.jpg"
+              alt="Saad Mughal"
+              fill
+              priority
+              sizes="(max-width: 640px) 80px, (max-width: 768px) 112px, (max-width: 1024px) 144px, 176px"
+              className="object-cover object-top"
+            />
+          </div>
 
-            <div className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-sm overflow-hidden bg-border-subtle border border-border shrink-0 shadow-sm">
-              <Image
-                src="/images/profile-pictures/1.jpg"
-                alt="Saad Mughal"
-                fill
-                priority
-                sizes="(max-width: 768px) 64px, 96px"
-                className="object-cover object-center"
-              />
-            </div>
+          {/* Location Tag */}
+          <div className="text-right">
+            <span className="text-[10px] sm:text-[11px] font-medium text-ink-muted uppercase tracking-wider">
+              Based in <strong className="text-ink font-semibold">Lahore, PK</strong>
+            </span>
           </div>
         </div>
       </div>
 
-      {/* Sub-Navigation Bar: Huge Gaps, Small Text, Animated Underline on Hover, No Bottom Section Break Line */}
+      {/* Sub-Navigation Bar: Minimal Margins, Expansive Gaps, Animated Hover Underline */}
       <div className="border-t border-border-subtle">
-        <div className="w-full px-3 sm:px-4 md:px-6 py-3 sm:py-3.5 flex items-center justify-between">
+        <div className="w-full px-2 sm:px-4 md:px-6 py-2.5 sm:py-3 flex items-center justify-between">
           <nav
             aria-label="Main Navigation"
             className="flex-1"
             onMouseLeave={() => setHoveredLink(null)}
           >
-            <ul className="grid grid-cols-2 sm:flex sm:items-center sm:gap-16 md:gap-24 lg:gap-32 text-[11px] sm:text-xs font-medium tracking-[0.18em] uppercase text-ink">
+            <ul className="flex items-center gap-8 sm:gap-16 md:gap-24 lg:gap-32 text-[11px] sm:text-xs font-medium tracking-[0.18em] uppercase text-ink">
               {NAV_ITEMS.map((item) => {
                 const isActive =
                   item.href === "/"
@@ -107,7 +105,7 @@ export function Nav() {
                     : pathname === item.href || pathname.startsWith(`${item.href}/`);
 
                 return (
-                  <li key={item.href} className="py-1">
+                  <li key={item.href} className="py-0.5">
                     <Link
                       href={item.href}
                       onMouseEnter={() => setHoveredLink(item.href)}
