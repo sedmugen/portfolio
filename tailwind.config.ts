@@ -29,8 +29,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ["var(--font-display)", "Georgia", "serif"],
-        "display-sans": ["var(--font-display-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
+        grotesk: ["var(--font-grotesk)", "system-ui", "sans-serif"],
         body: ["var(--font-body)", "system-ui", "-apple-system", "sans-serif"],
       },
       fontSize: {

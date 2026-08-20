@@ -1,21 +1,20 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Inter, Syne } from "next/font/google";
+import { Syne, Space_Grotesk, Inter } from "next/font/google";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import "./globals.css";
 
-const displayFont = Instrument_Serif({
+const displayFont = Syne({
   subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
+  weight: ["400", "500", "600", "700", "800"],
   variable: "--font-display",
   display: "swap",
 });
 
-const displaySansFont = Syne({
+const monoFont = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-display-sans",
+  weight: ["400", "500"],
+  variable: "--font-grotesk",
   display: "swap",
 });
 
@@ -50,7 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${displayFont.variable} ${displaySansFont.variable} ${bodyFont.variable} scroll-smooth`}
+      className={`${displayFont.variable} ${monoFont.variable} ${bodyFont.variable} scroll-smooth`}
     >
       <body className="min-h-screen bg-canvas text-ink antialiased flex flex-col font-body selection:bg-border selection:text-ink">
         <Nav />

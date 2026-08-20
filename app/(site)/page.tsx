@@ -1,7 +1,7 @@
 export default function HomePage() {
   return (
-    <div className="mx-auto max-w-site px-6 sm:px-8 md:px-12 py-16 sm:py-24">
-      {/* Shell placeholder: page content to be built in subsequent phases */}
+    <div className="w-full px-3 sm:px-4 md:px-6 py-12 sm:py-20">
+      {/* Home page content */}
     </div>
   );
 }

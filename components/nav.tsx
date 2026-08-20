@@ -48,18 +48,18 @@ export function Nav() {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
 
   return (
-    <header className="w-full border-b border-border bg-canvas">
-      {/* Top Banner: Huge Artistic Typography & Identity Box */}
-      <div className="mx-auto max-w-[1440px] px-6 sm:px-8 md:px-12 pt-8 sm:pt-12 pb-6 sm:pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
-        {/* Artistic, Thinner, Intentional Name Display */}
+    <header className="w-full bg-canvas">
+      {/* Top Banner: Minimal Side Margins, Large Architectural Typography */}
+      <div className="w-full px-3 sm:px-4 md:px-6 pt-6 sm:pt-8 pb-4 sm:pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        {/* Aesthetic, Thinner, Intentional Name Display */}
         <Link href="/" className="group block select-none">
-          <h1 className="font-display text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-normal tracking-[-0.03em] leading-[0.85] text-ink group-hover:text-accent transition-colors duration-300">
-            Saad Mughal
+          <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[9.5rem] font-normal uppercase tracking-[-0.04em] leading-[0.82] text-ink group-hover:text-accent transition-colors duration-300">
+            SAAD MUGHAL
           </h1>
         </Link>
 
         {/* Right Info Box: Live PKT Time, Avatar Monogram, Location */}
-        <div className="flex md:flex-col items-end justify-between md:justify-end gap-3 shrink-0 self-start md:self-end">
+        <div className="flex md:flex-col items-end justify-between md:justify-end gap-2.5 shrink-0 self-start md:self-end">
           <div className="text-right">
             <div className="text-[11px] font-mono font-medium text-ink-muted uppercase tracking-widest">
               <LiveTime /> <span className="text-ink-faint">PKT</span>
@@ -67,7 +67,7 @@ export function Nav() {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-sm bg-border-subtle overflow-hidden border border-border flex items-center justify-center text-xs font-mono font-medium text-ink-muted shrink-0">
+            <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-sm bg-border-subtle overflow-hidden border border-border flex items-center justify-center text-xs font-mono font-medium text-ink-muted shrink-0">
               <span className="tracking-widest">SM</span>
             </div>
             <div className="text-right hidden sm:block">
@@ -82,15 +82,14 @@ export function Nav() {
         </div>
       </div>
 
-      {/* Sub-Navigation Bar: Huge Gaps, Small Text, Animated Underline on Hover */}
+      {/* Sub-Navigation Bar: Huge Gaps, Small Text, Animated Underline on Hover, No Bottom Section Break Line */}
       <div className="border-t border-border-subtle">
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-8 md:px-12 py-3 sm:py-3.5 flex items-center justify-between">
+        <div className="w-full px-3 sm:px-4 md:px-6 py-3 sm:py-3.5 flex items-center justify-between">
           <nav
             aria-label="Main Navigation"
             className="flex-1"
             onMouseLeave={() => setHoveredLink(null)}
           >
-            {/* Distributed grid/flex with huge gaps matching the reference */}
             <ul className="grid grid-cols-2 sm:flex sm:items-center sm:gap-16 md:gap-24 lg:gap-32 text-[11px] sm:text-xs font-medium tracking-[0.18em] uppercase text-ink">
               {NAV_ITEMS.map((item) => {
                 const isActive =

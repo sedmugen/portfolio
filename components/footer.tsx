@@ -5,12 +5,12 @@ export function Footer() {
 
   return (
     <footer className="w-full bg-[#0E0D0D] text-[#F7F6F3] mt-auto">
-      <div className="mx-auto max-w-[1440px] px-6 sm:px-8 md:px-12 pt-20 sm:pt-28 pb-10 sm:pb-14">
+      <div className="w-full px-3 sm:px-4 md:px-6 pt-16 sm:pt-24 pb-8 sm:pb-12">
         {/* Massive Artistic CTA Headline */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-14 sm:pb-20">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-12 sm:pb-16">
           <Link href="/contact" className="group block select-none">
-            <h2 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-normal tracking-[-0.03em] leading-[0.88] text-white group-hover:text-accent transition-colors duration-300">
-              Let’s work together.
+            <h2 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[7.5rem] font-normal tracking-[-0.04em] uppercase leading-[0.88] text-white group-hover:text-accent transition-colors duration-300">
+              LET’S WORK TOGETHER.
             </h2>
           </Link>
 
@@ -20,7 +20,7 @@ export function Footer() {
         </div>
 
         {/* Horizontal Divider */}
-        <div className="w-full border-t border-white/10 pt-8 sm:pt-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-[11px] sm:text-xs font-medium tracking-[0.16em] uppercase text-[#8C8983]">
+        <div className="w-full border-t border-white/10 pt-6 sm:pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-[11px] sm:text-xs font-medium tracking-[0.16em] uppercase text-[#8C8983]">
           {/* Contact Details */}
           <div className="flex flex-wrap items-center gap-6 sm:gap-10">
             <a
@@ -64,7 +64,7 @@ export function Footer() {
         </div>
 
         {/* Small Bottom Copyright */}
-        <div className="pt-8 text-[10px] tracking-widest text-[#4E4B46] uppercase">
+        <div className="pt-6 sm:pt-8 text-[10px] tracking-widest text-[#4E4B46] uppercase">
           © {currentYear} Saad Mughal · Portfolio
         </div>
       </div>
