@@ -54,14 +54,14 @@ export function Nav() {
   }, [pathname]);
 
   return (
-    <header className="w-full bg-canvas select-none border-b border-border-subtle md:border-b-0 relative z-50">
+    <header className="w-full bg-canvas select-none relative z-50">
       {/* ========================================================= */}
       {/* 1. MOBILE HEADER (Screens < md)                           */}
       {/* All secondary items strictly use text-[10.5px] font-bold   */}
       {/* ========================================================= */}
-      <div className="md:hidden w-full px-2.5 py-2.5">
+      <div className="md:hidden w-full px-2 sm:px-4">
         {/* Row 1: "SAAD MUGHAL" + Close button (when collapsed) */}
-        <div className="w-full flex items-start justify-between">
+        <div className="w-full pt-3 pb-2 flex items-start justify-between">
           <Link href="/" className="inline-block" onClick={() => setIsOpen(false)}>
             <motion.h1
               layout
@@ -101,13 +101,13 @@ export function Nav() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
-              className="w-full overflow-hidden pt-3 flex flex-col gap-3"
+              className="w-full overflow-hidden flex flex-col"
             >
-              {/* Row 2: Pic on LEFT, Time & Location on RIGHT (exact same font size text-[10.5px]) */}
-              <div className="w-full flex items-start justify-between border-b border-border-subtle pb-3">
+              {/* Row 2: Pic on LEFT, Time & Location on RIGHT, '+' button top-right with solid black divider below */}
+              <div className="w-full border-t border-black pt-2 pb-2 flex items-start justify-between">
                 <div className="flex items-stretch gap-3">
                   {/* Profile Picture */}
-                  <div className="relative w-[5.5rem] h-[5.5rem] xs:w-24 xs:h-24 rounded-sm overflow-hidden bg-border-subtle border border-border shrink-0 shadow-sm">
+                  <div className="relative w-[5.5rem] h-[5.5rem] xs:w-24 xs:h-24 rounded-sm overflow-hidden bg-border-subtle border border-black shrink-0 shadow-sm">
                     <Image
                       src="/images/profile-pictures/1.jpg"
                       alt="Saad Mughal"
@@ -149,9 +149,9 @@ export function Nav() {
                 </button>
               </div>
 
-              {/* Row 3: HOME, WORK, ABOUT, CONTACT (Exact same font size text-[10.5px]) */}
-              <nav aria-label="Mobile Navigation" className="w-full">
-                <ul className="flex flex-col items-start gap-1 text-[10.5px] font-bold tracking-[0.14em] uppercase text-ink py-0.5">
+              {/* Row 3: HOME, WORK, ABOUT, CONTACT */}
+              <nav aria-label="Mobile Navigation" className="w-full border-t border-black pt-2 pb-2">
+                <ul className="flex flex-col items-start gap-1 text-[10.5px] font-bold tracking-[0.14em] uppercase text-ink">
                   {NAV_ITEMS.map((item) => (
                     <li key={item.href}>
                       <Link
@@ -170,8 +170,8 @@ export function Nav() {
                 </ul>
               </nav>
 
-              {/* Row 4: GH, LI, EM (Exact same font size text-[10.5px]) */}
-              <div className="flex items-center gap-5 border-t border-border-subtle pt-2.5 text-[10.5px] font-bold tracking-[0.14em] uppercase text-ink">
+              {/* Row 4: GH, LI, EM */}
+              <div className="flex items-center gap-5 border-t border-black pt-2 pb-3 text-[10.5px] font-bold tracking-[0.14em] uppercase text-ink">
                 {SOCIAL_LINKS.map((social) => (
                   <a
                     key={social.label}
@@ -200,7 +200,7 @@ export function Nav() {
       {/* ========================================================= */}
       <div className="hidden md:block w-full">
         {/* Top Banner: Name on Left, Info Box on Right */}
-        <div className="w-full px-2 sm:px-4 md:px-6 pt-3 sm:pt-4 pb-2 sm:pb-3 flex items-end justify-between gap-4 sm:gap-8">
+        <div className="w-full px-2 sm:px-4 md:px-6 pt-3 sm:pt-4 pb-2 sm:pb-2.5 flex items-end justify-between gap-4 sm:gap-8">
           {/* Name Display */}
           <div className="flex-1 min-w-0">
             <Link href="/" className="inline-block w-full">
@@ -227,7 +227,7 @@ export function Nav() {
             </div>
 
             {/* Profile Photo */}
-            <div className="relative w-24 h-24 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-sm overflow-hidden bg-border-subtle border border-border shrink-0 shadow-sm">
+            <div className="relative w-24 h-24 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-sm overflow-hidden bg-border-subtle border border-black shrink-0 shadow-sm">
               <Image
                 src="/images/profile-pictures/1.jpg"
                 alt="Saad Mughal"
@@ -240,9 +240,9 @@ export function Nav() {
           </div>
         </div>
 
-        {/* Sub-Navigation Bar: Nav Items and Socials strictly text-xs */}
-        <div className="border-t border-border-subtle">
-          <div className="w-full px-2 sm:px-4 md:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-4 sm:gap-8">
+        {/* Sub-Navigation Bar: Solid Black Divider matching footer with identical tight margins */}
+        <div className="border-t border-black">
+          <div className="w-full px-2 sm:px-4 md:px-6 pt-2 sm:pt-2.5 pb-2 sm:pb-2.5 flex items-center justify-between gap-4 sm:gap-8">
             {/* Navigation Items: text-xs font-bold */}
             <nav aria-label="Main Navigation" className="flex-1 min-w-0">
               <ul className="flex items-center justify-between w-full max-w-[70%] text-xs font-bold tracking-[0.16em] uppercase text-ink">
@@ -250,7 +250,7 @@ export function Nav() {
                   <li key={item.href} className="py-0.5">
                     <Link
                       href={item.href}
-                      className="group relative inline-block py-1 text-ink transition-colors duration-200"
+                      className="group relative inline-block py-0.5 text-ink transition-colors duration-200"
                     >
                       <span className="relative z-10">{item.label}</span>
 
@@ -273,7 +273,7 @@ export function Nav() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative py-1 text-ink transition-colors duration-150"
+                  className="group relative py-0.5 text-ink transition-colors duration-150"
                   title={social.full}
                 >
                   <span>{social.label}</span>
