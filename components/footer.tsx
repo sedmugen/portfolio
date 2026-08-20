@@ -5,24 +5,24 @@ export function Footer() {
 
   return (
     <footer className="w-full bg-[#0E0D0D] text-[#F7F6F3] mt-auto">
-      <div className="w-full px-2 sm:px-4 md:px-6 pt-16 sm:pt-24 pb-8 sm:pb-12">
-        {/* Massive Artistic CTA Headline: No red hover */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-12 sm:pb-16">
+      <div className="w-full px-2 sm:px-4 md:px-6 pt-10 sm:pt-14 pb-6 sm:pb-8">
+        {/* CTA Headline & Description: Reduced font size & tighter vertical space */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 sm:gap-6 pb-6 sm:pb-8">
           <Link href="/contact" className="inline-block select-none">
-            <h2 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[7.5rem] font-normal tracking-[-0.04em] uppercase leading-[0.88] text-white hover:opacity-85 transition-opacity duration-200">
+            <h2 className="font-display text-3xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-normal uppercase tracking-[-0.03em] leading-[0.9] text-white hover:opacity-85 transition-opacity duration-200">
               LET’S WORK TOGETHER.
             </h2>
           </Link>
 
-          <p className="text-xs sm:text-sm text-[#8C8983] max-w-sm tracking-wide leading-relaxed lg:text-right font-light">
+          <p className="text-xs sm:text-sm text-[#8C8983] max-w-sm tracking-wide leading-relaxed lg:text-right font-light pb-0.5">
             Feel free to get in touch. Available for full-time roles, contracts, and technical projects.
           </p>
         </div>
 
-        {/* Horizontal Divider */}
-        <div className="w-full border-t border-white/10 pt-6 sm:pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-[11px] sm:text-xs font-medium tracking-[0.16em] uppercase text-[#8C8983]">
-          {/* Contact Details: No red hover, clean white */}
-          <div className="flex flex-wrap items-center gap-6 sm:gap-10">
+        {/* Horizontal Divider with Reduced Spacing */}
+        <div className="w-full border-t border-white/10 pt-4 sm:pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 sm:gap-6 text-[11px] sm:text-xs font-medium tracking-[0.16em] uppercase text-[#8C8983]">
+          {/* Contact Details */}
+          <div className="flex flex-wrap items-center gap-6 sm:gap-8">
             <a
               href="mailto:contact@saadmughal.dev"
               className="relative group text-white transition-colors duration-200"
@@ -64,7 +64,7 @@ export function Footer() {
         </div>
 
         {/* Small Bottom Copyright */}
-        <div className="pt-6 sm:pt-8 text-[10px] tracking-widest text-[#4E4B46] uppercase">
+        <div className="pt-4 sm:pt-6 text-[10px] tracking-widest text-[#4E4B46] uppercase">
           © {currentYear} Saad Mughal · Portfolio
         </div>
       </div>
