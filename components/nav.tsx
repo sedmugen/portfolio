@@ -57,9 +57,10 @@ export function Nav() {
     <header className="w-full bg-canvas select-none border-b border-border-subtle md:border-b-0 relative z-50">
       {/* ========================================================= */}
       {/* 1. MOBILE HEADER (Screens < md)                           */}
+      {/* All secondary items strictly use text-[10.5px] font-bold   */}
       {/* ========================================================= */}
       <div className="md:hidden w-full px-2.5 py-2.5">
-        {/* Row 1: "SAAD MUGHAL" (Enlarges to full screen width when open) + Close button (when collapsed) */}
+        {/* Row 1: "SAAD MUGHAL" + Close button (when collapsed) */}
         <div className="w-full flex items-start justify-between">
           <Link href="/" className="inline-block" onClick={() => setIsOpen(false)}>
             <motion.h1
@@ -68,15 +69,15 @@ export function Nav() {
               className={cn(
                 "font-display uppercase tracking-[-0.04em] text-ink leading-[0.82] transition-colors duration-200",
                 isOpen
-                  ? "text-[13.5vw] xs:text-[14vw]" // Enlarged according to screen width
-                  : "text-3xl xs:text-4xl leading-none" // Compact when collapsed
+                  ? "text-[13.5vw] xs:text-[14vw]"
+                  : "text-3xl xs:text-4xl leading-none"
               )}
             >
               SAAD MUGHAL
             </motion.h1>
           </Link>
 
-          {/* Collapsed '+' button (visible only when collapsed) */}
+          {/* Collapsed '+' button */}
           {!isOpen && (
             <button
               type="button"
@@ -102,11 +103,10 @@ export function Nav() {
               transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
               className="w-full overflow-hidden pt-3 flex flex-col gap-3"
             >
-              {/* Row 2: Pic on LEFT, Time at top & Location at bottom, '+' button aligned to TOP */}
+              {/* Row 2: Pic on LEFT, Time & Location on RIGHT (exact same font size text-[10.5px]) */}
               <div className="w-full flex items-start justify-between border-b border-border-subtle pb-3">
-                {/* Left group: Profile Picture + Time (top) & Location (bottom) */}
                 <div className="flex items-stretch gap-3">
-                  {/* Profile Picture on the Left */}
+                  {/* Profile Picture */}
                   <div className="relative w-[5.5rem] h-[5.5rem] xs:w-24 xs:h-24 rounded-sm overflow-hidden bg-border-subtle border border-border shrink-0 shadow-sm">
                     <Image
                       src="/images/profile-pictures/1.jpg"
@@ -118,20 +118,20 @@ export function Nav() {
                     />
                   </div>
 
-                  {/* Time pinned to TOP, Location pinned to BOTTOM */}
+                  {/* Time & Location: text-[10.5px] */}
                   <div className="flex flex-col items-start justify-between self-stretch text-left py-0.5">
-                    <div className="text-[10px] xs:text-[11px] font-mono font-bold text-ink uppercase tracking-widest whitespace-nowrap">
+                    <div className="text-[10.5px] font-mono font-bold text-ink uppercase tracking-[0.14em] whitespace-nowrap">
                       <LiveTime /> <span className="text-ink">PKT</span>
                     </div>
                     <div className="whitespace-nowrap">
-                      <span className="block text-[9.5px] xs:text-[10.5px] font-bold text-ink uppercase tracking-wider">
+                      <span className="block text-[10.5px] font-bold text-ink uppercase tracking-[0.14em]">
                         BASED IN LAHORE, PK
                       </span>
                     </div>
                   </div>
                 </div>
 
-                {/* Far right: '+' button aligned to TOP */}
+                {/* '+' button aligned to top */}
                 <button
                   type="button"
                   onClick={() => setIsOpen(false)}
@@ -149,9 +149,9 @@ export function Nav() {
                 </button>
               </div>
 
-              {/* Row 3: HOME, WORK, ABOUT, CONTACT in vertical list view with reduced font and minimal margins */}
+              {/* Row 3: HOME, WORK, ABOUT, CONTACT (Exact same font size text-[10.5px]) */}
               <nav aria-label="Mobile Navigation" className="w-full">
-                <ul className="flex flex-col items-start gap-1 text-[11px] font-bold tracking-[0.18em] uppercase text-ink py-0.5">
+                <ul className="flex flex-col items-start gap-1 text-[10.5px] font-bold tracking-[0.14em] uppercase text-ink py-0.5">
                   {NAV_ITEMS.map((item) => (
                     <li key={item.href}>
                       <Link
@@ -170,8 +170,8 @@ export function Nav() {
                 </ul>
               </nav>
 
-              {/* Row 4: GH, LI, EM (Small with minimal margins) */}
-              <div className="flex items-center gap-5 border-t border-border-subtle pt-2.5 text-[10px] xs:text-[11px] font-bold tracking-[0.14em] uppercase text-ink">
+              {/* Row 4: GH, LI, EM (Exact same font size text-[10.5px]) */}
+              <div className="flex items-center gap-5 border-t border-border-subtle pt-2.5 text-[10.5px] font-bold tracking-[0.14em] uppercase text-ink">
                 {SOCIAL_LINKS.map((social) => (
                   <a
                     key={social.label}
@@ -196,6 +196,7 @@ export function Nav() {
 
       {/* ========================================================= */}
       {/* 2. DESKTOP & TABLET HEADER (Screens ≥ md)                 */}
+      {/* All secondary items strictly use text-xs font-bold        */}
       {/* ========================================================= */}
       <div className="hidden md:block w-full">
         {/* Top Banner: Name on Left, Info Box on Right */}
@@ -209,20 +210,23 @@ export function Nav() {
             </Link>
           </div>
 
-          {/* Right Info Box: Time & Location + Profile Photo */}
+          {/* Right Info Box: Time & Location strictly text-xs */}
           <div className="flex items-end gap-3 sm:gap-4 shrink-0 self-end">
             <div className="flex flex-col items-end justify-between self-stretch text-right py-0.5">
-              <div className="text-[10px] sm:text-xs font-mono font-bold text-ink uppercase tracking-widest whitespace-nowrap">
+              {/* Time: text-xs font-bold */}
+              <div className="text-xs font-mono font-bold text-ink uppercase tracking-[0.16em] whitespace-nowrap">
                 <LiveTime /> <span className="text-ink">PKT</span>
               </div>
 
+              {/* Location: text-xs font-bold */}
               <div className="whitespace-nowrap">
-                <span className="block text-[10px] sm:text-[11px] font-bold text-ink uppercase tracking-wider">
+                <span className="block text-xs font-bold text-ink uppercase tracking-[0.16em]">
                   BASED IN LAHORE, PK
                 </span>
               </div>
             </div>
 
+            {/* Profile Photo */}
             <div className="relative w-24 h-24 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-sm overflow-hidden bg-border-subtle border border-border shrink-0 shadow-sm">
               <Image
                 src="/images/profile-pictures/1.jpg"
@@ -236,12 +240,12 @@ export function Nav() {
           </div>
         </div>
 
-        {/* Sub-Navigation Bar */}
+        {/* Sub-Navigation Bar: Nav Items and Socials strictly text-xs */}
         <div className="border-t border-border-subtle">
           <div className="w-full px-2 sm:px-4 md:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-4 sm:gap-8">
-            {/* Navigation Items */}
+            {/* Navigation Items: text-xs font-bold */}
             <nav aria-label="Main Navigation" className="flex-1 min-w-0">
-              <ul className="flex items-center justify-between w-full max-w-[70%] text-xs font-bold tracking-[0.18em] uppercase text-ink">
+              <ul className="flex items-center justify-between w-full max-w-[70%] text-xs font-bold tracking-[0.16em] uppercase text-ink">
                 {NAV_ITEMS.map((item) => (
                   <li key={item.href} className="py-0.5">
                     <Link
@@ -261,8 +265,8 @@ export function Nav() {
               </ul>
             </nav>
 
-            {/* Socials abbreviation bar on the far right */}
-            <div className="flex items-center justify-end space-x-4 sm:space-x-6 text-[11px] font-bold tracking-[0.16em] uppercase text-ink shrink-0">
+            {/* Socials abbreviation bar: text-xs font-bold */}
+            <div className="flex items-center justify-end space-x-4 sm:space-x-6 text-xs font-bold tracking-[0.16em] uppercase text-ink shrink-0">
               {SOCIAL_LINKS.map((social) => (
                 <a
                   key={social.label}
