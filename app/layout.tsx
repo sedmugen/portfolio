@@ -1,13 +1,21 @@
 import type { Metadata } from "next";
-import { Newsreader, Inter } from "next/font/google";
+import { Instrument_Serif, Inter, Syne } from "next/font/google";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import "./globals.css";
 
-const displayFont = Newsreader({
+const displayFont = Instrument_Serif({
   subsets: ["latin"],
+  weight: "400",
   style: ["normal", "italic"],
   variable: "--font-display",
+  display: "swap",
+});
+
+const displaySansFont = Syne({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-display-sans",
   display: "swap",
 });
 
@@ -42,7 +50,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${displayFont.variable} ${bodyFont.variable} scroll-smooth`}
+      className={`${displayFont.variable} ${displaySansFont.variable} ${bodyFont.variable} scroll-smooth`}
     >
       <body className="min-h-screen bg-canvas text-ink antialiased flex flex-col font-body selection:bg-border selection:text-ink">
         <Nav />

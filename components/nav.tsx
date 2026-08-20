@@ -3,9 +3,11 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-const NAV_LINKS = [
+const NAV_ITEMS = [
+  { label: "HOME", href: "/" },
   { label: "WORK", href: "/work" },
   { label: "ABOUT", href: "/about" },
   { label: "CONTACT", href: "/contact" },
@@ -23,7 +25,6 @@ function LiveTime() {
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
-      // Format time in PKT (Asia/Karachi) or local
       const formatted = now.toLocaleTimeString("en-US", {
         timeZone: "Asia/Karachi",
         hour: "2-digit",
@@ -44,36 +45,36 @@ function LiveTime() {
 
 export function Nav() {
   const pathname = usePathname();
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
 
   return (
     <header className="w-full border-b border-border bg-canvas">
-      {/* Top Banner: Huge Typography & Identity Card */}
-      <div className="mx-auto max-w-[1440px] px-6 sm:px-8 md:px-12 pt-8 sm:pt-10 pb-6 sm:pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
-        {/* Massive Name Display */}
+      {/* Top Banner: Huge Artistic Typography & Identity Box */}
+      <div className="mx-auto max-w-[1440px] px-6 sm:px-8 md:px-12 pt-8 sm:pt-12 pb-6 sm:pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6">
+        {/* Artistic, Thinner, Intentional Name Display */}
         <Link href="/" className="group block select-none">
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.88] uppercase text-ink group-hover:text-accent transition-colors duration-200">
-            SAAD MUGHAL
+          <h1 className="font-display text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-normal tracking-[-0.03em] leading-[0.85] text-ink group-hover:text-accent transition-colors duration-300">
+            Saad Mughal
           </h1>
         </Link>
 
-        {/* Right Info Box: Time, Avatar, Location */}
+        {/* Right Info Box: Live PKT Time, Avatar Monogram, Location */}
         <div className="flex md:flex-col items-end justify-between md:justify-end gap-3 shrink-0 self-start md:self-end">
           <div className="text-right">
-            <div className="text-2xs sm:text-xs font-mono font-medium text-ink-muted uppercase tracking-widest">
+            <div className="text-[11px] font-mono font-medium text-ink-muted uppercase tracking-widest">
               <LiveTime /> <span className="text-ink-faint">PKT</span>
             </div>
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-sm bg-border-subtle overflow-hidden border border-border flex items-center justify-center text-xs font-bold text-ink-muted shrink-0">
-              {/* Avatar placeholder / image slot */}
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-sm bg-border-subtle overflow-hidden border border-border flex items-center justify-center text-xs font-mono font-medium text-ink-muted shrink-0">
               <span className="tracking-widest">SM</span>
             </div>
             <div className="text-right hidden sm:block">
-              <span className="block text-2xs text-ink-muted tracking-wider uppercase">
+              <span className="block text-[10px] text-ink-muted tracking-widest uppercase">
                 Based in
               </span>
-              <span className="block text-xs font-semibold text-ink uppercase tracking-wider">
+              <span className="block text-xs font-medium text-ink uppercase tracking-wider">
                 Lahore, PK
               </span>
             </div>
@@ -81,40 +82,49 @@ export function Nav() {
         </div>
       </div>
 
-      {/* Sub-Navigation Bar */}
+      {/* Sub-Navigation Bar: Huge Gaps, Small Text, Animated Underline on Hover */}
       <div className="border-t border-border-subtle">
-        <div className="mx-auto max-w-[1440px] px-6 sm:px-8 md:px-12 py-3 sm:py-4 flex items-center justify-between">
-          <nav aria-label="Main Navigation">
-            <ul className="flex items-center space-x-6 sm:space-x-10 text-xs sm:text-sm font-bold tracking-[0.16em] uppercase text-ink">
-              <li>
-                <Link
-                  href="/"
-                  className={cn(
-                    "transition-colors duration-150 py-1",
-                    pathname === "/"
-                      ? "text-ink border-b-2 border-ink"
-                      : "text-ink-muted hover:text-ink"
-                  )}
-                >
-                  HOME
-                </Link>
-              </li>
-              {NAV_LINKS.map((link) => {
+        <div className="mx-auto max-w-[1440px] px-6 sm:px-8 md:px-12 py-3 sm:py-3.5 flex items-center justify-between">
+          <nav
+            aria-label="Main Navigation"
+            className="flex-1"
+            onMouseLeave={() => setHoveredLink(null)}
+          >
+            {/* Distributed grid/flex with huge gaps matching the reference */}
+            <ul className="grid grid-cols-2 sm:flex sm:items-center sm:gap-16 md:gap-24 lg:gap-32 text-[11px] sm:text-xs font-medium tracking-[0.18em] uppercase text-ink">
+              {NAV_ITEMS.map((item) => {
                 const isActive =
-                  pathname === link.href || pathname.startsWith(`${link.href}/`);
+                  item.href === "/"
+                    ? pathname === "/"
+                    : pathname === item.href || pathname.startsWith(`${item.href}/`);
 
                 return (
-                  <li key={link.href}>
+                  <li key={item.href} className="py-1">
                     <Link
-                      href={link.href}
+                      href={item.href}
+                      onMouseEnter={() => setHoveredLink(item.href)}
                       className={cn(
-                        "transition-colors duration-150 py-1",
-                        isActive
-                          ? "text-ink border-b-2 border-ink"
-                          : "text-ink-muted hover:text-ink"
+                        "relative inline-block py-0.5 transition-colors duration-200",
+                        isActive ? "text-ink font-semibold" : "text-ink-muted hover:text-ink"
                       )}
                     >
-                      {link.label}
+                      <span>{item.label}</span>
+
+                      {/* Animated underline on hover or active */}
+                      {(hoveredLink === item.href || (isActive && hoveredLink === null)) && (
+                        <motion.span
+                          layoutId="navUnderline"
+                          className="absolute left-0 bottom-0 block h-[1.5px] w-full bg-ink"
+                          initial={{ opacity: 0, scaleX: 0 }}
+                          animate={{ opacity: 1, scaleX: 1 }}
+                          exit={{ opacity: 0, scaleX: 0 }}
+                          transition={{
+                            type: "spring",
+                            stiffness: 380,
+                            damping: 30,
+                          }}
+                        />
+                      )}
                     </Link>
                   </li>
                 );
@@ -122,18 +132,19 @@ export function Nav() {
             </ul>
           </nav>
 
-          {/* Socials abbreviation bar on the right */}
-          <div className="flex items-center space-x-4 sm:space-x-6 text-2xs sm:text-xs font-bold tracking-[0.14em] uppercase text-ink-muted">
+          {/* Socials abbreviation bar on the far right */}
+          <div className="flex items-center space-x-4 sm:space-x-6 text-[10px] sm:text-[11px] font-medium tracking-[0.16em] uppercase text-ink-muted shrink-0">
             {SOCIAL_LINKS.map((social) => (
               <a
                 key={social.label}
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-ink transition-colors duration-150"
+                className="relative group py-0.5 hover:text-ink transition-colors duration-150"
                 title={social.full}
               >
-                {social.label}
+                <span>{social.label}</span>
+                <span className="absolute left-0 bottom-0 block h-[1px] w-0 bg-ink group-hover:w-full transition-all duration-200 ease-out" />
               </a>
             ))}
           </div>
