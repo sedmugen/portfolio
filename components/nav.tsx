@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
   { label: "HOME", href: "/" },
@@ -53,118 +54,140 @@ export function Nav() {
   }, [pathname]);
 
   return (
-    <header className="w-full bg-canvas border-b border-border-subtle md:border-b-0 relative z-50">
+    <header className="w-full bg-canvas select-none border-b border-border-subtle md:border-b-0 relative z-50">
       {/* ========================================================= */}
-      {/* 1. MOBILE HEADER (Visible on screens < md)                */}
+      {/* 1. MOBILE HEADER (Screens < md)                           */}
       {/* ========================================================= */}
-      <div className="md:hidden w-full">
-        {/* Collapsed Bar: "SAAD MUGHAL" + Borderless Animated "+" Button */}
-        <div className="w-full px-3 py-2.5 flex items-center justify-between">
+      <div className="md:hidden w-full px-2.5 py-2.5">
+        {/* Row 1: "SAAD MUGHAL" (Enlarges to full screen width when open) + Close button (when collapsed) */}
+        <div className="w-full flex items-start justify-between">
           <Link href="/" className="inline-block" onClick={() => setIsOpen(false)}>
-            <h1 className="font-display text-3xl xs:text-4xl font-normal uppercase tracking-[-0.03em] leading-none text-ink hover:opacity-85 transition-opacity">
+            <motion.h1
+              layout
+              transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
+              className={cn(
+                "font-display uppercase tracking-[-0.04em] text-ink leading-[0.82] transition-colors duration-200",
+                isOpen
+                  ? "text-[13.5vw] xs:text-[14vw]" // Enlarged according to screen width
+                  : "text-3xl xs:text-4xl leading-none" // Compact when collapsed
+              )}
+            >
               SAAD MUGHAL
-            </h1>
+            </motion.h1>
           </Link>
 
-          {/* Borderless Animated Toggle Button (+ rotates to ×) */}
-          <button
-            type="button"
-            onClick={(e) => {
-              e.preventDefault();
-              setIsOpen((prev) => !prev);
-            }}
-            aria-expanded={isOpen}
-            aria-label={isOpen ? "Close menu" : "Open menu"}
-            className="p-2 -mr-1 flex items-center justify-center text-ink cursor-pointer hover:opacity-75 active:scale-90 transition-all focus:outline-none"
-          >
-            <motion.div
-              animate={{ rotate: isOpen ? 45 : 0 }}
-              transition={{ type: "spring", stiffness: 350, damping: 22 }}
-              className="relative w-5 h-5 flex items-center justify-center pointer-events-none"
+          {/* Collapsed '+' button (visible only when collapsed) */}
+          {!isOpen && (
+            <button
+              type="button"
+              onClick={() => setIsOpen(true)}
+              aria-label="Open menu"
+              className="p-1 text-ink cursor-pointer hover:opacity-75 active:scale-90 transition-all focus:outline-none shrink-0"
             >
-              {/* Horizontal line */}
-              <span className="absolute w-4 h-[1.75px] bg-ink rounded-full" />
-              {/* Vertical line */}
-              <span className="absolute h-4 w-[1.75px] bg-ink rounded-full" />
-            </motion.div>
-          </button>
+              <div className="relative w-5 h-5 flex items-center justify-center pointer-events-none">
+                <span className="absolute w-4 h-[1.75px] bg-ink rounded-full" />
+                <span className="absolute h-4 w-[1.75px] bg-ink rounded-full" />
+              </div>
+            </button>
+          )}
         </div>
 
         {/* Animated Extended Drawer for Mobile */}
-        <AnimatePresence initial={false}>
+        <AnimatePresence>
           {isOpen && (
             <motion.div
-              key="mobile-nav-drawer"
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
-              className="overflow-hidden border-t border-border-subtle bg-canvas w-full"
+              className="w-full overflow-hidden pt-3 flex flex-col gap-3.5"
             >
-              <div className="px-3 pt-4 pb-6 flex flex-col gap-6">
-                {/* Identity Block: Photo + Time & Location */}
-                <div className="flex items-center justify-between border-b border-border-subtle pb-4">
-                  <div className="flex flex-col gap-1.5">
-                    <div className="text-xs font-mono font-bold text-ink uppercase tracking-widest">
-                      <LiveTime /> <span className="text-ink">PKT</span>
-                    </div>
-                    <span className="text-[11px] font-bold text-ink uppercase tracking-wider">
+              {/* Row 2: Time & Location (left), +30% larger Pic (middle), '+' rotated button (right) */}
+              <div className="w-full flex items-end justify-between border-b border-border-subtle pb-3">
+                {/* Time & Location on the LEFT of the pic */}
+                <div className="flex flex-col items-start justify-between self-stretch text-left py-0.5">
+                  <div className="text-[10px] xs:text-[11px] font-mono font-bold text-ink uppercase tracking-widest whitespace-nowrap">
+                    <LiveTime /> <span className="text-ink">PKT</span>
+                  </div>
+                  <div className="whitespace-nowrap">
+                    <span className="block text-[9.5px] xs:text-[10.5px] font-bold text-ink uppercase tracking-wider">
                       BASED IN LAHORE, PK
                     </span>
                   </div>
+                </div>
 
-                  <div className="relative w-16 h-16 rounded-sm overflow-hidden bg-border-subtle border border-border shadow-sm">
+                {/* Right cluster: Pic (+30% size) + Downward-moved '+' button */}
+                <div className="flex items-center gap-3 shrink-0">
+                  {/* +30% Larger Profile Picture */}
+                  <div className="relative w-[5.5rem] h-[5.5rem] xs:w-24 xs:h-24 rounded-sm overflow-hidden bg-border-subtle border border-border shrink-0 shadow-sm">
                     <Image
                       src="/images/profile-pictures/1.jpg"
                       alt="Saad Mughal"
                       fill
                       priority
-                      sizes="64px"
+                      sizes="96px"
                       className="object-cover object-top"
                     />
                   </div>
-                </div>
 
-                {/* Navigation Links */}
-                <nav aria-label="Mobile Navigation">
-                  <ul className="flex flex-col gap-4 text-sm font-bold tracking-[0.18em] uppercase text-ink">
-                    {NAV_ITEMS.map((item) => (
-                      <li key={item.href}>
-                        <Link
-                          href={item.href}
-                          onClick={() => setIsOpen(false)}
-                          className="group relative inline-block py-1 text-ink"
-                        >
-                          <span className="relative z-10">{item.label}</span>
-                          <span
-                            aria-hidden="true"
-                            className="absolute left-0 bottom-0 block h-[1.5px] w-full bg-ink origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-250 ease-out"
-                          />
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </nav>
-
-                {/* Social Links */}
-                <div className="flex items-center gap-6 border-t border-border-subtle pt-4 text-xs font-bold tracking-[0.16em] uppercase text-ink">
-                  {SOCIAL_LINKS.map((social) => (
-                    <a
-                      key={social.label}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group relative py-1 text-ink"
-                      title={social.full}
+                  {/* '+' button moved downwards & rotated 45deg to '×' */}
+                  <button
+                    type="button"
+                    onClick={() => setIsOpen(false)}
+                    aria-label="Close menu"
+                    className="p-1.5 text-ink cursor-pointer hover:opacity-75 active:scale-90 transition-all focus:outline-none shrink-0"
+                  >
+                    <motion.div
+                      animate={{ rotate: 45 }}
+                      transition={{ type: "spring", stiffness: 350, damping: 22 }}
+                      className="relative w-5 h-5 flex items-center justify-center pointer-events-none"
                     >
-                      <span>{social.label}</span>
-                      <span
-                        aria-hidden="true"
-                        className="absolute left-0 bottom-0 block h-[1.5px] w-full bg-ink origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out"
-                      />
-                    </a>
-                  ))}
+                      <span className="absolute w-4 h-[1.75px] bg-ink rounded-full" />
+                      <span className="absolute h-4 w-[1.75px] bg-ink rounded-full" />
+                    </motion.div>
+                  </button>
                 </div>
+              </div>
+
+              {/* Row 3: HOME, WORK, ABOUT, CONTACT (Minimal margins, evenly distributed) */}
+              <nav aria-label="Mobile Navigation" className="w-full">
+                <ul className="flex items-center justify-between w-full text-xs font-bold tracking-[0.16em] uppercase text-ink py-1">
+                  {NAV_ITEMS.map((item) => (
+                    <li key={item.href}>
+                      <Link
+                        href={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className="group relative inline-block py-1 text-ink"
+                      >
+                        <span className="relative z-10">{item.label}</span>
+                        <span
+                          aria-hidden="true"
+                          className="absolute left-0 bottom-0 block h-[1.5px] w-full bg-ink origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-250 ease-out"
+                        />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+
+              {/* Row 4: GH, LI, EM (Small with minimal margins) */}
+              <div className="flex items-center gap-5 border-t border-border-subtle pt-2 text-[10px] xs:text-[11px] font-bold tracking-[0.14em] uppercase text-ink">
+                {SOCIAL_LINKS.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative py-0.5 text-ink"
+                    title={social.full}
+                  >
+                    <span>{social.label}</span>
+                    <span
+                      aria-hidden="true"
+                      className="absolute left-0 bottom-0 block h-[1.5px] w-full bg-ink origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out"
+                    />
+                  </a>
+                ))}
               </div>
             </motion.div>
           )}
@@ -172,7 +195,7 @@ export function Nav() {
       </div>
 
       {/* ========================================================= */}
-      {/* 2. DESKTOP & TABLET HEADER (Visible on md and above)      */}
+      {/* 2. DESKTOP & TABLET HEADER (Screens ≥ md)                 */}
       {/* ========================================================= */}
       <div className="hidden md:block w-full">
         {/* Top Banner: Name on Left, Info Box on Right */}
