@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
@@ -49,34 +50,42 @@ export function Nav() {
 
   return (
     <header className="w-full bg-canvas">
-      {/* Top Banner: Minimal Side Margins, Large Architectural Typography */}
-      <div className="w-full px-3 sm:px-4 md:px-6 pt-6 sm:pt-8 pb-4 sm:pb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
-        {/* Aesthetic, Thinner, Intentional Name Display */}
+      {/* Top Banner: Minimal Side Margins, Large Architectural Typography & Profile */}
+      <div className="w-full px-3 sm:px-4 md:px-6 pt-6 sm:pt-8 pb-4 sm:pb-6 flex flex-col md:flex-row md:items-end justify-between gap-6">
+        {/* Aesthetic Name Display */}
         <Link href="/" className="group block select-none">
           <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[9.5rem] font-normal uppercase tracking-[-0.04em] leading-[0.82] text-ink group-hover:text-accent transition-colors duration-300">
             SAAD MUGHAL
           </h1>
         </Link>
 
-        {/* Right Info Box: Live PKT Time, Avatar Monogram, Location */}
-        <div className="flex md:flex-col items-end justify-between md:justify-end gap-2.5 shrink-0 self-start md:self-end">
+        {/* Right Info Box: Live PKT Time, Profile Picture, Location */}
+        <div className="flex flex-col items-end gap-2.5 shrink-0 self-start md:self-end">
           <div className="text-right">
             <div className="text-[11px] font-mono font-medium text-ink-muted uppercase tracking-widest">
               <LiveTime /> <span className="text-ink-faint">PKT</span>
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
-            <div className="w-11 h-11 sm:w-13 sm:h-13 rounded-sm bg-border-subtle overflow-hidden border border-border flex items-center justify-center text-xs font-mono font-medium text-ink-muted shrink-0">
-              <span className="tracking-widest">SM</span>
-            </div>
-            <div className="text-right hidden sm:block">
+          <div className="flex items-end gap-3.5">
+            <div className="text-right hidden sm:block pb-0.5">
               <span className="block text-[10px] text-ink-muted tracking-widest uppercase">
                 Based in
               </span>
               <span className="block text-xs font-medium text-ink uppercase tracking-wider">
                 Lahore, PK
               </span>
+            </div>
+
+            <div className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-sm overflow-hidden bg-border-subtle border border-border shrink-0 shadow-sm">
+              <Image
+                src="/images/profile-pictures/1.jpg"
+                alt="Saad Mughal"
+                fill
+                priority
+                sizes="(max-width: 768px) 64px, 96px"
+                className="object-cover object-center"
+              />
             </div>
           </div>
         </div>
