@@ -50,25 +50,31 @@ export function Nav() {
 
   return (
     <header className="w-full bg-canvas">
-      {/* Top Banner: Edge-to-Edge Minimal Margins, Large Typography & Large Profile */}
+      {/* Top Banner: Minimal Margins, Large Typography, Time & Location on Left of Photo */}
       <div className="w-full px-2 sm:px-4 md:px-6 pt-3 sm:pt-4 pb-2 sm:pb-3 flex items-end justify-between gap-3 sm:gap-6">
-        {/* Name Display: Scaled to fit seamlessly alongside the photo */}
+        {/* Name Display */}
         <Link href="/" className="group block select-none flex-1 min-w-0">
           <h1 className="font-display text-[12vw] sm:text-[11vw] md:text-[10.5vw] lg:text-[10vw] font-normal uppercase tracking-[-0.04em] leading-[0.8] text-ink group-hover:text-accent transition-colors duration-300 truncate sm:overflow-visible">
             SAAD MUGHAL
           </h1>
         </Link>
 
-        {/* Right Info Box: Time, Large Photo, Location */}
-        <div className="flex flex-col items-end justify-between shrink-0 self-stretch gap-1.5 sm:gap-2">
-          {/* Live PKT Clock */}
-          <div className="text-right">
-            <div className="text-[10px] sm:text-xs font-mono font-medium text-ink-muted uppercase tracking-widest">
+        {/* Right Info Box: Time & Location on the LEFT of the Photo */}
+        <div className="flex items-end gap-3 sm:gap-4 shrink-0 self-end">
+          {/* Time (top) & Location (bottom) */}
+          <div className="flex flex-col items-end justify-between self-stretch text-right py-0.5">
+            <div className="text-[10px] sm:text-xs font-mono font-medium text-ink-muted uppercase tracking-widest whitespace-nowrap">
               <LiveTime /> <span className="text-ink-faint">PKT</span>
+            </div>
+
+            <div className="whitespace-nowrap">
+              <span className="block text-[10px] sm:text-[11px] font-medium text-ink-muted uppercase tracking-wider">
+                Based in <strong className="text-ink font-semibold">Lahore, PK</strong>
+              </span>
             </div>
           </div>
 
-          {/* Large Profile Picture */}
+          {/* Large Profile Picture on Far Right */}
           <div className="relative w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-sm overflow-hidden bg-border-subtle border border-border shrink-0 shadow-sm">
             <Image
               src="/images/profile-pictures/1.jpg"
@@ -79,17 +85,10 @@ export function Nav() {
               className="object-cover object-top"
             />
           </div>
-
-          {/* Location Tag */}
-          <div className="text-right">
-            <span className="text-[10px] sm:text-[11px] font-medium text-ink-muted uppercase tracking-wider">
-              Based in <strong className="text-ink font-semibold">Lahore, PK</strong>
-            </span>
-          </div>
         </div>
       </div>
 
-      {/* Sub-Navigation Bar: Minimal Margins, Expansive Gaps, Animated Hover Underline */}
+      {/* Sub-Navigation Bar */}
       <div className="border-t border-border-subtle">
         <div className="w-full px-2 sm:px-4 md:px-6 py-2.5 sm:py-3 flex items-center justify-between">
           <nav
