@@ -102,10 +102,10 @@ export function Nav() {
               transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
               className="w-full overflow-hidden pt-3 flex flex-col gap-3.5"
             >
-              {/* Row 2: Pic on the LEFT, Time & Location on RIGHT of Pic, '+' rotated button on far right */}
-              <div className="w-full flex items-center justify-between border-b border-border-subtle pb-3">
-                {/* Left group: Profile Picture + Time/Location to its right */}
-                <div className="flex items-center gap-3">
+              {/* Row 2: Pic on the LEFT, Time pinned to TOP, Location pinned to BOTTOM, '+' button aligned to TOP */}
+              <div className="w-full flex items-start justify-between border-b border-border-subtle pb-3">
+                {/* Left group: Profile Picture + Time (top) & Location (bottom) */}
+                <div className="flex items-stretch gap-3">
                   {/* Profile Picture on the Left */}
                   <div className="relative w-[5.5rem] h-[5.5rem] xs:w-24 xs:h-24 rounded-sm overflow-hidden bg-border-subtle border border-border shrink-0 shadow-sm">
                     <Image
@@ -118,8 +118,8 @@ export function Nav() {
                     />
                   </div>
 
-                  {/* Time & Location on the RIGHT of the pic */}
-                  <div className="flex flex-col items-start justify-center gap-1.5 text-left py-0.5">
+                  {/* Time pinned to TOP, Location pinned to BOTTOM */}
+                  <div className="flex flex-col items-start justify-between self-stretch text-left py-0.5">
                     <div className="text-[10px] xs:text-[11px] font-mono font-bold text-ink uppercase tracking-widest whitespace-nowrap">
                       <LiveTime /> <span className="text-ink">PKT</span>
                     </div>
@@ -131,12 +131,12 @@ export function Nav() {
                   </div>
                 </div>
 
-                {/* Far right: '+' button moved downwards & rotated 45deg to '×' */}
+                {/* Far right: '+' button aligned to TOP */}
                 <button
                   type="button"
                   onClick={() => setIsOpen(false)}
                   aria-label="Close menu"
-                  className="p-1.5 text-ink cursor-pointer hover:opacity-75 active:scale-90 transition-all focus:outline-none shrink-0 self-center"
+                  className="p-1 -mr-1 text-ink cursor-pointer hover:opacity-75 active:scale-90 transition-all focus:outline-none shrink-0 self-start"
                 >
                   <motion.div
                     animate={{ rotate: 45 }}
