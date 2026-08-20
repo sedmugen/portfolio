@@ -5,22 +5,23 @@ export function Footer() {
 
   return (
     <footer className="w-full bg-[#0E0D0D] text-[#F7F6F3] mt-auto">
-      <div className="w-full px-2 sm:px-4 md:px-6 pt-4 sm:pt-6 pb-3 sm:pb-4">
+      {/* Generous outer container padding to increase footer section size */}
+      <div className="w-full px-2 sm:px-4 md:px-6 pt-16 sm:pt-24 md:pt-28 pb-8 sm:pb-12">
         {/* CTA Headline & Description */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-2 sm:gap-3 pb-1.5 sm:pb-2">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-3 sm:gap-4 pb-2 sm:pb-2.5">
           <Link href="/contact" className="inline-block select-none">
-            <h2 className="font-display text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal uppercase tracking-[-0.03em] leading-[0.88] text-white hover:opacity-85 transition-opacity duration-200">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal uppercase tracking-[-0.03em] leading-[0.88] text-white hover:opacity-85 transition-opacity duration-200">
               LET’S WORK TOGETHER.
             </h2>
           </Link>
 
-          <p className="text-[11px] xs:text-xs sm:text-[13px] text-[#8C8983] max-w-sm tracking-wide leading-snug lg:text-right font-light">
+          <p className="text-[11px] xs:text-xs sm:text-[13px] text-[#8C8983] max-w-sm tracking-wide leading-snug lg:text-right font-light pb-0.5">
             Feel free to get in touch. Available for full-time roles, contracts, and technical projects.
           </p>
         </div>
 
-        {/* Solid White Horizontal Divider with Reduced Margins */}
-        <div className="w-full border-t border-white pt-1.5 sm:pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1.5 sm:gap-3 text-[10px] xs:text-[11px] sm:text-xs font-medium tracking-[0.14em] sm:tracking-[0.16em] uppercase text-[#8C8983]">
+        {/* Solid White Horizontal Divider with Clean Margins */}
+        <div className="w-full border-t border-white pt-2 sm:pt-2.5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-3 text-[10px] xs:text-[11px] sm:text-xs font-medium tracking-[0.14em] sm:tracking-[0.16em] uppercase text-[#8C8983]">
           {/* Contact Details */}
           <div className="flex flex-wrap items-center gap-3 sm:gap-6 md:gap-8">
             <a
@@ -64,7 +65,7 @@ export function Footer() {
         </div>
 
         {/* Small Bottom Copyright */}
-        <div className="pt-1.5 sm:pt-2 text-[9px] xs:text-[10px] tracking-widest text-[#4E4B46] uppercase">
+        <div className="pt-2 sm:pt-2.5 text-[9px] xs:text-[10px] tracking-widest text-[#4E4B46] uppercase">
           © {currentYear} Saad Mughal · Portfolio
         </div>
       </div>
