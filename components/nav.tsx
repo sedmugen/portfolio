@@ -82,12 +82,12 @@ export function Nav() {
         </div>
       </div>
 
-      {/* Sub-Navigation Bar: HOME aligned to 'S', CONTACT aligned to 'L', evenly distributed via clean CSS flex */}
+      {/* Sub-Navigation Bar: Gap reduced by 30% */}
       <div className="border-t border-border-subtle">
         <div className="w-full px-2 sm:px-4 md:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-4 sm:gap-8">
-          {/* Navigation Items: Matches the exact flex column of 'SAAD MUGHAL' above */}
+          {/* Navigation Items: Width scaled to 70% to reduce gap by 30% */}
           <nav aria-label="Main Navigation" className="flex-1 min-w-0">
-            <ul className="flex items-center justify-between w-full text-[11px] sm:text-xs font-bold tracking-[0.18em] uppercase text-ink">
+            <ul className="flex items-center justify-between w-full max-w-[70%] text-[11px] sm:text-xs font-bold tracking-[0.18em] uppercase text-ink">
               {NAV_ITEMS.map((item) => (
                 <li key={item.href} className="py-0.5">
                   <Link
