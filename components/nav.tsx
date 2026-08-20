@@ -100,9 +100,9 @@ export function Nav() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
-              className="w-full overflow-hidden pt-3 flex flex-col gap-3.5"
+              className="w-full overflow-hidden pt-3 flex flex-col gap-3"
             >
-              {/* Row 2: Pic on the LEFT, Time pinned to TOP, Location pinned to BOTTOM, '+' button aligned to TOP */}
+              {/* Row 2: Pic on LEFT, Time at top & Location at bottom, '+' button aligned to TOP */}
               <div className="w-full flex items-start justify-between border-b border-border-subtle pb-3">
                 {/* Left group: Profile Picture + Time (top) & Location (bottom) */}
                 <div className="flex items-stretch gap-3">
@@ -149,15 +149,15 @@ export function Nav() {
                 </button>
               </div>
 
-              {/* Row 3: HOME, WORK, ABOUT, CONTACT (Minimal margins, evenly distributed) */}
+              {/* Row 3: HOME, WORK, ABOUT, CONTACT in vertical list view with reduced font and minimal margins */}
               <nav aria-label="Mobile Navigation" className="w-full">
-                <ul className="flex items-center justify-between w-full text-xs font-bold tracking-[0.16em] uppercase text-ink py-1">
+                <ul className="flex flex-col items-start gap-1 text-[11px] font-bold tracking-[0.18em] uppercase text-ink py-0.5">
                   {NAV_ITEMS.map((item) => (
                     <li key={item.href}>
                       <Link
                         href={item.href}
                         onClick={() => setIsOpen(false)}
-                        className="group relative inline-block py-1 text-ink"
+                        className="group relative inline-block py-0.5 text-ink"
                       >
                         <span className="relative z-10">{item.label}</span>
                         <span
@@ -171,7 +171,7 @@ export function Nav() {
               </nav>
 
               {/* Row 4: GH, LI, EM (Small with minimal margins) */}
-              <div className="flex items-center gap-5 border-t border-border-subtle pt-2 text-[10px] xs:text-[11px] font-bold tracking-[0.14em] uppercase text-ink">
+              <div className="flex items-center gap-5 border-t border-border-subtle pt-2.5 text-[10px] xs:text-[11px] font-bold tracking-[0.14em] uppercase text-ink">
                 {SOCIAL_LINKS.map((social) => (
                   <a
                     key={social.label}
