@@ -14,7 +14,7 @@ const NAV_ITEMS = [
 const SOCIAL_LINKS = [
   { label: "GH", full: "GitHub", href: "https://github.com/sedmugen" },
   { label: "LI", full: "LinkedIn", href: "https://linkedin.com/in/sedmugen" },
-  { label: "EM", full: "Email", href: "mailto:contact@saadmughal.dev" },
+  { label: "EM", full: "Email", href: "mailto:saadmughal321@gmail.com" },
 ];
 
 function LiveTime() {

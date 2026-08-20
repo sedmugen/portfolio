@@ -24,10 +24,10 @@ export function Footer() {
           {/* Contact Details */}
           <div className="flex flex-wrap items-center gap-4 sm:gap-8">
             <a
-              href="mailto:contact@saadmughal.dev"
+              href="mailto:saadmughal321@gmail.com"
               className="relative group text-white transition-colors duration-200"
             >
-              <span>CONTACT@SAADMUGHAL.DEV</span>
+              <span>SAADMUGHAL321@GMAIL.COM</span>
               <span className="absolute left-0 bottom-0 block h-[1px] w-0 bg-white group-hover:w-full transition-all duration-200 ease-out" />
             </a>
             <span className="text-[#5C5954] hidden sm:inline">LAHORE, PK</span>
@@ -54,7 +54,7 @@ export function Footer() {
               <span className="absolute left-0 bottom-0 block h-[1px] w-0 bg-white group-hover:w-full transition-all duration-200 ease-out" />
             </a>
             <a
-              href="mailto:contact@saadmughal.dev"
+              href="mailto:saadmughal321@gmail.com"
               className="relative group text-[#8C8983] hover:text-white transition-colors duration-200"
             >
               <span>EMAIL</span>
