@@ -103,11 +103,11 @@ export function Nav() {
               transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
               className="w-full overflow-hidden flex flex-col"
             >
-              {/* Row 2: Pic on LEFT, Time & Location on RIGHT, '+' button top-right */}
+              {/* Row 2: Pic on LEFT (borderless), Time & Location on RIGHT, '+' button top-right */}
               <div className="w-full border-t border-black pt-2 pb-2 flex items-start justify-between">
                 <div className="flex items-stretch gap-3">
-                  {/* Profile Picture */}
-                  <div className="relative w-[5.5rem] h-[5.5rem] xs:w-24 xs:h-24 rounded-sm overflow-hidden bg-border-subtle border border-black shrink-0 shadow-sm">
+                  {/* Borderless Profile Picture */}
+                  <div className="relative w-[5.5rem] h-[5.5rem] xs:w-24 xs:h-24 overflow-hidden shrink-0">
                     <Image
                       src="/images/profile-pictures/1.jpg"
                       alt="Saad Mughal"
@@ -196,6 +196,7 @@ export function Nav() {
 
       {/* ========================================================= */}
       {/* 2. DESKTOP & TABLET HEADER (Screens ≥ md)                 */}
+      {/* All secondary items strictly use text-xs font-bold        */}
       {/* ========================================================= */}
       <div className="hidden md:block w-full">
         {/* Top Banner: Name on Left, Info Box on Right */}
@@ -225,8 +226,8 @@ export function Nav() {
               </div>
             </div>
 
-            {/* Profile Photo */}
-            <div className="relative w-24 h-24 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-sm overflow-hidden bg-border-subtle border border-black shrink-0 shadow-sm">
+            {/* Borderless Profile Photo */}
+            <div className="relative w-24 h-24 md:w-36 md:h-36 lg:w-44 lg:h-44 overflow-hidden shrink-0">
               <Image
                 src="/images/profile-pictures/1.jpg"
                 alt="Saad Mughal"
@@ -239,7 +240,7 @@ export function Nav() {
           </div>
         </div>
 
-        {/* Sub-Navigation Bar: Border positioned inside padding so it matches content margins and never touches the edges */}
+        {/* Sub-Navigation Bar */}
         <div className="w-full px-2 sm:px-4 md:px-6">
           <div className="w-full border-t border-black pt-2 sm:pt-2.5 pb-2 sm:pb-2.5 flex items-center justify-between gap-4 sm:gap-8">
             {/* Navigation Items: text-xs font-bold */}
