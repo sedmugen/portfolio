@@ -103,8 +103,8 @@ export function Nav() {
               transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
               className="w-full overflow-hidden flex flex-col"
             >
-              {/* Row 2: Pic on LEFT (borderless), Time & Location on RIGHT, '+' button top-right */}
-              <div className="w-full border-t border-black pt-2 pb-2 flex items-start justify-between">
+              {/* Row 2: Pic on LEFT (borderless), Time & Location on RIGHT, '+' button top-right (border-black/70) */}
+              <div className="w-full border-t border-black/70 pt-2 pb-2 flex items-start justify-between">
                 <div className="flex items-stretch gap-3">
                   {/* Borderless Profile Picture */}
                   <div className="relative w-[5.5rem] h-[5.5rem] xs:w-24 xs:h-24 overflow-hidden shrink-0">
@@ -149,8 +149,8 @@ export function Nav() {
                 </button>
               </div>
 
-              {/* Row 3: HOME, WORK, ABOUT, CONTACT */}
-              <nav aria-label="Mobile Navigation" className="w-full border-t border-black pt-2 pb-2">
+              {/* Row 3: HOME, WORK, ABOUT, CONTACT (border-black/70) */}
+              <nav aria-label="Mobile Navigation" className="w-full border-t border-black/70 pt-2 pb-2">
                 <ul className="flex flex-col items-start gap-1 text-[10.5px] font-bold tracking-[0.14em] uppercase text-ink">
                   {NAV_ITEMS.map((item) => (
                     <li key={item.href}>
@@ -170,8 +170,8 @@ export function Nav() {
                 </ul>
               </nav>
 
-              {/* Row 4: GH, LI, EM */}
-              <div className="flex items-center gap-5 border-t border-black pt-2 pb-3 text-[10.5px] font-bold tracking-[0.14em] uppercase text-ink">
+              {/* Row 4: GH, LI, EM (border-black/70) */}
+              <div className="flex items-center gap-5 border-t border-black/70 pt-2 pb-3 text-[10.5px] font-bold tracking-[0.14em] uppercase text-ink">
                 {SOCIAL_LINKS.map((social) => (
                   <a
                     key={social.label}
@@ -240,9 +240,9 @@ export function Nav() {
           </div>
         </div>
 
-        {/* Sub-Navigation Bar */}
+        {/* Sub-Navigation Bar: border-black/70 (reduced opacity by 30%) */}
         <div className="w-full px-2 sm:px-4 md:px-6">
-          <div className="w-full border-t border-black pt-2 sm:pt-2.5 pb-2 sm:pb-2.5 flex items-center justify-between gap-4 sm:gap-8">
+          <div className="w-full border-t border-black/70 pt-2 sm:pt-2.5 pb-2 sm:pb-2.5 flex items-center justify-between gap-4 sm:gap-8">
             {/* Navigation Items: text-xs font-bold */}
             <nav aria-label="Main Navigation" className="flex-1 min-w-0">
               <ul className="flex items-center justify-between w-full max-w-[70%] text-xs font-bold tracking-[0.16em] uppercase text-ink">

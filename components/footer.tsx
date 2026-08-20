@@ -5,7 +5,7 @@ export function Footer() {
 
   return (
     <footer className="w-full bg-[#0E0D0D] text-[#F7F6F3] mt-auto">
-      {/* Generous outer container padding to increase footer section size */}
+      {/* Outer container padding */}
       <div className="w-full px-2 sm:px-4 md:px-6 pt-16 sm:pt-24 md:pt-28 pb-8 sm:pb-12">
         {/* CTA Headline & Description */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-3 sm:gap-4 pb-2 sm:pb-2.5">
@@ -20,8 +20,8 @@ export function Footer() {
           </p>
         </div>
 
-        {/* Solid White Horizontal Divider with Clean Margins */}
-        <div className="w-full border-t border-white pt-2 sm:pt-2.5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-3 text-[10px] xs:text-[11px] sm:text-xs font-medium tracking-[0.14em] sm:tracking-[0.16em] uppercase text-[#8C8983]">
+        {/* White Horizontal Divider with 30% reduced opacity (border-white/70) */}
+        <div className="w-full border-t border-white/70 pt-2 sm:pt-2.5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-3 text-[10px] xs:text-[11px] sm:text-xs font-medium tracking-[0.14em] sm:tracking-[0.16em] uppercase text-[#8C8983]">
           {/* Contact Details */}
           <div className="flex flex-wrap items-center gap-3 sm:gap-6 md:gap-8">
             <a
