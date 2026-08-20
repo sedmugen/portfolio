@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
@@ -44,8 +43,6 @@ function LiveTime() {
 }
 
 export function Nav() {
-  const pathname = usePathname();
-
   return (
     <header className="w-full bg-canvas select-none">
       {/* Top Banner: Minimal Margins, Large Typography, Time & Location on Left of Photo */}
@@ -86,47 +83,32 @@ export function Nav() {
         </div>
       </div>
 
-      {/* Sub-Navigation Bar */}
+      {/* Sub-Navigation Bar: Bold by default, No permanent selected underline, Animated underline ONLY on hover */}
       <div className="border-t border-border-subtle">
         <div className="w-full px-2 sm:px-4 md:px-6 py-2.5 sm:py-3 flex items-center justify-between">
           <nav aria-label="Main Navigation" className="flex-1">
-            <ul className="flex items-center gap-8 sm:gap-16 md:gap-24 lg:gap-32 text-[11px] sm:text-xs font-medium tracking-[0.18em] uppercase text-ink">
-              {NAV_ITEMS.map((item) => {
-                const isActive =
-                  item.href === "/"
-                    ? pathname === "/"
-                    : pathname === item.href || pathname.startsWith(`${item.href}/`);
+            <ul className="flex items-center gap-8 sm:gap-16 md:gap-24 lg:gap-32 text-[11px] sm:text-xs font-bold tracking-[0.18em] uppercase text-ink">
+              {NAV_ITEMS.map((item) => (
+                <li key={item.href} className="py-0.5">
+                  <Link
+                    href={item.href}
+                    className="group relative inline-block py-1 text-ink transition-colors duration-200"
+                  >
+                    <span className="relative z-10">{item.label}</span>
 
-                return (
-                  <li key={item.href} className="py-0.5">
-                    <Link
-                      href={item.href}
-                      className={cn(
-                        "group relative inline-block py-1 transition-colors duration-200",
-                        isActive ? "text-ink font-semibold" : "text-ink-muted hover:text-ink"
-                      )}
-                    >
-                      <span className="relative z-10">{item.label}</span>
-
-                      {/* Smooth Animated Underline on Hover and Active */}
-                      <span
-                        aria-hidden="true"
-                        className={cn(
-                          "absolute left-0 bottom-0 block h-[1.5px] w-full bg-ink origin-left transition-transform duration-300 ease-[cubic-bezier(0.25,1,0.5,1)]",
-                          isActive
-                            ? "scale-x-100"
-                            : "scale-x-0 group-hover:scale-x-100"
-                        )}
-                      />
-                    </Link>
-                  </li>
-                );
-              })}
+                    {/* Underline animates ONLY when hovered */}
+                    <span
+                      aria-hidden="true"
+                      className="absolute left-0 bottom-0 block h-[1.5px] w-full bg-ink origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-[cubic-bezier(0.25,1,0.5,1)]"
+                    />
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
 
           {/* Socials abbreviation bar on the far right */}
-          <div className="flex items-center space-x-4 sm:space-x-6 text-[10px] sm:text-[11px] font-medium tracking-[0.16em] uppercase text-ink-muted shrink-0">
+          <div className="flex items-center space-x-4 sm:space-x-6 text-[10px] sm:text-[11px] font-bold tracking-[0.16em] uppercase text-ink-muted shrink-0">
             {SOCIAL_LINKS.map((social) => (
               <a
                 key={social.label}
