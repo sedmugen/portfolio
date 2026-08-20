@@ -46,9 +46,9 @@ export function Nav() {
     <header className="w-full bg-canvas select-none">
       {/* Top Banner: Name on Left, Info Box on Right */}
       <div className="w-full px-2 sm:px-4 md:px-6 pt-3 sm:pt-4 pb-2 sm:pb-3 flex items-end justify-between gap-4 sm:gap-8">
-        {/* Name Display: Defines the exact left-to-right boundary */}
+        {/* Name Display */}
         <div className="flex-1 min-w-0">
-          <Link href="/" className="group inline-block w-full">
+          <Link href="/" className="group inline-block">
             <h1 className="font-display text-[12vw] sm:text-[11vw] md:text-[10.5vw] lg:text-[10vw] font-normal uppercase tracking-[-0.04em] leading-[0.8] text-ink group-hover:text-accent transition-colors duration-300 truncate sm:overflow-visible">
               SAAD MUGHAL
             </h1>
@@ -82,12 +82,12 @@ export function Nav() {
         </div>
       </div>
 
-      {/* Sub-Navigation Bar: HOME aligned to 'S', CONTACT aligned to 'L', evenly distributed */}
+      {/* Sub-Navigation Bar: Refined, balanced spacing matching reference */}
       <div className="border-t border-border-subtle">
-        <div className="w-full px-2 sm:px-4 md:px-6 py-2.5 sm:py-3 flex items-center justify-between gap-4 sm:gap-8">
-          {/* Navigation Items: Exactly matches the width of 'SAAD MUGHAL' above */}
-          <nav aria-label="Main Navigation" className="flex-1 min-w-0">
-            <ul className="flex items-center justify-between w-full text-[11px] sm:text-xs font-bold tracking-[0.18em] uppercase text-ink">
+        <div className="w-full px-2 sm:px-4 md:px-6 py-2.5 sm:py-3 flex items-center justify-between">
+          {/* Navigation Items: Balanced gaps without over-stretching */}
+          <nav aria-label="Main Navigation">
+            <ul className="flex items-center gap-8 sm:gap-12 md:gap-16 lg:gap-20 text-[11px] sm:text-xs font-bold tracking-[0.18em] uppercase text-ink">
               {NAV_ITEMS.map((item) => (
                 <li key={item.href} className="py-0.5">
                   <Link
@@ -107,8 +107,8 @@ export function Nav() {
             </ul>
           </nav>
 
-          {/* Socials abbreviation bar: Aligned with the right Info Box */}
-          <div className="flex items-center justify-end space-x-4 sm:space-x-6 text-[10px] sm:text-[11px] font-bold tracking-[0.16em] uppercase text-ink shrink-0">
+          {/* Socials abbreviation bar on the far right */}
+          <div className="flex items-center space-x-4 sm:space-x-6 text-[10px] sm:text-[11px] font-bold tracking-[0.16em] uppercase text-ink shrink-0">
             {SOCIAL_LINKS.map((social) => (
               <a
                 key={social.label}
