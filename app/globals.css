@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Editorial Palette: Off-white canvas, near-black ink, muted grays, one accent */
+  --color-bg: #F7F6F3;
+  --color-bg-subtle: #EFECE6;
+  --color-fg: #141414;
+  --color-fg-muted: #6E6B65;
+  --color-fg-faint: #9E9B93;
+  --color-border: #E2DFD8;
+  --color-border-subtle: #ECEAE4;
+  --color-accent: #C44D34;
+  --color-accent-hover: #A83B24;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-body), system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    display: flex;
+    flex-direction: column;
+  }
+
+  ::selection {
+    background-color: #E2DFD8;
+    color: #141414;
+  }
+
+  /* Accessible, styled focus states */
+  :focus-visible {
+    outline: 1.5px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
