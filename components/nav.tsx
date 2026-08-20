@@ -157,7 +157,7 @@ export function Nav() {
                       className="group relative py-1 text-ink"
                       title={social.full}
                     >
-                      <span>{social.full}</span>
+                      <span>{social.label}</span>
                       <span
                         aria-hidden="true"
                         className="absolute left-0 bottom-0 block h-[1.5px] w-full bg-ink origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-200 ease-out"
