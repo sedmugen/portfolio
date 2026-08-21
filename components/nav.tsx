@@ -17,6 +17,8 @@ const NAV_ITEMS = [
 const SOCIAL_LINKS = [
   { label: "GH", full: "GitHub", href: "https://github.com/sedmugen" },
   { label: "LI", full: "LinkedIn", href: "https://linkedin.com/in/sedmugen" },
+  { label: "BE", full: "Behance", href: "https://www.behance.net/sedmugen" },
+  { label: "IT", full: "Itch.io", href: "https://sedmugen.itch.io/" },
   { label: "EM", full: "Email", href: "mailto:saadmughal321@gmail.com" },
 ];
 
@@ -47,11 +49,23 @@ function LiveTime() {
 export function Nav() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   // Close mobile menu on route change
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
+
+  // Track scroll position to fade the main header and keep subheader fixed
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header className="w-full bg-canvas select-none relative z-50">
@@ -198,9 +212,16 @@ export function Nav() {
       {/* 2. DESKTOP & TABLET HEADER (Screens ≥ md)                 */}
       {/* All secondary items strictly use text-xs font-bold        */}
       {/* ========================================================= */}
-      <div className="hidden md:block w-full">
-        {/* Top Banner: Name on Left, Info Box on Right */}
-        <div className="w-full px-2 sm:px-4 md:px-6 pt-3 sm:pt-4 pb-2 sm:pb-2.5 flex items-end justify-between gap-4 sm:gap-8">
+      <div className="hidden md:block w-full bg-canvas">
+        {/* Main Header Banner: Simple, lightweight CSS fade/slide transition */}
+        <div
+          className={cn(
+            "w-full px-2 sm:px-4 md:px-6 pt-3 sm:pt-4 pb-2 sm:pb-2.5 flex items-end justify-between gap-4 sm:gap-8 transition-all duration-300 ease-out",
+            isScrolled
+              ? "opacity-0 -translate-y-3 pointer-events-none"
+              : "opacity-100 translate-y-0"
+          )}
+        >
           {/* Name Display */}
           <div className="flex-1 min-w-0">
             <Link href="/" className="inline-block w-full">
@@ -240,9 +261,19 @@ export function Nav() {
           </div>
         </div>
 
-        {/* Sub-Navigation Bar: border-black/70 (reduced opacity by 30%) */}
-        <div className="w-full px-2 sm:px-4 md:px-6">
-          <div className="w-full border-t border-black/70 pt-2 sm:pt-2.5 pb-2 sm:pb-2.5 flex items-center justify-between gap-4 sm:gap-8">
+        {/* Sub-Navigation Bar: Fixed at top when scrolled, in-flow at top */}
+        <div
+          className={cn(
+            "w-full px-2 sm:px-4 md:px-6 bg-canvas transition-all duration-200",
+            isScrolled ? "fixed top-0 left-0 right-0 z-50 shadow-none" : "relative"
+          )}
+        >
+          <div
+            className={cn(
+              "w-full pt-2 sm:pt-2.5 pb-2 sm:pb-2.5 flex items-center justify-between gap-4 sm:gap-8 transition-all duration-200",
+              isScrolled ? "border-t-0" : "border-t border-black/70"
+            )}
+          >
             {/* Navigation Items: text-xs font-bold */}
             <nav aria-label="Main Navigation" className="flex-1 min-w-0">
               <ul className="flex items-center justify-between w-full max-w-[70%] text-xs font-bold tracking-[0.16em] uppercase text-ink">

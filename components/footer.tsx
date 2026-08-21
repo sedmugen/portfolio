@@ -55,6 +55,24 @@ export function Footer() {
               <span className="absolute left-0 bottom-0 block h-[1px] w-0 bg-white group-hover:w-full transition-all duration-200 ease-out" />
             </a>
             <a
+              href="https://www.behance.net/sedmugen"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative group text-[#8C8983] hover:text-white transition-colors duration-200"
+            >
+              <span>BEHANCE</span>
+              <span className="absolute left-0 bottom-0 block h-[1px] w-0 bg-white group-hover:w-full transition-all duration-200 ease-out" />
+            </a>
+            <a
+              href="https://sedmugen.itch.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative group text-[#8C8983] hover:text-white transition-colors duration-200"
+            >
+              <span>ITCH.IO</span>
+              <span className="absolute left-0 bottom-0 block h-[1px] w-0 bg-white group-hover:w-full transition-all duration-200 ease-out" />
+            </a>
+            <a
               href="mailto:saadmughal321@gmail.com"
               className="relative group text-[#8C8983] hover:text-white transition-colors duration-200"
             >
