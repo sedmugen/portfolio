@@ -24,21 +24,21 @@ export function FeaturedProjectCard({
         <ProjectMedia
           media={project.heroMedia}
           priority={priority}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
+          sizes="(max-width: 768px) 100vw, 100vw"
           aspectRatio="aspect-[16/9]"
-          className="mb-4 sm:mb-6"
+          className="mb-4 sm:mb-6 md:mb-8"
         />
 
-        <div className="flex flex-col space-y-2">
-          <div className="text-2xs sm:text-xs font-medium uppercase tracking-wider text-ink-muted">
+        <div className="flex flex-col space-y-2.5 sm:space-y-3.5">
+          <div className="text-xs sm:text-sm md:text-base font-semibold uppercase tracking-[0.14em] text-ink-muted">
             {metadata}
           </div>
 
-          <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-medium tracking-tight text-ink">
+          <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal tracking-tight text-ink">
             {project.title}
           </h3>
 
-          <p className="max-w-prose text-sm sm:text-base text-ink-muted leading-relaxed">
+          <p className="max-w-3xl text-base sm:text-lg md:text-xl text-ink-muted leading-relaxed">
             {project.shortDescription}
           </p>
         </div>
