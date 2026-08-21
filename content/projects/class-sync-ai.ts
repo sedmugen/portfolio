@@ -4,7 +4,7 @@ export const classSyncAi: Project = {
   slug: "class-sync-ai",
   title: "ClassSync AI",
   tier: "featured",
-  order: 2,
+  order: 3,
   category: "AI / Technical",
   year: "2026",
   role: "Solo developer",

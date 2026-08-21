@@ -3,16 +3,18 @@ import { bench } from "./projects/bench";
 import { classSyncAi } from "./projects/class-sync-ai";
 import { moralMatrix } from "./projects/moral-matrix";
 import { gisellesVeganKitchen } from "./projects/giselles-vegan-kitchen";
-import { onePercent } from "./projects/one-percent";
+import { urbanRun } from "./projects/urban-run";
 import { hitmanAssassin } from "./projects/hitman-assassin";
+import { onePercent } from "./projects/one-percent";
 
 export const projects: Project[] = [
   bench,
   classSyncAi,
   moralMatrix,
   gisellesVeganKitchen,
-  onePercent,
+  urbanRun,
   hitmanAssassin,
+  onePercent,
 ];
 
 /**

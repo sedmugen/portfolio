@@ -41,7 +41,7 @@ export function ProjectMedia({
   return (
     <div
       className={cn(
-        "relative w-full overflow-hidden bg-canvas-subtle border border-border-subtle",
+        "relative w-full overflow-hidden bg-canvas-subtle",
         aspectRatio,
         className
       )}

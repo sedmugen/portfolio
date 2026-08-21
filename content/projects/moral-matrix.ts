@@ -4,7 +4,7 @@ export const moralMatrix: Project = {
   slug: "moral-matrix",
   title: "Moral Matrix",
   tier: "featured",
-  order: 3,
+  order: 4,
   category: "Game",
   year: "2025",
   role: "Solo developer",
