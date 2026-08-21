@@ -33,13 +33,13 @@ export default function HomePage() {
         </div>
 
         {/* 3. Quiet "View all work" Link */}
-        <div className="pt-16 sm:pt-24 flex justify-start sm:justify-end">
+        <div className="pt-12 sm:pt-16 md:pt-20 flex justify-start sm:justify-end">
           <Link
             href="/work"
-            className="group inline-flex items-center gap-2 text-sm sm:text-base md:text-lg uppercase tracking-[0.16em] font-bold text-ink hover:text-accent transition-colors duration-200"
+            className="group inline-flex items-center gap-1.5 text-2xs sm:text-xs uppercase tracking-[0.16em] font-semibold text-ink-muted hover:text-ink transition-colors duration-200"
           >
             <span>View all work</span>
-            <span className="transition-transform duration-200 group-hover:translate-x-1.5">
+            <span className="transition-transform duration-200 group-hover:translate-x-1">
               →
             </span>
           </Link>
