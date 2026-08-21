@@ -17,8 +17,8 @@ export const hitmanAssassin: Project = {
   technologies: [],
   heroMedia: {
     type: "image",
-    src: "/images/hitman-assassin/hero.webp", // TODO: Add hero image/video asset
-    alt: "Hitman Assassin POV-style short film title frame",
+    src: "/images/hitman-assassin/hero.jpg",
+    alt: "Hitman Assassin POV action short film cinematic shot",
   },
   links: [
     {

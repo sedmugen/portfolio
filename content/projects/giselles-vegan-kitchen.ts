@@ -16,7 +16,7 @@ export const gisellesVeganKitchen: Project = {
   technologies: ["TODO: Confirm actual stack (front-end only or with a backend/CMS)"],
   heroMedia: {
     type: "image",
-    src: "/images/giselles-vegan-kitchen/hero.webp", // TODO: Add hero image asset
+    src: "/images/giselles-vegan-kitchen/hero.jpg",
     alt: "Giselle's Vegan Kitchen luxury bakery concept store design",
   },
   links: [

@@ -15,7 +15,7 @@ export const bench: Project = {
   technologies: ["Tauri", "TypeScript", "Rust", "SQLite"],
   heroMedia: {
     type: "image",
-    src: "/images/bench/hero.webp", // TODO: Add hero image asset
+    src: "/images/bench/hero.png",
     alt: "Bench desktop application interface",
   },
   links: [

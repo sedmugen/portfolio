@@ -15,7 +15,7 @@ export const classSyncAi: Project = {
   technologies: ["Python", "Genetic Algorithms", "FastAPI", "React 19"],
   heroMedia: {
     type: "image",
-    src: "/images/class-sync-ai/hero.webp", // TODO: Add hero image asset
+    src: "/images/class-sync-ai/hero.jpg",
     alt: "ClassSync AI timetabling system schedule dashboard",
   },
   links: [

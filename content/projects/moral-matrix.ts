@@ -15,7 +15,7 @@ export const moralMatrix: Project = {
   technologies: ["Unity 2023", "C#", "URP"],
   heroMedia: {
     type: "image",
-    src: "/images/moral-matrix/hero.webp", // TODO: Add hero image asset
+    src: "/images/moral-matrix/hero.jpg",
     alt: "Moral Matrix 2.5D adventure gameplay screenshot",
   },
   links: [
