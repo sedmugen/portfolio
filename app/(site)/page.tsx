@@ -8,7 +8,7 @@ export default function HomePage() {
   return (
     <div className="w-full px-2 sm:px-4 md:px-6">
       {/* 1. Intro & Selected Work Header Row */}
-      <section className="w-full pt-32 sm:pt-44 md:pt-56 lg:pt-64 pb-3 sm:pb-4 md:pb-5 flex flex-col md:flex-row md:items-end justify-between gap-3 md:gap-8">
+      <section className="w-full pt-32 sm:pt-44 md:pt-56 lg:pt-64 pb-4 sm:pb-6 flex flex-col md:flex-row md:items-end justify-between gap-3 md:gap-8">
         <p className="text-sm sm:text-base md:text-lg text-ink font-normal max-w-2xl leading-relaxed">
           I’m Saad, a developer, game designer, and builder who creates simple, thoughtful solutions to everyday problems.
         </p>
@@ -20,14 +20,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. Selected Work Section */}
+      {/* 2. 3x2 Selected Work Grid */}
       <section className="w-full pb-20 sm:pb-28 md:pb-36">
-        <div className="flex flex-col space-y-16 sm:space-y-24 md:space-y-36">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-3 sm:gap-x-4 md:gap-x-5 gap-y-3 sm:gap-y-4 md:gap-y-5">
           {featuredProjects.map((project, index) => (
             <FeaturedProjectCard
               key={project.slug}
               project={project}
-              priority={index === 0}
+              priority={index < 3}
             />
           ))}
         </div>

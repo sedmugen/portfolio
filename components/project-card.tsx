@@ -14,33 +14,25 @@ export function FeaturedProjectCard({
   priority = false,
   className,
 }: FeaturedProjectCardProps) {
-  const metadata = [project.year, project.category, project.role]
-    .filter(Boolean)
-    .join(" · ");
-
   return (
     <article className={cn("group w-full", className)}>
       <Link href={`/work/${project.slug}`} className="block">
         <ProjectMedia
           media={project.heroMedia}
           priority={priority}
-          sizes="(max-width: 768px) 100vw, 100vw"
-          aspectRatio="aspect-[16/9]"
-          className="mb-4 sm:mb-6 md:mb-8"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          aspectRatio="aspect-[16/10]"
+          className="mb-2 sm:mb-2.5 w-full overflow-hidden"
+          imageClassName="transition-transform duration-300 ease-out group-hover:scale-[1.02]"
         />
 
-        <div className="flex flex-col space-y-1.5 sm:space-y-2">
-          <div className="text-2xs sm:text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted">
-            {metadata}
-          </div>
-
-          <h3 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal tracking-tight text-ink">
+        <div className="flex items-baseline gap-2 text-xs pt-1">
+          <h3 className="font-bold uppercase tracking-tight text-ink">
             {project.title}
           </h3>
-
-          <p className="max-w-2xl text-xs sm:text-sm md:text-base text-ink-muted leading-relaxed">
-            {project.shortDescription}
-          </p>
+          <span className="text-ink-muted text-[11px] sm:text-xs font-normal">
+            {project.category}
+          </span>
         </div>
       </Link>
     </article>

@@ -16,7 +16,7 @@ export const onePercent: Project = {
   technologies: ["TODO: Confirm actual stack"],
   heroMedia: {
     type: "image",
-    src: "/images/one-percent/hero.jpg",
+    src: "/images/one-percent/hero.webp",
     alt: "One Percent marketing and web development agency website",
   },
   links: [
