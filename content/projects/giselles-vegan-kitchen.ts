@@ -1,0 +1,32 @@
+import { Project } from "@/lib/types";
+
+export const gisellesVeganKitchen: Project = {
+  slug: "giselles-vegan-kitchen",
+  title: "Giselle's Vegan Kitchen",
+  tier: "featured",
+  order: 4,
+  category: "Design / Web",
+  year: "2026",
+  role: "Designer & developer",
+  shortDescription:
+    "A luxury vegan bakery concept, designed and built end to end as a self-directed exercise.",
+  longDescription:
+    "A concept e-commerce site for a fictional high-end organic bakery. No client brief, no constraints, just a chance to build the kind of premium commerce layout that photography and product-led brands need: large product imagery, quiet typography, and a full shop and checkout flow.",
+  // TODO: Confirm actual stack, front-end only or with a backend/CMS
+  technologies: ["TODO: Confirm actual stack (front-end only or with a backend/CMS)"],
+  heroMedia: {
+    type: "image",
+    src: "/images/giselles-vegan-kitchen/hero.webp", // TODO: Add hero image asset
+    alt: "Giselle's Vegan Kitchen luxury bakery concept store design",
+  },
+  links: [
+    {
+      label: "Live",
+      url: "https://giselles-kitchen.netlify.app",
+    },
+    {
+      label: "GitHub",
+      url: "https://github.com/sedmugen/giselles-concept",
+    },
+  ],
+};

@@ -6,13 +6,13 @@ export type MediaItem = {
 };
 
 export type ProjectLink = {
-  label: string; // "Live", "GitHub", "Itch.io", "YouTube", "Case Study", "Play"
+  label: string; // "Live", "GitHub", "Itch.io", "YouTube", "Case Study"
   url: string;
 };
 
 export type ContentSection = {
   heading?: string; // e.g. "Process", "Features", omit for freeform sections
-  body: string; // markdown or rich text
+  body: string; // markdown/richtext
   media?: MediaItem[]; // 0 or more supporting images for this section
 };
 
@@ -21,7 +21,7 @@ export type Project = {
   title: string;
   tier: "featured" | "projects";
   order: number; // manual display order within its tier
-  category: string; // "Product", "Game", "AI / Technical", "Design", "Web", "Video Production", "3D"
+  category: string; // "Product", "Game", "AI / Technical", "Design", "Web"
   year: string; // "2026" or "2025–2026"
   role?: string; // e.g. "Solo developer", "Designer & developer"
   shortDescription: string; // 1 sentence, used on cards and hero
