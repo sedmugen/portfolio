@@ -11,7 +11,7 @@ export function Footer() {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-3 sm:gap-4 pb-2 sm:pb-2.5">
           <Link href="/contact" className="inline-block select-none">
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal uppercase tracking-[-0.03em] leading-[0.88] text-white hover:opacity-85 transition-opacity duration-200">
-              LET’S WORK TOGETHER.
+              LET’S GET THIS BREAD.
             </h2>
           </Link>
 
