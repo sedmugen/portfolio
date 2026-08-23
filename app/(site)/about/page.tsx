@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { ScrollReveal } from "@/components/scroll-reveal";
 
 export const metadata: Metadata = {
-  title: "Info — Saad Mughal",
+  title: "About - Saad",
   description:
     "Learn more about Saad Mughal, developer, game designer, and builder based in Lahore, PK.",
 };

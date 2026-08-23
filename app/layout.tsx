@@ -26,7 +26,10 @@ const bodyFont = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Saad Mughal — Developer, Game Designer, Builder",
+  title: {
+    default: "Saad - Portfolio",
+    template: "%s - Saad",
+  },
   description:
     "Curated portfolio of software, games, AI systems, and design work by Saad Mughal.",
   keywords: [

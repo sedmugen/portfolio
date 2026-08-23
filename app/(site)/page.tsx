@@ -1,7 +1,12 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import { getFeaturedProjects } from "@/content/projects";
 import { FeaturedProjectCard } from "@/components/project-card";
 import { ScrollReveal } from "@/components/scroll-reveal";
+
+export const metadata: Metadata = {
+  title: "Saad - Portfolio",
+};
 
 export default function HomePage() {
   const featuredProjects = getFeaturedProjects();

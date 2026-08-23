@@ -24,12 +24,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!project) {
     return {
-      title: "Project Not Found — Saad Mughal",
+      title: "Project Not Found - Saad",
     };
   }
 
   return {
-    title: `${project.title} — Saad Mughal`,
+    title: `${project.title} - Saad`,
     description: project.shortDescription,
   };
 }
