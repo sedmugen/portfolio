@@ -211,6 +211,7 @@ const GalleryItemCard = memo(function GalleryItemCard({
             aria-label={item.alt}
           />
         ) : (
+          // eslint-disable-next-line @next/next/no-img-element
           <img
             src={item.src}
             alt={item.alt}
