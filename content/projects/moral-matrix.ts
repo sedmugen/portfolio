@@ -7,7 +7,7 @@ export const moralMatrix: Project = {
   order: 3,
   category: "Game",
   year: "2025",
-  role: "Team project",
+  role: "Capstone",
   shortDescription:
     "A 2.5D narrative adventure with branching dialogue and moral-choice mechanics.",
   longDescription:
