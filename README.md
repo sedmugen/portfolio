@@ -20,7 +20,7 @@
 
 | Homepage Exhibition | Dynamic Project Window |
 | :---: | :---: |
-| ![Homepage Overview](public/images/bench/hero.png) | ![Project Detail Case Study](public/images/class-sync-ai/timetable.webp) |
+| ![Homepage Overview](assets/images/homepage-exhibition.png) | ![Project Detail Case Study](assets/images/project-showcase.webp) |
 | *Editorial 2-Column Selected Work Grid* | *Two-Column Detail Layout with Automated Asset Gallery* |
 
 ---
@@ -57,27 +57,21 @@ This project was built around a singular principle: **exhibit the work rather th
 
 ## 6. Architecture Overview
 
+![Architecture Diagram](assets/diagrams/architecture.svg)
+
+For in-depth architectural specifications and decision records, see:
+- 📐 [**System Architecture**](docs/architecture.md)
+- 📋 [**API & Content Schema Reference**](docs/api.md)
+- 📑 [**Architecture Decision Records (ADRs)**](docs/decisions.md)
+
 ```
-app/
-├── layout.tsx                # Root layout, Google Fonts, global header & footer
-├── globals.css               # Editorial theme tokens, GPU acceleration utilities
-├── not-found.tsx             # 404 error template
-└── (site)/
-    ├── page.tsx              # Homepage: Hero + Selected Work
-    ├── work/
-    │   ├── page.tsx          # Full catalog index (/work)
-    │   └── [slug]/page.tsx   # Dynamic project showcase (/work/[slug])
-    ├── about/page.tsx        # Profile, disciplines, education, and connect links
-    └── contact/page.tsx      # Direct inquiry gateway & email copy utility
-
-content/
-├── projects.ts               # Registry helpers (getAllProjects, getFeaturedProjects)
-└── projects/*.ts             # Individual project metadata definitions
-
-lib/
-├── types.ts                  # Schema definitions (Project, MediaItem, ContentSection)
-├── gallery.ts                # Server-side filesystem scanner for automated galleries
-└── motion.ts                 # Shared animation timing & easing tokens
+assets/                       # Open-source documentation assets & diagrams
+docs/                         # System specifications, ADRs, and schema docs
+app/                          # Next.js App Router (Layout, Site routes, CSS)
+components/                   # Reusable UI component library (Nav, Cards, Media, Motion)
+content/                      # Typed project definitions & query helpers
+lib/                          # Shared types, gallery discovery, motion tokens, utilities
+public/                       # Public runtime media (images & videos)
 ```
 
 ---
