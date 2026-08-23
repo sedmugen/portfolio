@@ -46,6 +46,10 @@ function LiveTime() {
   return <span>{timeStr || "12:00:00 AM"}</span>;
 }
 
+/**
+ * Primary navigation header component.
+ * Features a desktop two-tier layout with scroll fade and a mobile animated drawer with real-time PKT clock.
+ */
 export function Nav() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);

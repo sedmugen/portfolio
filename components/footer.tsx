@@ -1,5 +1,8 @@
 import Link from "next/link";
 
+/**
+ * Global site footer with call-to-action, direct email, location, and social links directory.
+ */
 export function Footer() {
   const currentYear = new Date().getFullYear();
 

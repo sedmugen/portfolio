@@ -17,6 +17,10 @@ interface ProjectMediaProps {
   showHoverOverlay?: boolean;
 }
 
+/**
+ * Responsive media component rendering WebP/AVIF images and H.264/AV1 looping videos.
+ * Features viewport intersection management, reduced-motion fallbacks, and editorial hover brackets.
+ */
 export function ProjectMedia({
   media,
   priority = false,
@@ -236,6 +240,9 @@ interface ProjectGalleryProps {
   className?: string;
 }
 
+/**
+ * Masonry gallery component rendering project media items in balanced columns.
+ */
 export function ProjectGallery({ items, className }: ProjectGalleryProps) {
   if (!items || items.length === 0) return null;
 

@@ -3,19 +3,27 @@ import { Project } from "@/lib/types";
 import { ProjectMedia } from "@/components/project-media";
 import { cn } from "@/lib/utils";
 
-interface FeaturedProjectCardProps {
+interface ProjectCardProps {
   project: Project;
   priority?: boolean;
   className?: string;
 }
 
+/**
+ * Featured tier project card rendering large media, title, and category label.
+ */
 export function FeaturedProjectCard({
   project,
   priority = false,
   className,
-}: FeaturedProjectCardProps) {
+}: ProjectCardProps) {
   return (
-    <article className={cn("group w-full transform-gpu [content-visibility:_auto] [contain-intrinsic-size:_1px_280px]", className)}>
+    <article
+      className={cn(
+        "group w-full transform-gpu [content-visibility:_auto] [contain-intrinsic-size:_1px_280px]",
+        className
+      )}
+    >
       <Link href={`/work/${project.slug}`} className="block">
         <ProjectMedia
           media={project.heroMedia}
@@ -39,21 +47,23 @@ export function FeaturedProjectCard({
   );
 }
 
-interface ProjectsTierCardProps {
-  project: Project;
-  priority?: boolean;
-  className?: string;
-}
-
+/**
+ * Projects tier card rendering compact media, title, category, and year metadata.
+ */
 export function ProjectsTierCard({
   project,
   priority = false,
   className,
-}: ProjectsTierCardProps) {
+}: ProjectCardProps) {
   const metadata = [project.category, project.year].filter(Boolean).join(" · ");
 
   return (
-    <article className={cn("group w-full transform-gpu [content-visibility:_auto] [contain-intrinsic-size:_1px_280px]", className)}>
+    <article
+      className={cn(
+        "group w-full transform-gpu [content-visibility:_auto] [contain-intrinsic-size:_1px_280px]",
+        className
+      )}
+    >
       <Link href={`/work/${project.slug}`} className="block">
         <ProjectMedia
           media={project.heroMedia}
@@ -77,19 +87,19 @@ export function ProjectsTierCard({
   );
 }
 
-interface ProjectCardProps {
-  project: Project;
+interface DynamicProjectCardProps extends ProjectCardProps {
   variant?: "featured" | "projects";
-  priority?: boolean;
-  className?: string;
 }
 
+/**
+ * Polymorphic card selector dynamically rendering Featured or Projects-tier card variant.
+ */
 export function ProjectCard({
   project,
   variant,
   priority = false,
   className,
-}: ProjectCardProps) {
+}: DynamicProjectCardProps) {
   const tier = variant || project.tier;
 
   if (tier === "featured") {

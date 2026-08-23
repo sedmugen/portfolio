@@ -10,6 +10,9 @@ interface ScrollRevealProps {
   as?: "section" | "div" | "article" | "header" | "footer";
 }
 
+/**
+ * Viewport intersection container that triggers subtle entrance animations on scroll.
+ */
 export function ScrollReveal({
   children,
   className,

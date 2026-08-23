@@ -1,8 +1,6 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllProjects, getProjectBySlug } from "@/content/projects";
-import { Project } from "@/lib/types";
 import { ProjectMedia, ProjectGallery } from "@/components/project-media";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { getAutomaticProjectGallery } from "@/lib/gallery";

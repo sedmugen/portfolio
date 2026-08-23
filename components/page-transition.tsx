@@ -5,6 +5,9 @@ import { usePathname } from "next/navigation";
 import { motion, useReducedMotion } from "framer-motion";
 import { transitions } from "@/lib/motion";
 
+/**
+ * Page transition wrapper providing smooth route crossfades and scroll-to-top behavior.
+ */
 export function PageTransition({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const shouldReduceMotion = useReducedMotion();

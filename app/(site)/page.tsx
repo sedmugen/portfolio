@@ -6,7 +6,7 @@ import { ScrollReveal } from "@/components/scroll-reveal";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Saad - Portfolio",
+    absolute: "Saad Mughal — Software Engineer & Builder",
   },
 };
 

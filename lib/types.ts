@@ -1,35 +1,47 @@
+/**
+ * Represents a media asset (image or video) rendered within project showcases.
+ */
 export type MediaItem = {
   type: "image" | "video";
   src: string;
   alt: string;
-  poster?: string; // required if type is "video", used before playback / as fallback
+  poster?: string; // Required for videos (used before playback and as reduced-motion fallback)
   aspectRatio?: string; // e.g. "aspect-[16/9]" (default), "aspect-[4/3]", "aspect-[1/1]"
 };
 
+/**
+ * Represents an external link related to a project (e.g. Live, GitHub, Itch.io, YouTube).
+ */
 export type ProjectLink = {
-  label: string; // "Live", "GitHub", "Itch.io", "YouTube", "Case Study"
+  label: string;
   url: string;
 };
 
+/**
+ * Optional content breakdown section for detailed case studies.
+ */
 export type ContentSection = {
-  heading?: string; // e.g. "Process", "Features", omit for freeform sections
-  body: string; // markdown/richtext
-  media?: MediaItem[]; // 0 or more supporting images for this section
+  heading?: string;
+  body: string;
+  media?: MediaItem[];
 };
 
+/**
+ * Unified project schema across Featured and Projects tiers.
+ */
 export type Project = {
   slug: string;
   title: string;
   tier: "featured" | "projects";
-  order: number; // manual display order within its tier
-  category: string; // "Product", "Game", "AI / Technical", "Design", "Web"
-  year: string; // "2026" or "2025–2026"
-  role?: string; // e.g. "Solo developer", "Designer & developer"
-  shortDescription: string; // 1 sentence, used on cards and hero
-  longDescription?: string; // 2-4 sentences, used on the project page (Featured only)
-  technologies: string[]; // ["Tauri", "TypeScript", "Rust", "SQLite"]
+  order: number; // Manual display order within its tier
+  category: string; // "Product", "Game", "AI / Technical", "Design", "Web", "3D"
+  year: string; // e.g. "2026" or "2024–2025"
+  role?: string; // e.g. "Solo developer", "Lead Developer", "Designer & developer"
+  shortDescription: string; // 1 punchy sentence used on cards and project headers
+  longDescription?: string; // 2–4 sentences used on the project case study page
+  technologies: string[]; // List of technologies used
   heroMedia: MediaItem;
-  gallery?: MediaItem[]; // additional standalone images, no section text
-  contentSections?: ContentSection[]; // Featured only, About / Process / Features etc.
+  gallery?: MediaItem[]; // Optional explicit gallery overrides
+  contentSections?: ContentSection[]; // Flexible case-study sections
   links?: ProjectLink[];
 };

@@ -2,6 +2,10 @@ import fs from "fs";
 import path from "path";
 import { MediaItem, Project } from "@/lib/types";
 
+/**
+ * Formats a raw file basename into a human-readable title caption.
+ * e.g. "ui-screens-overview" -> "Ui Screens Overview"
+ */
 function formatCaption(filename: string): string {
   const base = path.parse(filename).name;
   return base
@@ -17,9 +21,8 @@ const galleryCache = new Map<string, MediaItem[]>();
  * Automatically detects all media assets (images and videos) for a project
  * from public/images/[folder] and public/videos/[folder].
  *
- * Adding an asset to the project directory automatically adds it to the gallery.
- * Removing an asset from the directory automatically removes it from the gallery.
- * There is no hardcoded limit on the number of gallery items.
+ * Scans directories dynamically at build time (Static Site Generation),
+ * merges optional explicit overrides, and caches results.
  */
 export function getAutomaticProjectGallery(project: Project): MediaItem[] {
   if (galleryCache.has(project.slug)) {
@@ -64,8 +67,8 @@ export function getAutomaticProjectGallery(project: Project): MediaItem[] {
           }
         }
       }
-    } catch (e) {
-      console.error(`Error scanning images for ${folder}:`, e);
+    } catch {
+      // Graceful fallback for non-existent or inaccessible directories
     }
   }
 
@@ -89,8 +92,8 @@ export function getAutomaticProjectGallery(project: Project): MediaItem[] {
           }
         }
       }
-    } catch (e) {
-      console.error(`Error scanning videos for ${folder}:`, e);
+    } catch {
+      // Graceful fallback for non-existent or inaccessible directories
     }
   }
 
