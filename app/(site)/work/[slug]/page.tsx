@@ -5,6 +5,7 @@ import { getAllProjects, getProjectBySlug } from "@/content/projects";
 import { Project } from "@/lib/types";
 import { ProjectMedia, ProjectGallery } from "@/components/project-media";
 import { ScrollReveal } from "@/components/scroll-reveal";
+import { getAutomaticProjectGallery } from "@/lib/gallery";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -43,6 +44,8 @@ export default async function ProjectPage({ params }: Props) {
   if (!project) {
     notFound();
   }
+
+  const galleryItems = getAutomaticProjectGallery(project);
 
   return (
     <div className="w-full px-2 sm:px-4 md:px-6">
@@ -207,8 +210,8 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       </ScrollReveal>
 
-      {/* 3. Supporting Standalone Gallery (if present) */}
-      {project.gallery && project.gallery.length > 0 && (
+      {/* 3. Supporting Standalone Gallery (automatically detected from assets) */}
+      {galleryItems && galleryItems.length > 0 && (
         <ScrollReveal
           as="section"
           className="w-full pb-20 sm:pb-28 md:pb-36 border-t border-black/70 pt-12 sm:pt-16"
@@ -218,7 +221,7 @@ export default async function ProjectPage({ params }: Props) {
               Gallery &amp; Process
             </h2>
           </div>
-          <ProjectGallery items={project.gallery} />
+          <ProjectGallery items={galleryItems} />
         </ScrollReveal>
       )}
 

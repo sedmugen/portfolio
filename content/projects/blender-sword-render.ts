@@ -29,12 +29,6 @@ export const blenderSwordRender: Project = {
       src: "/images/blender-sword/blender-sword-greybox.png",
       alt: "Blender 3D sword viewport greybox model",
     },
-    {
-      type: "video",
-      src: "/videos/blender-sword/sword_doily_v1.mp4",
-      poster: "/images/blender-sword/sword-render.png",
-      alt: "Blender 3D sword turntable showcase variation",
-    },
   ],
   links: [],
 };

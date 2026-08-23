@@ -46,7 +46,7 @@ export function ProjectMedia({
   return (
     <div
       className={cn(
-        "relative w-full overflow-hidden bg-canvas-subtle",
+        "relative w-full overflow-hidden bg-white",
         effectiveAspectRatio,
         className
       )}
@@ -139,9 +139,9 @@ export function ProjectGallery({
       {items.map((item, index) => (
         <figure
           key={`${item.src}-${index}`}
-          className="break-inside-avoid mb-6 md:mb-8 inline-block w-full overflow-hidden bg-canvas-subtle transition-all duration-300"
+          className="break-inside-avoid mb-6 md:mb-8 inline-block w-full overflow-hidden bg-white transition-all duration-300"
         >
-          <div className="relative w-full flex items-center justify-center bg-canvas-subtle overflow-hidden">
+          <div className="relative w-full flex items-center justify-center bg-white overflow-hidden">
             {item.type === "video" ? (
               <video
                 src={item.src}

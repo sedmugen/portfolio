@@ -35,14 +35,14 @@ export default function WorkPage() {
         </div>
       </ScrollReveal>
 
-      {/* 2. Unified 4-Column Project Grid */}
+      {/* 2. Unified 3-Column Project Grid */}
       <ScrollReveal as="section" className="w-full pb-20 sm:pb-28 md:pb-36">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-1.5 sm:gap-x-2 md:gap-x-2.5 gap-y-3 sm:gap-y-4 md:gap-y-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-2 sm:gap-x-3 md:gap-x-4 gap-y-4 sm:gap-y-5 md:gap-y-6">
           {allProjects.map((project, index) => (
             <FeaturedProjectCard
               key={project.slug}
               project={project}
-              priority={index < 4}
+              priority={index < 3}
             />
           ))}
         </div>
