@@ -1,8 +1,7 @@
 import { Metadata } from "next";
-import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About — Saad Mughal",
+  title: "Info — Saad Mughal",
   description:
     "Learn more about Saad Mughal, developer, game designer, and builder based in Lahore, PK.",
 };
@@ -41,12 +40,15 @@ const CONNECT_LINKS = [
 export default function AboutPage() {
   return (
     <div className="w-full px-2 sm:px-4 md:px-6">
-      {/* 1. Page Header */}
-      <section className="w-full pt-28 sm:pt-36 md:pt-44 lg:pt-52 pb-4 sm:pb-6 flex flex-col md:flex-row md:items-end justify-between gap-3 md:gap-8 border-b border-black/70">
-        <div>
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal uppercase tracking-[-0.03em] leading-none text-ink">
-            ABOUT.
-          </h1>
+      {/* 1. Overview Content Row (Left-aligned, Profile & Disciplines on right) */}
+      <section className="w-full pt-32 sm:pt-44 md:pt-56 lg:pt-64 pb-6 sm:pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8">
+        <div className="max-w-2xl md:max-w-3xl space-y-4">
+          <p className="text-sm sm:text-base md:text-lg text-ink font-normal leading-relaxed">
+            I’m a computer science student in my final year at Beaconhouse National University in Lahore. I build things: desktop apps, games, scheduling systems, and the occasional site for a client who needs one built right.
+          </p>
+          <p className="text-sm sm:text-base md:text-lg text-ink font-normal leading-relaxed">
+            I care about software that respects your time. No unnecessary decisions, no clutter, no waiting on something that should be instant.
+          </p>
         </div>
 
         <div className="shrink-0 text-left md:text-right self-start md:self-end">
@@ -56,25 +58,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 2. Overview / Bio */}
-      <section className="w-full py-8 sm:py-12 md:py-16 border-b border-black/70 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
-        <div className="md:col-span-4">
-          <h2 className="text-3xs sm:text-2xs md:text-xs font-semibold uppercase tracking-[0.16em] text-ink">
-            Overview
-          </h2>
-        </div>
-        <div className="md:col-span-8 space-y-6">
-          <p className="text-base sm:text-lg md:text-xl text-ink leading-relaxed max-w-prose font-normal">
-            I’m a computer science student in my final year at Beaconhouse National University in Lahore. I build things: desktop apps, games, scheduling systems, and the occasional site for a client who needs one built right.
-          </p>
-          <p className="text-base sm:text-lg md:text-xl text-ink leading-relaxed max-w-prose font-normal">
-            I care about software that respects your time. No unnecessary decisions, no clutter, no waiting on something that should be instant.
-          </p>
-        </div>
-      </section>
-
-      {/* 3. Areas of Focus / Disciplines */}
-      <section className="w-full py-8 sm:py-12 md:py-16 border-b border-black/70 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
+      {/* 2. Areas of Focus / Disciplines */}
+      <section className="w-full py-8 sm:py-12 md:py-16 border-t border-black/70 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
         <div className="md:col-span-4">
           <h2 className="text-3xs sm:text-2xs md:text-xs font-semibold uppercase tracking-[0.16em] text-ink">
             Areas of Focus
@@ -94,8 +79,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 4. Education & Background */}
-      <section className="w-full py-8 sm:py-12 md:py-16 border-b border-black/70 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
+      {/* 3. Education & Background */}
+      <section className="w-full py-8 sm:py-12 md:py-16 border-t border-black/70 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
         <div className="md:col-span-4">
           <h2 className="text-3xs sm:text-2xs md:text-xs font-semibold uppercase tracking-[0.16em] text-ink">
             Education
@@ -116,8 +101,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 5. Direct Connect & Links */}
-      <section className="w-full py-8 sm:py-12 md:py-16 pb-20 sm:pb-28 md:pb-36 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
+      {/* 4. Direct Connect & Links */}
+      <section className="w-full py-8 sm:py-12 md:py-16 pb-20 sm:pb-28 md:pb-36 border-t border-black/70 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
         <div className="md:col-span-4">
           <h2 className="text-3xs sm:text-2xs md:text-xs font-semibold uppercase tracking-[0.16em] text-ink">
             Connect
