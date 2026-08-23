@@ -60,10 +60,10 @@ export const metadata: Metadata = {
       "Curated digital exhibition of software systems, desktop applications, games, AI schedulers, and design work by Saad Mughal.",
     images: [
       {
-        url: "/images/bench/hero.png",
+        url: "/images/og-banner.png",
         width: 1200,
-        height: 630,
-        alt: "Saad Mughal Showcase Preview",
+        height: 675,
+        alt: "Saad Mughal — Software Engineer & Builder",
       },
     ],
   },
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     title: "Saad Mughal — Software Engineer & Builder",
     description:
       "Curated digital exhibition of software systems, desktop applications, games, AI schedulers, and design work by Saad Mughal.",
-    images: ["/images/bench/hero.png"],
+    images: ["/images/og-banner.png"],
     creator: "@sedmugen",
   },
   robots: {

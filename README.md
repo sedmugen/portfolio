@@ -1,3 +1,7 @@
+<div align="center">
+
+![Saad Mughal Portfolio Banner](assets/images/banner.png)
+
 # Saad Mughal — Developer Showcase & Exhibition
 
 > A high-performance, editorial digital exhibition showcasing software systems, desktop applications, games, AI schedulers, and design work built by Saad Mughal.
@@ -7,6 +11,8 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
+
+</div>
 
 ---
 
