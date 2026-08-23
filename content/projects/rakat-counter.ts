@@ -15,23 +15,23 @@ export const rakatCounter: Project = {
   heroMedia: {
     type: "video",
     src: "/videos/rakat-counter/rakatcounter-showcase.mp4",
-    poster: "/images/rakat-counter/RakatCounter-2.png",
+    poster: "/images/rakat-counter/ui-screens-overview.png",
     alt: "Rakat Counter mobile app interface walkthrough",
   },
   gallery: [
     {
       type: "image",
-      src: "/images/rakat-counter/RakatCounter-2.png",
+      src: "/images/rakat-counter/ui-screens-overview.png",
       alt: "Rakat Counter high-fidelity application screens",
     },
     {
       type: "image",
-      src: "/images/rakat-counter/PaperSketches-prototpying.png",
+      src: "/images/rakat-counter/paper-sketches-prototyping.png",
       alt: "Rakat Counter paper prototyping and ideation sketches",
     },
     {
       type: "image",
-      src: "/images/rakat-counter/IconAppRakatCounter.png",
+      src: "/images/rakat-counter/app-icon.png",
       alt: "Rakat Counter custom application icon design",
     },
   ],

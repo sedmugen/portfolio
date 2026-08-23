@@ -22,22 +22,22 @@ export const hitmanAssassin: Project = {
   gallery: [
     {
       type: "image",
-      src: "/images/hitman-assassin/TheDefinitiveHitmanExperience.png",
+      src: "/images/hitman-assassin/the-definitive-hitman-experience.png",
       alt: "The Definitive Hitman Experience feature artwork",
     },
     {
       type: "image",
-      src: "/images/hitman-assassin/AttackThemSwiftly.png",
+      src: "/images/hitman-assassin/attack-them-swiftly.png",
       alt: "Hitman Assassin stealth combat gameplay",
     },
     {
       type: "image",
-      src: "/images/hitman-assassin/EarnMissionRewards.png",
+      src: "/images/hitman-assassin/earn-mission-rewards.png",
       alt: "Hitman Assassin mission progression and reward systems",
     },
     {
       type: "image",
-      src: "/images/hitman-assassin/MultipleMaps.png",
+      src: "/images/hitman-assassin/multiple-maps.png",
       alt: "Hitman Assassin tactical environments and map layouts",
     },
   ],

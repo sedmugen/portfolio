@@ -22,7 +22,7 @@ export const classSyncAi: Project = {
   gallery: [
     {
       type: "image",
-      src: "/images/class-sync-ai/cs.png",
+      src: "/images/class-sync-ai/system-architecture.png",
       alt: "ClassSync AI schedule management dashboard",
     },
     {
