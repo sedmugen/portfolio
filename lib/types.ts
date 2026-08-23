@@ -3,6 +3,7 @@ export type MediaItem = {
   src: string;
   alt: string;
   poster?: string; // required if type is "video", used before playback / as fallback
+  aspectRatio?: string; // e.g. "aspect-[16/9]" (default), "aspect-[4/3]", "aspect-[1/1]"
 };
 
 export type ProjectLink = {
