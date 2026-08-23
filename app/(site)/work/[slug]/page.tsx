@@ -129,7 +129,7 @@ export default async function ProjectPage({ params }: Props) {
   return (
     <div className="w-full px-2 sm:px-4 md:px-6">
       {/* Top Breadcrumb / Back Link */}
-      <div className="pt-28 sm:pt-36 md:pt-44 lg:pt-48 pb-4">
+      <div className="pt-6 sm:pt-8 md:pt-10 pb-4">
         <Link
           href="/work"
           className="group inline-flex items-center gap-1.5 text-2xs sm:text-xs uppercase tracking-[0.16em] font-semibold text-ink-muted hover:text-ink transition-colors duration-200"
@@ -137,7 +137,7 @@ export default async function ProjectPage({ params }: Props) {
           <span className="transition-transform duration-200 group-hover:-translate-x-1">
             ←
           </span>
-          <span>Back to Work</span>
+          <span>Back to Projects</span>
         </Link>
       </div>
 

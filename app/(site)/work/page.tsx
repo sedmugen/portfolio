@@ -17,7 +17,7 @@ export default function WorkPage() {
   return (
     <div className="w-full px-2 sm:px-4 md:px-6">
       {/* 1. Projects Header Row */}
-      <section className="w-full pt-28 sm:pt-36 md:pt-44 lg:pt-52 pb-4 sm:pb-6 flex flex-col md:flex-row md:items-end justify-between gap-3 md:gap-8">
+      <section className="w-full pt-6 sm:pt-8 md:pt-10 pb-4 sm:pb-6 flex flex-col md:flex-row md:items-end justify-between gap-3 md:gap-8">
         <div>
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal uppercase tracking-[-0.03em] leading-none text-ink">
             PROJECTS.

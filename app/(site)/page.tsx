@@ -38,7 +38,7 @@ export default function HomePage() {
             href="/work"
             className="group inline-flex items-center gap-1.5 text-2xs sm:text-xs uppercase tracking-[0.16em] font-semibold text-ink-muted hover:text-ink transition-colors duration-200"
           >
-            <span>View all work</span>
+            <span>View all projects</span>
             <span className="transition-transform duration-200 group-hover:translate-x-1">
               →
             </span>

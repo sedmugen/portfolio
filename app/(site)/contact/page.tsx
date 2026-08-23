@@ -39,7 +39,7 @@ export default function ContactPage() {
   return (
     <div className="w-full px-2 sm:px-4 md:px-6">
       {/* 1. Page Header */}
-      <section className="w-full pt-28 sm:pt-36 md:pt-44 lg:pt-52 pb-4 sm:pb-6 flex flex-col md:flex-row md:items-end justify-between gap-3 md:gap-8 border-b border-black/70">
+      <section className="w-full pt-6 sm:pt-8 md:pt-10 pb-4 sm:pb-6 flex flex-col md:flex-row md:items-end justify-between gap-3 md:gap-8 border-b border-black/70">
         <div>
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal uppercase tracking-[-0.03em] leading-none text-ink">
             CONTACT.
@@ -116,14 +116,14 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Right Column: Contact Form */}
+        {/* Right Column: Borderless Contact Form */}
         <div className="lg:col-span-7">
-          <div className="border border-black/70 p-6 sm:p-8 md:p-10 bg-canvas">
-            <h2 className="text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-ink pb-6 border-b border-black/70">
+          <div className="space-y-6">
+            <h2 className="text-3xs sm:text-2xs md:text-xs font-semibold uppercase tracking-[0.16em] text-ink">
               Send a Message
             </h2>
 
-            <form onSubmit={handleSubmit} className="pt-6 space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-1.5">
                 <label
                   htmlFor="name"
