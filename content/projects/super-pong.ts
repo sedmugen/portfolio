@@ -11,9 +11,9 @@ export const superPong: Project = {
     "A 2D arcade Pong where time only moves when you do, a SUPERHOT-style twist on a 50-year-old idea.",
   technologies: ["Unity", "C#"],
   heroMedia: {
-    type: "image",
-    src: "/images/super-pong/hero.svg",
-    alt: "Super Pong gameplay screen",
+    type: "video",
+    src: "/videos/super-pong/super-pong.mp4",
+    alt: "Super Pong gameplay showcase — time moves only when you move",
   },
   links: [
     {

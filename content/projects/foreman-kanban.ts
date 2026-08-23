@@ -16,6 +16,23 @@ export const foremanKanban: Project = {
     src: "/images/foreman-kanban/hero.svg",
     alt: "Foreman Kanban task tracking and pull request management interface",
   },
+  gallery: [
+    {
+      type: "image",
+      src: "/images/foreman-kanban/manager-dashboard.svg",
+      alt: "Foreman Kanban manager dashboard view",
+    },
+    {
+      type: "image",
+      src: "/images/foreman-kanban/employee-dashboard.svg",
+      alt: "Foreman Kanban employee task board view",
+    },
+    {
+      type: "image",
+      src: "/images/foreman-kanban/auth-screen.svg",
+      alt: "Foreman Kanban authentication view",
+    },
+  ],
   links: [
     {
       label: "Live",

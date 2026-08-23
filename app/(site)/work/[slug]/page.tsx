@@ -117,6 +117,13 @@ function ProjectsTierDetail({ project }: { project: Project }) {
           </div>
         </ScrollReveal>
       )}
+
+      {/* Standalone Gallery */}
+      {project.gallery && project.gallery.length > 0 && (
+        <ScrollReveal as="section" className="w-full py-8 sm:py-12 border-t border-black/70">
+          <ProjectGallery items={project.gallery} />
+        </ScrollReveal>
+      )}
     </>
   );
 }

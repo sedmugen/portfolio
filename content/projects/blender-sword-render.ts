@@ -6,14 +6,34 @@ export const blenderSwordRender: Project = {
   tier: "projects",
   order: 8,
   category: "3D",
-  // TODO: Confirm year
-  year: "TODO: Confirm year",
-  shortDescription: "A sword asset modeled and rendered in Blender.",
-  technologies: ["Blender"],
+  year: "2024",
+  shortDescription: "A fantasy sword asset modeled, textured, and rendered in Blender.",
+  longDescription:
+    "A 3D fantasy sword modeled, textured, and rendered in Blender. Features detailed hilt geometry, blade shaders, and lighting turntable sequences.",
+  technologies: ["Blender", "Cycles / Eevee"],
   heroMedia: {
-    type: "image",
-    src: "/images/blender-sword/hero.svg",
-    alt: "Blender 3D modeled and rendered sword asset",
+    type: "video",
+    src: "/videos/blender-sword/sword_v1.mp4",
+    poster: "/images/blender-sword/sword-render.png",
+    alt: "Blender 3D sword turntable render",
   },
+  gallery: [
+    {
+      type: "image",
+      src: "/images/blender-sword/sword-render.png",
+      alt: "Blender 3D sword final render",
+    },
+    {
+      type: "image",
+      src: "/images/blender-sword/blender-sword-greybox.png",
+      alt: "Blender 3D sword viewport greybox model",
+    },
+    {
+      type: "video",
+      src: "/videos/blender-sword/sword_doily_v1.mp4",
+      poster: "/images/blender-sword/sword-render.png",
+      alt: "Blender 3D sword turntable showcase variation",
+    },
+  ],
   links: [],
 };

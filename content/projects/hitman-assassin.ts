@@ -21,6 +21,28 @@ export const hitmanAssassin: Project = {
     poster: "/images/hitman-assassin/hero.png",
     alt: "Hitman Assassin official gameplay trailer",
   },
+  gallery: [
+    {
+      type: "image",
+      src: "/images/hitman-assassin/TheDefinitiveHitmanExperience.png",
+      alt: "The Definitive Hitman Experience feature artwork",
+    },
+    {
+      type: "image",
+      src: "/images/hitman-assassin/AttackThemSwiftly.png",
+      alt: "Hitman Assassin stealth combat gameplay",
+    },
+    {
+      type: "image",
+      src: "/images/hitman-assassin/EarnMissionRewards.png",
+      alt: "Hitman Assassin mission progression and reward systems",
+    },
+    {
+      type: "image",
+      src: "/images/hitman-assassin/MultipleMaps.png",
+      alt: "Hitman Assassin tactical environments and map layouts",
+    },
+  ],
   links: [
     {
       label: "YouTube",

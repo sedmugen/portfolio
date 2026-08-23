@@ -15,10 +15,18 @@ export const gisellesVeganKitchen: Project = {
   // TODO: Confirm actual stack, front-end only or with a backend/CMS
   technologies: ["TODO: Confirm actual stack (front-end only or with a backend/CMS)"],
   heroMedia: {
-    type: "image",
-    src: "/images/giselles-vegan-kitchen/hero.jpg",
-    alt: "Giselle's Vegan Kitchen luxury bakery concept store design",
+    type: "video",
+    src: "/videos/giselles-vegan-kitchen/giselle-showcase.mp4",
+    poster: "/images/giselles-vegan-kitchen/hero.jpg",
+    alt: "Giselle's Vegan Kitchen luxury bakery concept store showcase",
   },
+  gallery: [
+    {
+      type: "image",
+      src: "/images/giselles-vegan-kitchen/hero.jpg",
+      alt: "Giselle's Vegan Kitchen storefront layout and product photography",
+    },
+  ],
   links: [
     {
       label: "Live",

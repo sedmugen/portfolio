@@ -12,9 +12,9 @@ export const ridgelineProRoofing: Project = {
     "A concept marketing site for a roofing company: services, process, coverage area, and a quote flow.",
   technologies: ["Astro"],
   heroMedia: {
-    type: "image",
-    src: "/images/ridgeline-pro-roofing/hero.svg",
-    alt: "Ridgeline Pro Roofing marketing concept website",
+    type: "video",
+    src: "/videos/ridgeline-pro-roofing/ridgeline-pro-showcase.mp4",
+    alt: "Ridgeline Pro Roofing marketing concept website walkthrough showcase",
   },
   links: [
     {

@@ -6,14 +6,15 @@ export const climateActionLogo: Project = {
   tier: "projects",
   order: 9,
   category: "Design",
-  // TODO: Confirm year
-  year: "TODO: Confirm year",
-  shortDescription: "A logo and mark for Climate Action Coalition.",
-  technologies: ["Illustrator"],
+  year: "2024",
+  shortDescription: "A logo and brand mark designed for Climate Action Coalition.",
+  longDescription:
+    "A vector brand mark and identity system designed for Climate Action Coalition, focusing on clean geometry, environmental symbolism, and scalable typography.",
+  technologies: ["Adobe Illustrator"],
   heroMedia: {
     type: "image",
-    src: "/images/climate-action-coalition/hero.svg",
-    alt: "Climate Action Coalition logo and brand mark design",
+    src: "/images/climate-action-coalition/hero.png",
+    alt: "Climate Action Coalition brand identity and logo presentation",
   },
   links: [],
 };

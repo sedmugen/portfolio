@@ -6,16 +6,34 @@ export const rakatCounter: Project = {
   tier: "projects",
   order: 6,
   category: "Design",
-  // TODO: Confirm year
-  year: "TODO: Confirm year",
-  // TODO: Need real sentence here. Is this a prayer-tracking app interface, and was it designed only or also built?
+  year: "2024",
   shortDescription:
-    "TODO: Need real sentence on whether this is prayer-tracking app interface and if designed only or also built.",
-  technologies: ["Figma"],
+    "A mobile prayer-tracking app interface designed from paper wireframes to interactive prototypes.",
+  longDescription:
+    "An intuitive mobile application concept designed to help Muslims track prayer rakats seamlessly. The design process moved from initial paper sketches and wireframing to high-fidelity UI screens and interactive prototypes in Figma.",
+  technologies: ["Figma", "UI/UX Design", "Wireframing"],
   heroMedia: {
-    type: "image",
-    src: "/images/rakat-counter/hero.svg",
-    alt: "Rakat Counter UI/UX concept design",
+    type: "video",
+    src: "/videos/rakat-counter/rakatcounter-showcase.mp4",
+    poster: "/images/rakat-counter/RakatCounter-2.png",
+    alt: "Rakat Counter mobile app interface walkthrough",
   },
+  gallery: [
+    {
+      type: "image",
+      src: "/images/rakat-counter/RakatCounter-2.png",
+      alt: "Rakat Counter high-fidelity application screens",
+    },
+    {
+      type: "image",
+      src: "/images/rakat-counter/PaperSketches-prototpying.png",
+      alt: "Rakat Counter paper prototyping and ideation sketches",
+    },
+    {
+      type: "image",
+      src: "/images/rakat-counter/IconAppRakatCounter.png",
+      alt: "Rakat Counter custom application icon design",
+    },
+  ],
   links: [],
 };

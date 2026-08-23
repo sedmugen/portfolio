@@ -13,9 +13,9 @@ export const sunbirdSolutions: Project = {
   // TODO: Confirm actual technology stack
   technologies: ["TODO: Confirm technologies"],
   heroMedia: {
-    type: "image",
-    src: "/images/sunbird-solutions/hero.svg",
-    alt: "Sunbird Solutions website structure and redesign",
+    type: "video",
+    src: "/videos/sunbird-solutions/sunbird-showcase.mp4",
+    alt: "Sunbird Solutions website structure and redesign showcase",
   },
   links: [
     {

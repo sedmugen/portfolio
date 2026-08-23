@@ -6,15 +6,15 @@ export const himalayanSalt: Project = {
   tier: "projects",
   order: 7,
   category: "Design",
-  // TODO: Confirm year
-  year: "TODO: Confirm year",
-  // TODO: Need real sentence here. Packaging, branding, or product photography, and for what product exactly?
+  year: "2024",
   shortDescription:
-    "TODO: Need real sentence on packaging, branding, or product photography, and for what product exactly.",
-  technologies: ["Illustrator", "Photoshop"],
+    "Packaging and visual brand presentation for organic Himalayan pink salt products.",
+  longDescription:
+    "Brand identity, packaging design, and visual product mockups developed for organic Himalayan salt products, highlighting natural textures and minimalist label design.",
+  technologies: ["Adobe Illustrator", "Adobe Photoshop"],
   heroMedia: {
     type: "image",
-    src: "/images/himalayan-salt/hero.svg",
+    src: "/images/himalayan-salt/hero.png",
     alt: "Himalayan Salt product packaging and branding design",
   },
   links: [],

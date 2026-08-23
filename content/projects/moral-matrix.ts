@@ -14,10 +14,18 @@ export const moralMatrix: Project = {
     "Moral Matrix is a hybrid 2.5D adventure built in Unity with URP. Characters use 8-directional billboarded sprites over a 3D environment, NavMesh handles pathfinding, and dialogue runs through a typewriter-style system built for branching NPC conversations. It's an engine layer, not a single scripted level, built to carry more than one story.",
   technologies: ["Unity 2023", "C#", "URP"],
   heroMedia: {
-    type: "image",
-    src: "/images/moral-matrix/hero.webp",
-    alt: "Moral Matrix 2.5D adventure gameplay screenshot",
+    type: "video",
+    src: "/videos/moral-matrix/Moral-Matrix-Trailer.mp4",
+    poster: "/images/moral-matrix/hero.webp",
+    alt: "Moral Matrix official gameplay trailer",
   },
+  gallery: [
+    {
+      type: "image",
+      src: "/images/moral-matrix/hero.webp",
+      alt: "Moral Matrix 2.5D environment and billboarded sprite system",
+    },
+  ],
   links: [
     {
       label: "GitHub",
