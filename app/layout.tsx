@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Syne, Space_Grotesk, Inter } from "next/font/google";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
+import { PageTransition } from "@/components/page-transition";
 import "./globals.css";
 
 const displayFont = Syne({
@@ -53,7 +54,9 @@ export default function RootLayout({
     >
       <body className="min-h-screen bg-canvas text-ink antialiased flex flex-col font-body selection:bg-border selection:text-ink">
         <Nav />
-        <main className="flex-1 w-full">{children}</main>
+        <main className="flex-1 w-full flex flex-col">
+          <PageTransition>{children}</PageTransition>
+        </main>
         <Footer />
       </body>
     </html>
