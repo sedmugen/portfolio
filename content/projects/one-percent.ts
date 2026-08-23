@@ -15,7 +15,7 @@ export const onePercent: Project = {
   technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
   heroMedia: {
     type: "image",
-    src: "/images/one-percent/hero.webp",
+    src: "/images/one-percent/hero.png",
     alt: "One Percent marketing and web development agency website",
   },
   links: [

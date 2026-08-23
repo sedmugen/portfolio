@@ -15,7 +15,7 @@ export const foremanKanban: Project = {
   technologies: ["Python", "React", "MongoDB"],
   heroMedia: {
     type: "image",
-    src: "/images/foreman-kanban/hero.svg",
+    src: "/images/foreman-kanban/foreman.png",
     alt: "Foreman Kanban task tracking and pull request management interface",
   },
   gallery: [
