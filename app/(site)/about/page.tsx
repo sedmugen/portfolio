@@ -16,7 +16,7 @@ const DISCIPLINES = [
   {
     title: "Game Development",
     description:
-      "2D, 3D, and FPS games featuring responsive mechanics, custom gameplay systems, fluid combat, and immersive physics in Unity.",
+      "2D, 3D, and FPS games with responsive player controls, custom gameplay systems, and interactive physics in Unity.",
   },
   {
     title: "AI & Technical Systems",
