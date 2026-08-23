@@ -10,8 +10,7 @@ export const sunbirdSolutions: Project = {
   role: "Developer",
   shortDescription:
     "Web development work for Sunbird Solutions, including a footer redesign and site structure updates.",
-  // TODO: Confirm actual technology stack
-  technologies: ["TODO: Confirm technologies"],
+  technologies: ["Web Development", "Responsive Design"],
   heroMedia: {
     type: "video",
     src: "/videos/sunbird-solutions/sunbird-showcase.mp4",

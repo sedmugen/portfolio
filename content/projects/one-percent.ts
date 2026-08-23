@@ -6,14 +6,13 @@ export const onePercent: Project = {
   tier: "projects",
   order: 5,
   category: "Web",
-  year: "2025-2026",
-  role: "Designer & developer",
+  year: "2026",
+  role: "Designer & Developer",
   shortDescription:
-    "A marketing and web services site, designed and built from the ground up.",
+    "A modern digital platform and marketing services website featuring structured solution showcases and inquiry flows.",
   longDescription:
-    "A full site built to sell marketing and web development services to local businesses: positioning, service breakdown, and a contact flow, designed and shipped independently.",
-  // TODO: Confirm actual stack
-  technologies: ["TODO: Confirm actual stack"],
+    "A digital presence and service platform built for business and marketing solutions. Features clean editorial typography, modular service showcases, and a streamlined client inquiry and contact flow.",
+  technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
   heroMedia: {
     type: "image",
     src: "/images/one-percent/hero.webp",

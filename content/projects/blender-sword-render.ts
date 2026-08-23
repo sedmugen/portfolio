@@ -6,7 +6,8 @@ export const blenderSwordRender: Project = {
   tier: "projects",
   order: 8,
   category: "3D",
-  year: "2024",
+  year: "2023",
+  role: "3D Artist",
   shortDescription: "A fantasy sword asset modeled, textured, and rendered in Blender.",
   longDescription:
     "A 3D fantasy sword modeled, textured, and rendered in Blender. Features detailed hilt geometry, blade shaders, and lighting turntable sequences.",

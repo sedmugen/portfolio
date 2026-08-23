@@ -5,14 +5,14 @@ export const urbanRun: Project = {
   title: "Urban Run",
   tier: "featured",
   order: 6,
-  category: "Video Production",
-  // TODO: Confirm year
-  year: "TODO: Confirm year",
-  role: "Director / editor",
-  shortDescription: "A POV-style short film. (TODO: Need one real sentence on premise or setting.)",
+  category: "Game",
+  year: "2024",
+  role: "Lead Developer & Game Designer",
+  shortDescription:
+    "A fast-paced 2D endless runner built with responsive physics, dynamic obstacles, and fluid movement.",
   longDescription:
-    "A POV-style short film capturing fast-paced urban movement. Directed and edited independently, exploring dynamic camera angles, pacing, and visual storytelling.",
-  technologies: ["Premiere Pro", "After Effects"],
+    "Urban Run is a 2D endless runner developed in Unity. It combines responsive jump and slide mechanics with procedural obstacle spawning and progressive difficulty scaling for fast-paced, replayable gameplay.",
+  technologies: ["Unity", "C#"],
   heroMedia: {
     type: "video",
     src: "/videos/urban-run/trailer.mp4",

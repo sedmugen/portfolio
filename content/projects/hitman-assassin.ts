@@ -6,15 +6,13 @@ export const hitmanAssassin: Project = {
   tier: "featured",
   order: 2,
   category: "Game",
-  // TODO: Confirm year
-  year: "TODO: Confirm year",
-  role: "Director / editor",
+  year: "2025",
+  role: "Lead Developer & Game Designer",
   shortDescription:
-    "A POV-style short film, written, storyboarded, and produced scene by scene before a single frame was shot.",
-  // TODO: Need real description on premise, tone, and what makes this one worth featuring
+    "A tactical stealth-action game featuring assassination contracts, detection systems, and varied mission environments.",
   longDescription:
-    "TODO: Need one real sentence from you on the premise and what makes this one worth featuring, the format, the tone, what you were trying to pull off. I know this was planned through a full scene-by-scene production bible before production, but I don't have the actual story beats to write about honestly.",
-  technologies: [],
+    "Hitman Assassin is a tactical stealth-action experience built around precision movement, target elimination, and dynamic detection mechanics. Features responsive enemy awareness cones, multi-tier mission contracts, and diverse map layouts designed for strategic execution.",
+  technologies: ["Unity", "C#", "Game Design"],
   heroMedia: {
     type: "video",
     src: "/videos/hitman-assassin/trailer.mp4",

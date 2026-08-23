@@ -6,10 +6,12 @@ export const foremanKanban: Project = {
   tier: "projects",
   order: 1,
   category: "Product",
-  year: "2025",
-  role: "Contributor (forked from ismailrzw/foreman-kanban)",
+  year: "2026",
+  role: "Full-Stack Developer (Team Project)",
   shortDescription:
-    "A Kanban tool built for tracking pull requests and team task flow, built as a DevOps final-semester project.",
+    "A collaborative Kanban board built for tracking pull requests, team workflows, and task delivery pipelines.",
+  longDescription:
+    "A team-developed workflow management system engineered to streamline pull request tracking and task allocation across engineering teams. Features interactive kanban boards, real-time status updates, and automated DevOps delivery metrics.",
   technologies: ["Python", "React", "MongoDB"],
   heroMedia: {
     type: "image",

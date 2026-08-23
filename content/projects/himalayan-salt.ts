@@ -6,12 +6,13 @@ export const himalayanSalt: Project = {
   tier: "projects",
   order: 7,
   category: "Design",
-  year: "2024",
+  year: "2023",
+  role: "Product Designer",
   shortDescription:
-    "Packaging and visual brand presentation for organic Himalayan pink salt products.",
+    "End-to-end concept development and industrial product design for organic Himalayan pink salt products.",
   longDescription:
-    "Brand identity, packaging design, and visual product mockups developed for organic Himalayan salt products, highlighting natural textures and minimalist label design.",
-  technologies: ["Adobe Illustrator", "Adobe Photoshop"],
+    "A complete physical product conceived and designed from scratch. The project spans initial concept development, 3D product modeling, physical form development, and minimalist packaging design to translate an original idea into a finished physical product.",
+  technologies: ["Concept Development", "3D Product Design", "Adobe Illustrator", "Adobe Photoshop"],
   heroMedia: {
     type: "image",
     src: "/images/himalayan-salt/hero.png",

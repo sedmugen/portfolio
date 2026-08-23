@@ -6,7 +6,8 @@ export const superPong: Project = {
   tier: "projects",
   order: 2,
   category: "Game",
-  year: "2025",
+  year: "2024",
+  role: "Game Developer",
   shortDescription:
     "A 2D arcade Pong where time only moves when you do, a SUPERHOT-style twist on a 50-year-old idea.",
   technologies: ["Unity", "C#"],

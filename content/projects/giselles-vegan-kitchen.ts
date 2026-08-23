@@ -12,8 +12,7 @@ export const gisellesVeganKitchen: Project = {
     "A luxury vegan bakery concept, designed and built end to end as a self-directed exercise.",
   longDescription:
     "A concept e-commerce site for a fictional high-end organic bakery. No client brief, no constraints, just a chance to build the kind of premium commerce layout that photography and product-led brands need: large product imagery, quiet typography, and a full shop and checkout flow.",
-  // TODO: Confirm actual stack, front-end only or with a backend/CMS
-  technologies: ["TODO: Confirm actual stack (front-end only or with a backend/CMS)"],
+  technologies: ["HTML", "CSS", "JavaScript"],
   heroMedia: {
     type: "video",
     src: "/videos/giselles-vegan-kitchen/giselle-showcase.mp4",

@@ -6,7 +6,8 @@ export const classSyncAi: Project = {
   tier: "featured",
   order: 4,
   category: "AI / Technical",
-  year: "2026",
+  year: "2025",
+  role: "Lead Developer",
   shortDescription:
     "A university timetabling system that schedules classes with a genetic algorithm.",
   longDescription:
