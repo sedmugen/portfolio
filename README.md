@@ -106,6 +106,8 @@ public/                       # Public runtime media (images & videos)
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
+> For complete deployment instructions, visit the 🚀 [**Setup & Installation Guide**](docs/setup.md).
+
 ---
 
 ## 8. Usage & Content Authoring
@@ -140,6 +142,8 @@ public/                       # Public runtime media (images & videos)
 
 2. Register the project in `content/projects.ts`.
 3. Drop supporting images into `public/images/my-project/`. They will be automatically detected and displayed in the project's gallery.
+
+> For detailed content workflows and masonry gallery discovery, see the 📝 [**Content Authoring Guide**](docs/usage.md) and 🛠️ [**Development Guide**](docs/development.md).
 
 ---
 
