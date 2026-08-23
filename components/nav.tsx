@@ -73,9 +73,9 @@ export function Nav() {
   return (
     <header className="w-full bg-canvas select-none relative z-50">
       {/* ========================================================= */}
-      {/* 1. MOBILE HEADER (Screens < md): Sticky & Animated on all pages */}
+      {/* 1. MOBILE HEADER (Screens < md): Scrolls naturally with page */}
       {/* ========================================================= */}
-      <div className="md:hidden w-full sticky top-0 z-50 bg-canvas px-2 sm:px-4">
+      <div className="md:hidden w-full px-2 sm:px-4">
         {/* Row 1: "SAAD MUGHAL" + '+' button */}
         <div className="w-full pt-3 pb-2 flex items-start justify-between">
           <Link href="/" className="inline-block" onClick={() => setIsOpen(false)}>
