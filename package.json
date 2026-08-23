@@ -2,6 +2,28 @@
   "name": "saad-mughal-portfolio",
   "version": "0.1.0",
   "private": true,
+  "description": "Curated digital exhibition of software systems, desktop applications, games, AI schedulers, and design work by Saad Mughal.",
+  "author": "Saad Mughal <saadmughal321@gmail.com> (https://github.com/sedmugen)",
+  "license": "MIT",
+  "homepage": "https://github.com/sedmugen/portfolio#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sedmugen/portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sedmugen/portfolio/issues"
+  },
+  "keywords": [
+    "nextjs",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "framer-motion",
+    "portfolio",
+    "software-engineer",
+    "game-developer",
+    "exhibition"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
