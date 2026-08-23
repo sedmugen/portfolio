@@ -46,7 +46,7 @@ export function ProjectMedia({
   return (
     <div
       className={cn(
-        "relative w-full overflow-hidden bg-white",
+        "relative w-full overflow-hidden bg-transparent",
         effectiveAspectRatio,
         className
       )}
@@ -59,7 +59,7 @@ export function ProjectMedia({
             controls
             playsInline
             preload="metadata"
-            className={cn("h-full w-full object-cover", videoClassName)}
+            className={cn("h-full w-full object-cover bg-transparent", videoClassName)}
             aria-label={media.alt}
           />
         ) : prefersReducedMotion && media.poster ? (
@@ -79,7 +79,7 @@ export function ProjectMedia({
             loop={!prefersReducedMotion}
             playsInline
             autoPlay={!prefersReducedMotion}
-            className={cn("h-full w-full object-cover", videoClassName)}
+            className={cn("h-full w-full object-cover bg-transparent", videoClassName)}
             aria-label={media.alt}
           />
         )
@@ -139,9 +139,9 @@ export function ProjectGallery({
       {items.map((item, index) => (
         <figure
           key={`${item.src}-${index}`}
-          className="break-inside-avoid mb-6 md:mb-8 inline-block w-full overflow-hidden bg-white transition-all duration-300"
+          className="break-inside-avoid mb-6 md:mb-8 inline-block w-full bg-transparent transition-all duration-300"
         >
-          <div className="relative w-full flex items-center justify-center bg-white overflow-hidden">
+          <div className="relative w-full bg-transparent">
             {item.type === "video" ? (
               <video
                 src={item.src}
@@ -149,7 +149,7 @@ export function ProjectGallery({
                 controls
                 playsInline
                 preload="metadata"
-                className="block w-full h-auto max-h-[75vh] min-h-[120px] object-contain"
+                className="block w-full h-auto max-h-[75vh] min-h-[120px] object-contain bg-transparent"
                 aria-label={item.alt}
               />
             ) : (
@@ -158,7 +158,7 @@ export function ProjectGallery({
                 alt={item.alt}
                 loading="lazy"
                 decoding="async"
-                className="block w-full h-auto max-h-[75vh] min-h-[120px] object-contain transition-transform duration-300 ease-out hover:scale-[1.01]"
+                className="block w-full h-auto max-h-[75vh] min-h-[120px] object-contain bg-transparent transition-transform duration-300 ease-out hover:scale-[1.01]"
               />
             )}
           </div>
