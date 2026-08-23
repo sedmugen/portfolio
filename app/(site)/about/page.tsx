@@ -16,7 +16,7 @@ const DISCIPLINES = [
   {
     title: "Game Development",
     description:
-      "2.5D narrative adventures, arcade mechanics, custom dialogue systems, and physics-driven experiences in Unity.",
+      "2D, 3D, and FPS games featuring responsive mechanics, custom gameplay systems, fluid combat, and immersive physics in Unity.",
   },
   {
     title: "AI & Technical Systems",
