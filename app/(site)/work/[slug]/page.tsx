@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getAllProjects, getProjectBySlug } from "@/content/projects";
 import { Project } from "@/lib/types";
 import { ProjectMedia, ProjectGallery } from "@/components/project-media";
+import { ScrollReveal } from "@/components/scroll-reveal";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -40,7 +41,10 @@ function FeaturedProjectDetail({ project }: { project: Project }) {
     <>
       {/* 1. About / Long Description */}
       {project.longDescription && (
-        <section className="w-full py-8 sm:py-12 border-t border-black/70 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
+        <ScrollReveal
+          as="section"
+          className="w-full py-8 sm:py-12 border-t border-black/70 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8"
+        >
           <div className="md:col-span-4">
             <h2 className="text-3xs sm:text-2xs md:text-xs font-semibold uppercase tracking-[0.16em] text-ink">
               About
@@ -51,20 +55,21 @@ function FeaturedProjectDetail({ project }: { project: Project }) {
               {project.longDescription}
             </p>
           </div>
-        </section>
+        </ScrollReveal>
       )}
 
       {/* 2. Standalone Gallery */}
       {project.gallery && project.gallery.length > 0 && (
-        <section className="w-full py-8 sm:py-12 border-t border-black/70">
+        <ScrollReveal as="section" className="w-full py-8 sm:py-12 border-t border-black/70">
           <ProjectGallery items={project.gallery} />
-        </section>
+        </ScrollReveal>
       )}
 
       {/* 3. Flexible Content Sections */}
       {project.contentSections?.map((section, idx) => (
-        <section
+        <ScrollReveal
           key={section.heading || idx}
+          as="section"
           className="w-full py-8 sm:py-12 border-t border-black/70 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8"
         >
           <div className="md:col-span-4">
@@ -82,7 +87,7 @@ function FeaturedProjectDetail({ project }: { project: Project }) {
               <ProjectGallery items={section.media} />
             )}
           </div>
-        </section>
+        </ScrollReveal>
       ))}
     </>
   );
@@ -96,7 +101,10 @@ function ProjectsTierDetail({ project }: { project: Project }) {
     <>
       {/* Optional Short / Long Description */}
       {project.longDescription && (
-        <section className="w-full py-8 sm:py-12 border-t border-black/70 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
+        <ScrollReveal
+          as="section"
+          className="w-full py-8 sm:py-12 border-t border-black/70 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8"
+        >
           <div className="md:col-span-4">
             <h2 className="text-3xs sm:text-2xs md:text-xs font-semibold uppercase tracking-[0.16em] text-ink">
               About
@@ -107,7 +115,7 @@ function ProjectsTierDetail({ project }: { project: Project }) {
               {project.longDescription}
             </p>
           </div>
-        </section>
+        </ScrollReveal>
       )}
     </>
   );
@@ -142,7 +150,10 @@ export default async function ProjectPage({ params }: Props) {
       </div>
 
       {/* Hero Header */}
-      <header className="w-full pb-6 sm:pb-8 flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-8 border-b border-black/70">
+      <ScrollReveal
+        as="header"
+        className="w-full pb-6 sm:pb-8 flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-8 border-b border-black/70"
+      >
         <div className="max-w-3xl">
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal uppercase tracking-[-0.03em] leading-[0.9] text-ink">
             {project.title}
@@ -157,10 +168,10 @@ export default async function ProjectPage({ params }: Props) {
             {metadataLine}
           </div>
         </div>
-      </header>
+      </ScrollReveal>
 
       {/* Hero Media (Large) */}
-      <section className="w-full pt-6 sm:pt-8 md:pt-10 pb-8 sm:pb-12 md:pb-16">
+      <ScrollReveal as="section" className="w-full pt-6 sm:pt-8 md:pt-10 pb-8 sm:pb-12 md:pb-16">
         <ProjectMedia
           media={project.heroMedia}
           priority
@@ -168,7 +179,7 @@ export default async function ProjectPage({ params }: Props) {
           aspectRatio="aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/9]"
           className="w-full overflow-hidden"
         />
-      </section>
+      </ScrollReveal>
 
       {/* Tier-Specific Template Content */}
       {isFeatured ? (
@@ -179,7 +190,10 @@ export default async function ProjectPage({ params }: Props) {
 
       {/* Technology List (Plain inline list, not badges/pills) */}
       {project.technologies && project.technologies.length > 0 && (
-        <section className="w-full py-8 sm:py-12 border-t border-black/70 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
+        <ScrollReveal
+          as="section"
+          className="w-full py-8 sm:py-12 border-t border-black/70 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8"
+        >
           <div className="md:col-span-4">
             <h2 className="text-3xs sm:text-2xs md:text-xs font-semibold uppercase tracking-[0.16em] text-ink">
               Technology
@@ -190,12 +204,15 @@ export default async function ProjectPage({ params }: Props) {
               {project.technologies.join(" · ")}
             </p>
           </div>
-        </section>
+        </ScrollReveal>
       )}
 
       {/* Understated Links (Text links, not heavy buttons) */}
       {project.links && project.links.length > 0 && (
-        <section className="w-full py-8 sm:py-12 pb-20 sm:pb-28 md:pb-36 border-t border-black/70 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
+        <ScrollReveal
+          as="section"
+          className="w-full py-8 sm:py-12 pb-20 sm:pb-28 md:pb-36 border-t border-black/70 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8"
+        >
           <div className="md:col-span-4">
             <h2 className="text-3xs sm:text-2xs md:text-xs font-semibold uppercase tracking-[0.16em] text-ink">
               Links
@@ -220,7 +237,7 @@ export default async function ProjectPage({ params }: Props) {
               </a>
             ))}
           </div>
-        </section>
+        </ScrollReveal>
       )}
     </div>
   );

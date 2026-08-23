@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { getAllProjects } from "@/content/projects";
 import { FeaturedProjectCard } from "@/components/project-card";
+import { ScrollReveal } from "@/components/scroll-reveal";
 
 export const metadata: Metadata = {
   title: "Projects — Saad Mughal",
@@ -17,7 +18,10 @@ export default function WorkPage() {
   return (
     <div className="w-full px-2 sm:px-4 md:px-6">
       {/* 1. Projects Header Row */}
-      <section className="w-full pt-6 sm:pt-8 md:pt-10 pb-4 sm:pb-6 flex flex-col md:flex-row md:items-end justify-between gap-3 md:gap-8">
+      <ScrollReveal
+        as="section"
+        className="w-full pt-6 sm:pt-8 md:pt-10 pb-4 sm:pb-6 flex flex-col md:flex-row md:items-end justify-between gap-3 md:gap-8"
+      >
         <div>
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal uppercase tracking-[-0.03em] leading-none text-ink">
             PROJECTS.
@@ -29,10 +33,10 @@ export default function WorkPage() {
             All Projects <span className="font-mono text-ink-faint">({formattedCount})</span>
           </h2>
         </div>
-      </section>
+      </ScrollReveal>
 
       {/* 2. Unified 4-Column Project Grid */}
-      <section className="w-full pb-20 sm:pb-28 md:pb-36">
+      <ScrollReveal as="section" className="w-full pb-20 sm:pb-28 md:pb-36">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-1.5 sm:gap-x-2 md:gap-x-2.5 gap-y-3 sm:gap-y-4 md:gap-y-5">
           {allProjects.map((project, index) => (
             <FeaturedProjectCard
@@ -42,7 +46,7 @@ export default function WorkPage() {
             />
           ))}
         </div>
-      </section>
+      </ScrollReveal>
     </div>
   );
 }

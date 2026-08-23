@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ScrollReveal } from "@/components/scroll-reveal";
 
 const SOCIALS = [
   { label: "GitHub", href: "https://github.com/sedmugen", handle: "github.com/sedmugen" },
@@ -39,7 +40,10 @@ export default function ContactPage() {
   return (
     <div className="w-full px-2 sm:px-4 md:px-6">
       {/* 1. Page Header */}
-      <section className="w-full pt-6 sm:pt-8 md:pt-10 pb-4 sm:pb-6 flex flex-col md:flex-row md:items-end justify-between gap-3 md:gap-8 border-b border-black/70">
+      <ScrollReveal
+        as="section"
+        className="w-full pt-6 sm:pt-8 md:pt-10 pb-4 sm:pb-6 flex flex-col md:flex-row md:items-end justify-between gap-3 md:gap-8 border-b border-black/70"
+      >
         <div>
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal uppercase tracking-[-0.03em] leading-none text-ink">
             CONTACT.
@@ -51,10 +55,13 @@ export default function ContactPage() {
             GET IN TOUCH
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
       {/* 2. Main Contact Grid */}
-      <section className="w-full py-8 sm:py-12 md:py-16 pb-20 sm:pb-28 md:pb-36 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
+      <ScrollReveal
+        as="section"
+        className="w-full py-8 sm:py-12 md:py-16 pb-20 sm:pb-28 md:pb-36 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16"
+      >
         {/* Left Column: Direct Info & Social Links */}
         <div className="lg:col-span-5 space-y-8 sm:space-y-12">
           <div className="space-y-3">
@@ -198,7 +205,7 @@ export default function ContactPage() {
             </form>
           </div>
         </div>
-      </section>
+      </ScrollReveal>
     </div>
   );
 }

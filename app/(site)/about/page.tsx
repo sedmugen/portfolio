@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { ScrollReveal } from "@/components/scroll-reveal";
 
 export const metadata: Metadata = {
   title: "Info — Saad Mughal",
@@ -41,7 +42,10 @@ export default function AboutPage() {
   return (
     <div className="w-full px-2 sm:px-4 md:px-6">
       {/* 1. Overview Content Row (Left-aligned, Profile & Disciplines on right) */}
-      <section className="w-full pt-32 sm:pt-44 md:pt-56 lg:pt-64 pb-6 sm:pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8">
+      <ScrollReveal
+        as="section"
+        className="w-full pt-32 sm:pt-44 md:pt-56 lg:pt-64 pb-6 sm:pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8"
+      >
         <div className="max-w-2xl md:max-w-3xl space-y-4">
           <p className="text-sm sm:text-base md:text-lg text-ink font-normal leading-relaxed">
             I’m a computer science student in my final year at Beaconhouse National University in Lahore. I build things: desktop apps, games, scheduling systems, and the occasional site for a client who needs one built right.
@@ -56,10 +60,13 @@ export default function AboutPage() {
             PROFILE &amp; DISCIPLINES
           </div>
         </div>
-      </section>
+      </ScrollReveal>
 
       {/* 2. Areas of Focus / Disciplines */}
-      <section className="w-full py-8 sm:py-12 md:py-16 border-t border-black/70 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
+      <ScrollReveal
+        as="section"
+        className="w-full py-8 sm:py-12 md:py-16 border-t border-black/70 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8"
+      >
         <div className="md:col-span-4">
           <h2 className="text-3xs sm:text-2xs md:text-xs font-semibold uppercase tracking-[0.16em] text-ink">
             Areas of Focus
@@ -77,10 +84,13 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
-      </section>
+      </ScrollReveal>
 
       {/* 3. Education & Background */}
-      <section className="w-full py-8 sm:py-12 md:py-16 border-t border-black/70 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
+      <ScrollReveal
+        as="section"
+        className="w-full py-8 sm:py-12 md:py-16 border-t border-black/70 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8"
+      >
         <div className="md:col-span-4">
           <h2 className="text-3xs sm:text-2xs md:text-xs font-semibold uppercase tracking-[0.16em] text-ink">
             Education
@@ -99,10 +109,13 @@ export default function AboutPage() {
             Independent software development, coursework in algorithms, operating systems, DevOps, and interactive media design.
           </p>
         </div>
-      </section>
+      </ScrollReveal>
 
       {/* 4. Direct Connect & Links */}
-      <section className="w-full py-8 sm:py-12 md:py-16 pb-20 sm:pb-28 md:pb-36 border-t border-black/70 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
+      <ScrollReveal
+        as="section"
+        className="w-full py-8 sm:py-12 md:py-16 pb-20 sm:pb-28 md:pb-36 border-t border-black/70 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8"
+      >
         <div className="md:col-span-4">
           <h2 className="text-3xs sm:text-2xs md:text-xs font-semibold uppercase tracking-[0.16em] text-ink">
             Connect
@@ -127,7 +140,7 @@ export default function AboutPage() {
             </a>
           ))}
         </div>
-      </section>
+      </ScrollReveal>
     </div>
   );
 }

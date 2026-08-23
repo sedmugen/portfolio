@@ -12,7 +12,7 @@ export const transitions = {
     ease: [0.25, 0.1, 0.25, 1],
   },
   pageTransition: {
-    duration: 0.25,
+    duration: 0.28,
     ease: [0.25, 0.1, 0.25, 1],
   },
 } as const;
@@ -25,10 +25,20 @@ export const fadeInVariants = {
   },
 };
 
+export const pageTransitionVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: transitions.pageTransition,
+  },
+};
+
 export const scrollRevealVariants = {
   hidden: {
     opacity: 0,
-    y: 20,
+    y: 18,
   },
   visible: {
     opacity: 1,
