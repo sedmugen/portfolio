@@ -14,7 +14,7 @@
 
     <text x="0" y="170" fill="#A09585" font-size="13" width="340">
       <tspan x="0" dy="0">A job board for teams who need real sign-off</tspan>
-      <tspan x="0" dy="20">before work counts as finished — not just a checkbox.</tspan>
+      <tspan x="0" dy="20">before work counts as finished - not just a checkbox.</tspan>
     </text>
 
     <!-- Ledger rules -->

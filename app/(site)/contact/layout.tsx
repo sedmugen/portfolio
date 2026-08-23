@@ -3,7 +3,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Saad Mughal for software engineering, game design, and technical collaboration.",
+    "Get in touch with Saad Mughal for software development, game design, and collaboration opportunities.",
 };
 
 export default function ContactLayout({
@@ -11,5 +11,5 @@ export default function ContactLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return <>{children}</>;
 }

@@ -8,7 +8,7 @@ Two typefaces, no more.
 - **Body / UI typeface**: one highly readable sans (Inter, General Sans, or system-ui stack as a pragmatic starting point). Used for descriptions, nav, metadata, links.
 
 Rules:
-- Generous line-height on body copy (1.5–1.7).
+- Generous line-height on body copy (1.5-1.7).
 - Text measure (line length) capped around 60-75 characters for any paragraph content, don't let longDescription/contentSections stretch full-width on desktop.
 - Hierarchy comes from size and spacing, not from bolding everything. Category/year metadata lines are small, uppercase-tracked, muted, never competing with the title.
 - No more than 3 distinct font sizes on any single screen (display, body, metadata/caption).
@@ -30,14 +30,14 @@ Optional dark mode: not required for v1. If added later, it should be a straight
 
 - Whitespace is a feature, not empty space to fill. Sections should feel roomy, err toward more vertical padding between sections than feels necessary at first.
 - Use a consistent spacing scale (e.g. 4/8px base, 8, 16, 24, 32, 48, 64, 96, 128) rather than arbitrary pixel values per section.
-- Content max-width container (e.g. ~1280–1440px) with consistent horizontal padding; hero media can break out to full-bleed where the template calls for it.
+- Content max-width container (e.g. ~1280-1440px) with consistent horizontal padding; hero media can break out to full-bleed where the template calls for it.
 
 ## Responsive design
 
 Defined explicitly, not left to "it'll probably reflow fine":
 
 - **Desktop** (≥1024px): full visual ambition, large Featured project imagery, generous whitespace, multi-column Projects-tier grid (2-3 cols).
-- **Tablet** (768–1023px): Featured imagery scales down proportionally, Projects-tier grid drops to 2 columns, nav stays inline (no hamburger needed at this width unless testing says otherwise).
+- **Tablet** (768-1023px): Featured imagery scales down proportionally, Projects-tier grid drops to 2 columns, nav stays inline (no hamburger needed at this width unless testing says otherwise).
 - **Mobile** (<768px): single column throughout. Featured project media goes full-width. Typography scale steps down (display size drops meaningfully, body stays readable, don't shrink body text below ~16px). Nav can collapse to a simple menu if 3 items don't fit inline, but try inline first, 3 items usually fit.
 - Image aspect ratios should be defined per breakpoint where a project's hero image genuinely needs to recompose (e.g. a wide desktop screenshot vs. a portrait-friendly crop on mobile) rather than just scaling the same crop down.
 

@@ -35,10 +35,10 @@ export type Project = {
   tier: "featured" | "projects";
   order: number; // Manual display order within its tier
   category: string; // "Product", "Game", "AI / Technical", "Design", "Web", "3D"
-  year: string; // e.g. "2026" or "2024–2025"
+  year: string; // e.g. "2026" or "2024-2025"
   role?: string; // e.g. "Solo developer", "Lead Developer", "Designer & developer"
   shortDescription: string; // 1 punchy sentence used on cards and project headers
-  longDescription?: string; // 2–4 sentences used on the project case study page
+  longDescription?: string; // 2-4 sentences used on the project case study page
   technologies: string[]; // List of technologies used
   heroMedia: MediaItem;
   gallery?: MediaItem[]; // Optional explicit gallery overrides

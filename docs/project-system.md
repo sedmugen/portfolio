@@ -29,7 +29,7 @@ type Project = {
   tier: "featured" | "projects";
   order: number;              // manual display order within its tier
   category: string;           // "Product", "Game", "AI / Technical", "Design", "Web"
-  year: string;                // "2026" or "2025–2026"
+  year: string;                // "2026" or "2025-2026"
   role?: string;                // e.g. "Solo developer", "Designer & developer"
   shortDescription: string;    // 1 sentence, used on cards and hero
   longDescription?: string;    // 2-4 sentences, used on the project page (Featured only)

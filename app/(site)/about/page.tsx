@@ -102,7 +102,7 @@ export default function AboutPage() {
               BS Computer Science
             </div>
             <div className="text-xs sm:text-sm text-ink-muted">
-              Beaconhouse National University · Final Year (2022–2026)
+              Beaconhouse National University · Final Year (2022-2026)
             </div>
           </div>
           <p className="text-xs sm:text-sm text-ink-muted max-w-prose leading-relaxed">

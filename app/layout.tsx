@@ -30,8 +30,8 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://saadmughal.vercel.a
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Saad Mughal — Software Engineer & Builder",
-    template: "%s — Saad Mughal",
+    default: "Saad - Portfolio",
+    template: "%s - Saad",
   },
   description:
     "Curated digital exhibition of software systems, desktop applications, games, AI schedulers, and design work by Saad Mughal.",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteUrl,
     siteName: "Saad Mughal",
-    title: "Saad Mughal — Software Engineer & Builder",
+    title: "Saad - Portfolio",
     description:
       "Curated digital exhibition of software systems, desktop applications, games, AI schedulers, and design work by Saad Mughal.",
     images: [
@@ -63,13 +63,13 @@ export const metadata: Metadata = {
         url: "/images/og-banner.png",
         width: 1200,
         height: 675,
-        alt: "Saad Mughal — Software Engineer & Builder",
+        alt: "Saad - Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Saad Mughal — Software Engineer & Builder",
+    title: "Saad - Portfolio",
     description:
       "Curated digital exhibition of software systems, desktop applications, games, AI schedulers, and design work by Saad Mughal.",
     images: ["/images/og-banner.png"],

@@ -68,7 +68,7 @@ Accepted
 Over-animated portfolios with bouncy spring physics, scroll-jacking, and heavy parallax distract from technical project substance and reduce readability.
 
 ### Decision
-Centralize all transition timings in `lib/motion.ts` using subtle `18px` translation distances, fast `0.2s–0.4s` cubic-bezier easings, and GPU-accelerated layer transforms (`translate3d`). Enforce strict `prefers-reduced-motion` fallbacks across Framer Motion variants and video players.
+Centralize all transition timings in `lib/motion.ts` using subtle `18px` translation distances, fast `0.2s-0.4s` cubic-bezier easings, and GPU-accelerated layer transforms (`translate3d`). Enforce strict `prefers-reduced-motion` fallbacks across Framer Motion variants and video players.
 
 ### Consequences
 - **Positive**: The site feels responsive and alive without competing with project media.

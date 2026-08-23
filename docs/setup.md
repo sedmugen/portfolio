@@ -74,12 +74,12 @@ http://localhost:3000
 ```
 
 ### Key Development Routes
-- `http://localhost:3000/` — Homepage (Hero & Selected Work)
-- `http://localhost:3000/work` — All Projects Catalog
-- `http://localhost:3000/work/bench` — Example Case Study (Featured Tier)
-- `http://localhost:3000/work/super-pong` — Example Case Study (Projects Tier)
-- `http://localhost:3000/about` — Profile & Disciplines
-- `http://localhost:3000/contact` — Inquiry Gateway
+- `http://localhost:3000/` - Homepage (Hero & Selected Work)
+- `http://localhost:3000/work` - All Projects Catalog
+- `http://localhost:3000/work/bench` - Example Case Study (Featured Tier)
+- `http://localhost:3000/work/super-pong` - Example Case Study (Projects Tier)
+- `http://localhost:3000/about` - Profile & Disciplines
+- `http://localhost:3000/contact` - Inquiry Gateway
 
 ---
 

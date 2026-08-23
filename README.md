@@ -2,7 +2,7 @@
 
 ![Saad Mughal Portfolio Banner](assets/images/banner.png)
 
-# Saad Mughal — Developer Showcase & Exhibition
+# Saad Mughal - Developer Showcase & Exhibition
 
 > A high-performance, editorial digital exhibition showcasing software systems, desktop applications, games, AI schedulers, and design work built by Saad Mughal.
 
