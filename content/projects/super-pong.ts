@@ -4,7 +4,7 @@ export const superPong: Project = {
   slug: "super-pong",
   title: "Super Pong",
   tier: "projects",
-  order: 3,
+  order: 2,
   category: "Game",
   year: "2025",
   shortDescription:
@@ -13,7 +13,7 @@ export const superPong: Project = {
   heroMedia: {
     type: "image",
     src: "/images/super-pong/hero.svg",
-    alt: "Super Pong gameplay mechanics preview",
+    alt: "Super Pong gameplay screen",
   },
   links: [
     {

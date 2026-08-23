@@ -3,34 +3,37 @@ import { bench } from "./projects/bench";
 import { classSyncAi } from "./projects/class-sync-ai";
 import { moralMatrix } from "./projects/moral-matrix";
 import { gisellesVeganKitchen } from "./projects/giselles-vegan-kitchen";
-import { urbanRun } from "./projects/urban-run";
 import { hitmanAssassin } from "./projects/hitman-assassin";
 import { onePercent } from "./projects/one-percent";
 import { foremanKanban } from "./projects/foreman-kanban";
 import { superPong } from "./projects/super-pong";
 import { ridgelineProRoofing } from "./projects/ridgeline-pro-roofing";
 import { sunbirdSolutions } from "./projects/sunbird-solutions";
+import { urbanRun } from "./projects/urban-run";
 import { rakatCounter } from "./projects/rakat-counter";
 import { himalayanSalt } from "./projects/himalayan-salt";
-import { blenderSword } from "./projects/blender-sword";
-import { climateActionCoalition } from "./projects/climate-action-coalition";
+import { blenderSwordRender } from "./projects/blender-sword-render";
+import { climateActionLogo } from "./projects/climate-action-logo";
 
 export const projects: Project[] = [
+  // 1. Featured Tier (6 items)
   bench,
-  classSyncAi,
-  moralMatrix,
-  gisellesVeganKitchen,
-  urbanRun,
   hitmanAssassin,
+  moralMatrix,
+  classSyncAi,
+  gisellesVeganKitchen,
   onePercent,
+
+  // 2. Projects Tier (9 items)
   foremanKanban,
   superPong,
   ridgelineProRoofing,
   sunbirdSolutions,
+  urbanRun,
   rakatCounter,
   himalayanSalt,
-  blenderSword,
-  climateActionCoalition,
+  blenderSwordRender,
+  climateActionLogo,
 ];
 
 /**

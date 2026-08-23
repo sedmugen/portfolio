@@ -2,18 +2,20 @@ import { Project } from "@/lib/types";
 
 export const himalayanSalt: Project = {
   slug: "himalayan-salt",
-  title: "Himalayan Salt",
+  title: "Himalayan Salt Product Design",
   tier: "projects",
   order: 7,
   category: "Design",
-  year: "2025",
-  role: "Product Designer",
+  // TODO: Confirm year
+  year: "TODO: Confirm year",
+  // TODO: Need real sentence here. Packaging, branding, or product photography, and for what product exactly?
   shortDescription:
-    "Packaging and branding concept for artisanal Himalayan pink salt.",
-  technologies: ["Branding", "Packaging", "3D"],
+    "TODO: Need real sentence on packaging, branding, or product photography, and for what product exactly.",
+  technologies: ["Illustrator", "Photoshop"],
   heroMedia: {
     type: "image",
     src: "/images/himalayan-salt/hero.svg",
-    alt: "Himalayan Salt product packaging and branding",
+    alt: "Himalayan Salt product packaging and branding design",
   },
+  links: [],
 };

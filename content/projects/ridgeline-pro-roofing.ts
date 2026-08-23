@@ -4,7 +4,7 @@ export const ridgelineProRoofing: Project = {
   slug: "ridgeline-pro-roofing",
   title: "Ridgeline Pro Roofing",
   tier: "projects",
-  order: 4,
+  order: 3,
   category: "Web / Design",
   year: "2026",
   role: "Designer & developer",
@@ -14,7 +14,7 @@ export const ridgelineProRoofing: Project = {
   heroMedia: {
     type: "image",
     src: "/images/ridgeline-pro-roofing/hero.svg",
-    alt: "Ridgeline Pro Roofing showcase website",
+    alt: "Ridgeline Pro Roofing marketing concept website",
   },
   links: [
     {

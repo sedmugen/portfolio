@@ -4,10 +4,10 @@ export const foremanKanban: Project = {
   slug: "foreman-kanban",
   title: "Foreman Kanban",
   tier: "projects",
-  order: 2,
+  order: 1,
   category: "Product",
   year: "2025",
-  role: "Contributor",
+  role: "Contributor (forked from ismailrzw/foreman-kanban)",
   shortDescription:
     "A Kanban tool built for tracking pull requests and team task flow, built as a DevOps final-semester project.",
   technologies: ["Python", "React", "MongoDB"],

@@ -2,18 +2,20 @@ import { Project } from "@/lib/types";
 
 export const rakatCounter: Project = {
   slug: "rakat-counter",
-  title: "Rakat Counter",
+  title: "Rakat Counter (UI/UX Project)",
   tier: "projects",
   order: 6,
   category: "Design",
-  year: "2025",
-  role: "UI/UX Designer",
+  // TODO: Confirm year
+  year: "TODO: Confirm year",
+  // TODO: Need real sentence here. Is this a prayer-tracking app interface, and was it designed only or also built?
   shortDescription:
-    "A minimal, modern prayer-tracking mobile app interface and UX system.",
-  technologies: ["Figma", "UI/UX Design"],
+    "TODO: Need real sentence on whether this is prayer-tracking app interface and if designed only or also built.",
+  technologies: ["Figma"],
   heroMedia: {
     type: "image",
     src: "/images/rakat-counter/hero.svg",
-    alt: "Rakat Counter mobile UI design",
+    alt: "Rakat Counter UI/UX concept design",
   },
+  links: [],
 };
