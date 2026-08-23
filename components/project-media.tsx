@@ -132,14 +132,14 @@ export function ProjectGallery({
   return (
     <div
       className={cn(
-        "columns-1 md:columns-2 gap-6 md:gap-8 [column-fill:_balance]",
+        "columns-[280px] sm:columns-[320px] lg:columns-[360px] gap-6 md:gap-8 [column-fill:_balance] w-full",
         className
       )}
     >
       {items.map((item, index) => (
         <figure
           key={`${item.src}-${index}`}
-          className="break-inside-avoid mb-6 md:mb-8 inline-block w-full bg-transparent transition-all duration-300"
+          className="break-inside-avoid mb-6 md:mb-8 inline-block w-full align-top bg-transparent transition-all duration-300"
         >
           <div className="relative w-full bg-transparent">
             {item.type === "video" ? (
@@ -149,7 +149,7 @@ export function ProjectGallery({
                 controls
                 playsInline
                 preload="metadata"
-                className="block w-full h-auto max-h-[75vh] min-h-[120px] object-contain bg-transparent"
+                className="block w-full h-auto max-h-[85vh] min-h-[100px] object-contain bg-transparent"
                 aria-label={item.alt}
               />
             ) : (
@@ -158,13 +158,13 @@ export function ProjectGallery({
                 alt={item.alt}
                 loading="lazy"
                 decoding="async"
-                className="block w-full h-auto max-h-[75vh] min-h-[120px] object-contain bg-transparent transition-transform duration-300 ease-out hover:scale-[1.01]"
+                className="block w-full h-auto max-h-[85vh] min-h-[100px] object-contain bg-transparent transition-transform duration-300 ease-out hover:scale-[1.01]"
               />
             )}
           </div>
 
           {item.alt && (
-            <figcaption className="pt-2.5 pb-1 text-3xs sm:text-2xs font-mono text-ink-muted uppercase tracking-[0.14em]">
+            <figcaption className="pt-2.5 pb-1 text-3xs sm:text-2xs font-mono text-ink-muted uppercase tracking-[0.14em] break-words">
               {item.alt}
             </figcaption>
           )}
