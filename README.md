@@ -18,10 +18,15 @@
 
 ## 2. Visuals & Showcase
 
-| Homepage Exhibition | Dynamic Project Window |
+| Homepage Exhibition (`/`) | Full Projects Catalog (`/work`) |
 | :---: | :---: |
-| ![Homepage Overview](assets/images/homepage-exhibition.png) | ![Project Detail Case Study](assets/images/project-showcase.webp) |
-| *Editorial 2-Column Selected Work Grid* | *Two-Column Detail Layout with Automated Asset Gallery* |
+| ![Homepage Desktop](assets/images/homepage-desktop.png) | ![Projects Grid](assets/images/projects-grid.png) |
+| *Editorial Header with PKT Clock & Selected Work Grid* | *Unified 3-Column Exhibition Index* |
+
+| Case Study Detail (`/work/[slug]`) | Mobile Responsive Layout (390px) |
+| :---: | :---: |
+| ![Case Study Detail](assets/images/case-study-classsync.png) | ![Mobile Layout](assets/images/mobile-showcase.png) |
+| *Two-Column Case Study Window with Automated Gallery* | *Adaptive Single-Column Stack with Touch Navigation* |
 
 ---
 
