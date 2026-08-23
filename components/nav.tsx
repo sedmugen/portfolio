@@ -216,55 +216,66 @@ export function Nav() {
       {/* 2. DESKTOP & TABLET HEADER (Screens ≥ md)                 */}
       {/* ========================================================= */}
       <div className="hidden md:block w-full bg-canvas">
-        {/* Main Header Banner: Only visible/rendered on HOME and INFO */}
-        {!isSubheaderOnlyPage && (
-          <div
-            className={cn(
-              "w-full px-2 sm:px-4 md:px-6 pt-3 sm:pt-4 pb-2 sm:pb-2.5 flex items-end justify-between gap-4 sm:gap-8 transition-all duration-300 ease-out",
-              isScrolled
-                ? "opacity-0 -translate-y-3 pointer-events-none"
-                : "opacity-100 translate-y-0"
-            )}
-          >
-            {/* Name Display */}
-            <div className="flex-1 min-w-0">
-              <Link href="/" className="inline-block w-full">
-                <h1 className="font-display text-[11vw] md:text-[10.5vw] lg:text-[10vw] font-normal uppercase tracking-[-0.04em] leading-[0.8] text-ink truncate sm:overflow-visible transition-opacity duration-200 hover:opacity-85">
-                  SAAD MUGHAL
-                </h1>
-              </Link>
-            </div>
-
-            {/* Right Info Box: Time & Location strictly text-xs */}
-            <div className="flex items-end gap-3 sm:gap-4 shrink-0 self-end">
-              <div className="flex flex-col items-end justify-between self-stretch text-right py-0.5">
-                {/* Time: text-xs font-bold */}
-                <div className="text-xs font-mono font-bold text-ink uppercase tracking-[0.16em] whitespace-nowrap">
-                  <LiveTime /> <span className="text-ink">PKT</span>
+        {/* Main Header Banner: Linearly animated open and close between routes */}
+        <AnimatePresence initial={false}>
+          {!isSubheaderOnlyPage && (
+            <motion.div
+              key="main-header-banner"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.42, ease: [0.25, 1, 0.5, 1] }}
+              className="w-full overflow-hidden"
+            >
+              <div
+                className={cn(
+                  "w-full px-2 sm:px-4 md:px-6 pt-3 sm:pt-4 pb-2 sm:pb-2.5 flex items-end justify-between gap-4 sm:gap-8 transition-all duration-300 ease-out",
+                  isScrolled
+                    ? "opacity-0 -translate-y-3 pointer-events-none"
+                    : "opacity-100 translate-y-0"
+                )}
+              >
+                {/* Name Display */}
+                <div className="flex-1 min-w-0">
+                  <Link href="/" className="inline-block w-full">
+                    <h1 className="font-display text-[11vw] md:text-[10.5vw] lg:text-[10vw] font-normal uppercase tracking-[-0.04em] leading-[0.8] text-ink truncate sm:overflow-visible transition-opacity duration-200 hover:opacity-85">
+                      SAAD MUGHAL
+                    </h1>
+                  </Link>
                 </div>
 
-                {/* Location: text-xs font-bold */}
-                <div className="whitespace-nowrap">
-                  <span className="block text-xs font-bold text-ink uppercase tracking-[0.16em]">
-                    BASED IN LAHORE, PK
-                  </span>
+                {/* Right Info Box: Time & Location strictly text-xs */}
+                <div className="flex items-end gap-3 sm:gap-4 shrink-0 self-end">
+                  <div className="flex flex-col items-end justify-between self-stretch text-right py-0.5">
+                    {/* Time: text-xs font-bold */}
+                    <div className="text-xs font-mono font-bold text-ink uppercase tracking-[0.16em] whitespace-nowrap">
+                      <LiveTime /> <span className="text-ink">PKT</span>
+                    </div>
+
+                    {/* Location: text-xs font-bold */}
+                    <div className="whitespace-nowrap">
+                      <span className="block text-xs font-bold text-ink uppercase tracking-[0.16em]">
+                        BASED IN LAHORE, PK
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Borderless Profile Photo */}
+                  <div className="relative w-24 h-24 md:w-36 md:h-36 lg:w-44 lg:h-44 overflow-hidden shrink-0">
+                    <Image
+                      src="/images/profile-pictures/1.jpg"
+                      alt="Saad Mughal"
+                      fill
+                      priority
+                      sizes="(max-width: 1024px) 144px, 176px"
+                      className="object-cover object-top"
+                    />
+                  </div>
                 </div>
               </div>
-
-              {/* Borderless Profile Photo */}
-              <div className="relative w-24 h-24 md:w-36 md:h-36 lg:w-44 lg:h-44 overflow-hidden shrink-0">
-                <Image
-                  src="/images/profile-pictures/1.jpg"
-                  alt="Saad Mughal"
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 144px, 176px"
-                  className="object-cover object-top"
-                />
-              </div>
-            </div>
-          </div>
-        )}
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Sub-Navigation Bar: HOME-INFO-PROJECTS-CONTACT */}
         <div
