@@ -4,7 +4,7 @@ export const gisellesVeganKitchen: Project = {
   slug: "giselles-vegan-kitchen",
   title: "Giselle's Vegan Kitchen",
   tier: "featured",
-  order: 6,
+  order: 5,
   category: "Design / Web",
   year: "2026",
   role: "Designer & developer",

@@ -4,7 +4,7 @@ export const urbanRun: Project = {
   slug: "urban-run",
   title: "Urban Run",
   tier: "featured",
-  order: 5,
+  order: 6,
   category: "Game",
   year: "2025",
   role: "Game developer & designer",

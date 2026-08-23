@@ -4,10 +4,10 @@ export const moralMatrix: Project = {
   slug: "moral-matrix",
   title: "Moral Matrix",
   tier: "featured",
-  order: 4,
+  order: 3,
   category: "Game",
   year: "2025",
-  role: "Solo developer",
+  role: "Team project",
   shortDescription:
     "A 2.5D narrative adventure with branching dialogue and moral-choice mechanics.",
   longDescription:

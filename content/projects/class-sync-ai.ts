@@ -4,10 +4,10 @@ export const classSyncAi: Project = {
   slug: "class-sync-ai",
   title: "ClassSync AI",
   tier: "featured",
-  order: 3,
+  order: 4,
   category: "AI / Technical",
   year: "2026",
-  role: "Solo developer",
+  role: "Team project (3 people)",
   shortDescription:
     "A university timetabling system that schedules classes with a genetic algorithm.",
   longDescription:
