@@ -15,7 +15,7 @@ export function FeaturedProjectCard({
   className,
 }: FeaturedProjectCardProps) {
   return (
-    <article className={cn("group w-full", className)}>
+    <article className={cn("group w-full transform-gpu [content-visibility:_auto] [contain-intrinsic-size:_1px_280px]", className)}>
       <Link href={`/work/${project.slug}`} className="block">
         <ProjectMedia
           media={project.heroMedia}
@@ -53,7 +53,7 @@ export function ProjectsTierCard({
   const metadata = [project.category, project.year].filter(Boolean).join(" · ");
 
   return (
-    <article className={cn("group w-full", className)}>
+    <article className={cn("group w-full transform-gpu [content-visibility:_auto] [contain-intrinsic-size:_1px_280px]", className)}>
       <Link href={`/work/${project.slug}`} className="block">
         <ProjectMedia
           media={project.heroMedia}

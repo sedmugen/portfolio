@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { scrollRevealVariants } from "@/lib/motion";
+import { cn } from "@/lib/utils";
 
 interface ScrollRevealProps {
   children: React.ReactNode;
@@ -26,9 +27,9 @@ export function ScrollReveal({
     <MotionComponent
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-40px" }}
+      viewport={{ once: true, margin: "-20px" }}
       variants={scrollRevealVariants}
-      className={className}
+      className={cn("transform-gpu", className)}
     >
       {children}
     </MotionComponent>

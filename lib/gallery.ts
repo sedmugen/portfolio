@@ -11,6 +11,8 @@ function formatCaption(filename: string): string {
     .trim();
 }
 
+const galleryCache = new Map<string, MediaItem[]>();
+
 /**
  * Automatically detects all media assets (images and videos) for a project
  * from public/images/[folder] and public/videos/[folder].
@@ -20,6 +22,10 @@ function formatCaption(filename: string): string {
  * There is no hardcoded limit on the number of gallery items.
  */
 export function getAutomaticProjectGallery(project: Project): MediaItem[] {
+  if (galleryCache.has(project.slug)) {
+    return galleryCache.get(project.slug)!;
+  }
+
   const heroSrc = project.heroMedia?.src;
   const folderCandidates = [
     heroSrc ? heroSrc.split("/")[2] : undefined,
@@ -88,16 +94,19 @@ export function getAutomaticProjectGallery(project: Project): MediaItem[] {
     }
   }
 
+  let finalItems = items;
+
   // Merge explicit metadata/alt overrides from project.gallery if defined
   if (project.gallery && project.gallery.length > 0) {
     const customMap = new Map<string, MediaItem>();
     project.gallery.forEach((item) => customMap.set(item.src, item));
 
-    return items.map((item) => {
+    finalItems = items.map((item) => {
       const custom = customMap.get(item.src);
       return custom ? { ...item, ...custom } : item;
     });
   }
 
-  return items;
+  galleryCache.set(project.slug, finalItems);
+  return finalItems;
 }

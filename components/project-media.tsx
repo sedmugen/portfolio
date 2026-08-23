@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState, memo } from "react";
 import Image from "next/image";
 import { MediaItem } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -29,6 +29,10 @@ export function ProjectMedia({
   showHoverOverlay = true,
 }: ProjectMediaProps) {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [isInView, setIsInView] = useState(priority);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
   const effectiveAspectRatio = aspectRatio || media.aspectRatio || "aspect-[16/9]";
 
   useEffect(() => {
@@ -43,10 +47,41 @@ export function ProjectMedia({
     return () => mediaQuery.removeEventListener("change", handler);
   }, []);
 
+  // Viewport Observer: Pre-warm and play/pause videos based on visibility
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const inView = entry.isIntersecting;
+        setIsInView(inView);
+
+        if (videoRef.current && !showControls) {
+          if (inView && !prefersReducedMotion) {
+            videoRef.current.play().catch(() => {
+              // Autoplay policy or interrupt catch
+            });
+          } else {
+            videoRef.current.pause();
+          }
+        }
+      },
+      {
+        rootMargin: "250px 0px",
+        threshold: 0.05,
+      }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [showControls, prefersReducedMotion]);
+
   return (
     <div
+      ref={containerRef}
       className={cn(
-        "relative w-full overflow-hidden bg-transparent",
+        "relative w-full overflow-hidden bg-transparent transform-gpu",
         effectiveAspectRatio,
         className
       )}
@@ -54,11 +89,12 @@ export function ProjectMedia({
       {media.type === "video" ? (
         showControls ? (
           <video
+            ref={videoRef}
             src={media.src}
             poster={media.poster}
             controls
             playsInline
-            preload="metadata"
+            preload={priority ? "auto" : "metadata"}
             className={cn("h-full w-full object-cover bg-transparent", videoClassName)}
             aria-label={media.alt}
           />
@@ -69,16 +105,20 @@ export function ProjectMedia({
             fill
             sizes={sizes}
             priority={priority}
+            loading={priority ? "eager" : "lazy"}
+            decoding="async"
             className={cn("object-cover", imageClassName)}
           />
         ) : (
           <video
-            src={media.src}
+            ref={videoRef}
+            src={isInView || priority ? media.src : undefined}
             poster={media.poster}
             muted
             loop={!prefersReducedMotion}
             playsInline
-            autoPlay={!prefersReducedMotion}
+            autoPlay={!prefersReducedMotion && (isInView || priority)}
+            preload={priority ? "auto" : "none"}
             className={cn("h-full w-full object-cover bg-transparent", videoClassName)}
             aria-label={media.alt}
           />
@@ -90,6 +130,8 @@ export function ProjectMedia({
           fill
           sizes={sizes}
           priority={priority}
+          loading={priority ? "eager" : "lazy"}
+          decoding="async"
           className={cn("object-cover", imageClassName)}
         />
       )}
@@ -117,16 +159,83 @@ export function ProjectMedia({
   );
 }
 
+const GalleryItemCard = memo(function GalleryItemCard({
+  item,
+}: {
+  item: MediaItem;
+}) {
+  const [isInView, setIsInView] = useState(false);
+  const containerRef = useRef<HTMLElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const inView = entry.isIntersecting;
+        setIsInView(inView);
+
+        if (videoRef.current) {
+          if (!inView) {
+            videoRef.current.pause();
+          }
+        }
+      },
+      {
+        rootMargin: "250px 0px",
+        threshold: 0.05,
+      }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <figure
+      ref={containerRef}
+      className="break-inside-avoid mb-6 md:mb-8 inline-block w-full align-top bg-transparent transition-transform duration-300 [content-visibility:_auto] [contain-intrinsic-size:_1px_360px]"
+    >
+      <div className="relative w-full bg-transparent overflow-hidden">
+        {item.type === "video" ? (
+          <video
+            ref={videoRef}
+            src={isInView ? item.src : undefined}
+            poster={item.poster}
+            controls
+            playsInline
+            preload="metadata"
+            className="block w-full h-auto max-h-[85vh] min-h-[100px] object-contain bg-transparent"
+            aria-label={item.alt}
+          />
+        ) : (
+          <img
+            src={item.src}
+            alt={item.alt}
+            loading="lazy"
+            decoding="async"
+            className="block w-full h-auto max-h-[85vh] min-h-[100px] object-contain bg-transparent transition-transform duration-300 ease-out hover:scale-[1.01] transform-gpu"
+          />
+        )}
+      </div>
+
+      {item.alt && (
+        <figcaption className="pt-2.5 pb-1 text-3xs sm:text-2xs font-mono text-ink-muted uppercase tracking-[0.14em] break-words select-none">
+          {item.alt}
+        </figcaption>
+      )}
+    </figure>
+  );
+});
+
 interface ProjectGalleryProps {
   items: MediaItem[];
   className?: string;
-  sizes?: string;
 }
 
-export function ProjectGallery({
-  items,
-  className,
-}: ProjectGalleryProps) {
+export function ProjectGallery({ items, className }: ProjectGalleryProps) {
   if (!items || items.length === 0) return null;
 
   return (
@@ -137,38 +246,7 @@ export function ProjectGallery({
       )}
     >
       {items.map((item, index) => (
-        <figure
-          key={`${item.src}-${index}`}
-          className="break-inside-avoid mb-6 md:mb-8 inline-block w-full align-top bg-transparent transition-all duration-300"
-        >
-          <div className="relative w-full bg-transparent">
-            {item.type === "video" ? (
-              <video
-                src={item.src}
-                poster={item.poster}
-                controls
-                playsInline
-                preload="metadata"
-                className="block w-full h-auto max-h-[85vh] min-h-[100px] object-contain bg-transparent"
-                aria-label={item.alt}
-              />
-            ) : (
-              <img
-                src={item.src}
-                alt={item.alt}
-                loading="lazy"
-                decoding="async"
-                className="block w-full h-auto max-h-[85vh] min-h-[100px] object-contain bg-transparent transition-transform duration-300 ease-out hover:scale-[1.01]"
-              />
-            )}
-          </div>
-
-          {item.alt && (
-            <figcaption className="pt-2.5 pb-1 text-3xs sm:text-2xs font-mono text-ink-muted uppercase tracking-[0.14em] break-words">
-              {item.alt}
-            </figcaption>
-          )}
-        </figure>
+        <GalleryItemCard key={`${item.src}-${index}`} item={item} />
       ))}
     </div>
   );

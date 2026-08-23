@@ -59,10 +59,17 @@ export function Nav() {
     setIsOpen(false);
   }, [pathname]);
 
-  // Track scroll position to fade the main header and keep subheader fixed on HOME/INFO (Desktop)
+  // Track scroll position with RAF throttling to fade the main header and keep subheader fixed on HOME/INFO (Desktop)
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
