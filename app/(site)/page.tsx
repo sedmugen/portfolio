@@ -26,7 +26,7 @@ export default function HomePage() {
 
       {/* 2. 3x2 Selected Work Grid */}
       <ScrollReveal as="section" className="w-full pb-20 sm:pb-28 md:pb-36">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-3 sm:gap-x-4 md:gap-x-5 gap-y-3 sm:gap-y-4 md:gap-y-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-1.5 sm:gap-x-2 md:gap-x-2.5 gap-y-3 sm:gap-y-4 md:gap-y-5">
           {featuredProjects.map((project, index) => (
             <FeaturedProjectCard
               key={project.slug}
