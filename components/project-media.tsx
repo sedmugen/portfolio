@@ -126,18 +126,49 @@ interface ProjectGalleryProps {
 export function ProjectGallery({
   items,
   className,
-  sizes = "(max-width: 768px) 100vw, 50vw",
 }: ProjectGalleryProps) {
   if (!items || items.length === 0) return null;
 
   return (
-    <div className={cn("grid grid-cols-1 gap-6 md:grid-cols-2", className)}>
+    <div
+      className={cn(
+        "columns-1 md:columns-2 gap-6 md:gap-8 [column-fill:_balance]",
+        className
+      )}
+    >
       {items.map((item, index) => (
-        <ProjectMedia
+        <figure
           key={`${item.src}-${index}`}
-          media={item}
-          sizes={sizes}
-        />
+          className="break-inside-avoid mb-6 md:mb-8 inline-block w-full overflow-hidden bg-canvas-subtle transition-all duration-300"
+        >
+          <div className="relative w-full flex items-center justify-center bg-canvas-subtle overflow-hidden">
+            {item.type === "video" ? (
+              <video
+                src={item.src}
+                poster={item.poster}
+                controls
+                playsInline
+                preload="metadata"
+                className="block w-full h-auto max-h-[75vh] min-h-[120px] object-contain"
+                aria-label={item.alt}
+              />
+            ) : (
+              <img
+                src={item.src}
+                alt={item.alt}
+                loading="lazy"
+                decoding="async"
+                className="block w-full h-auto max-h-[75vh] min-h-[120px] object-contain transition-transform duration-300 ease-out hover:scale-[1.01]"
+              />
+            )}
+          </div>
+
+          {item.alt && (
+            <figcaption className="pt-2.5 pb-1 text-3xs sm:text-2xs font-mono text-ink-muted uppercase tracking-[0.14em]">
+              {item.alt}
+            </figcaption>
+          )}
+        </figure>
       ))}
     </div>
   );
