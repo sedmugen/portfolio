@@ -21,7 +21,7 @@ export function FeaturedProjectCard({
           media={project.heroMedia}
           priority={priority}
           sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-          aspectRatio="aspect-[16/10]"
+          aspectRatio="aspect-[16/9]"
           className="mb-1 sm:mb-1.5 w-full overflow-hidden"
           imageClassName="transition-transform duration-300 ease-out group-hover:scale-[1.02]"
         />
@@ -59,7 +59,7 @@ export function ProjectsTierCard({
           media={project.heroMedia}
           priority={priority}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          aspectRatio="aspect-[16/10]"
+          aspectRatio="aspect-[16/9]"
           className="mb-1 sm:mb-1.5 w-full overflow-hidden"
           imageClassName="transition-transform duration-300 ease-out group-hover:scale-[1.02]"
         />
