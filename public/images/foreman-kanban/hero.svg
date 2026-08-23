@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" fill="none">
+  <rect width="1200" height="750" fill="#18181B"/>
+  <circle cx="600" cy="375" r="280" fill="#27272A" opacity="0.4"/>
+  <g stroke="#3F3F46" stroke-width="1.5">
+    <line x1="200" y1="200" x2="1000" y2="200"/>
+    <line x1="200" y1="550" x2="1000" y2="550"/>
+    <line x1="200" y1="200" x2="200" y2="550"/>
+    <line x1="600" y1="200" x2="600" y2="550"/>
+    <line x1="1000" y1="200" x2="1000" y2="550"/>
+  </g>
+  <text x="600" y="360" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="44" fill="#F4F4F5" letter-spacing="0.08em">FOREMAN KANBAN</text>
+  <text x="600" y="415" text-anchor="middle" font-family="monospace" font-size="20" fill="#A1A1AA" letter-spacing="0.2em">PRODUCT · 2025</text>
+</svg>

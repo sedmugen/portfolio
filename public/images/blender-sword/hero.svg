@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" fill="none">
+  <rect width="1200" height="750" fill="#18181B"/>
+  <line x1="600" y1="180" x2="600" y2="480" stroke="#E4E4E7" stroke-width="4"/>
+  <line x1="520" y1="420" x2="680" y2="420" stroke="#71717A" stroke-width="6"/>
+  <circle cx="600" cy="510" r="12" fill="#71717A"/>
+  <text x="600" y="360" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="40" fill="#F4F4F5" letter-spacing="0.08em">BLENDER SWORD</text>
+  <text x="600" y="460" text-anchor="middle" font-family="monospace" font-size="20" fill="#A1A1AA" letter-spacing="0.2em">3D RENDER · 2025</text>
+</svg>

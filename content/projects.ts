@@ -6,6 +6,14 @@ import { gisellesVeganKitchen } from "./projects/giselles-vegan-kitchen";
 import { urbanRun } from "./projects/urban-run";
 import { hitmanAssassin } from "./projects/hitman-assassin";
 import { onePercent } from "./projects/one-percent";
+import { foremanKanban } from "./projects/foreman-kanban";
+import { superPong } from "./projects/super-pong";
+import { ridgelineProRoofing } from "./projects/ridgeline-pro-roofing";
+import { sunbirdSolutions } from "./projects/sunbird-solutions";
+import { rakatCounter } from "./projects/rakat-counter";
+import { himalayanSalt } from "./projects/himalayan-salt";
+import { blenderSword } from "./projects/blender-sword";
+import { climateActionCoalition } from "./projects/climate-action-coalition";
 
 export const projects: Project[] = [
   bench,
@@ -15,6 +23,14 @@ export const projects: Project[] = [
   urbanRun,
   hitmanAssassin,
   onePercent,
+  foremanKanban,
+  superPong,
+  ridgelineProRoofing,
+  sunbirdSolutions,
+  rakatCounter,
+  himalayanSalt,
+  blenderSword,
+  climateActionCoalition,
 ];
 
 /**
@@ -25,10 +41,12 @@ export function sortProjectsByOrder(items: Project[]): Project[] {
 }
 
 /**
- * Returns all projects sorted by order.
+ * Returns all projects sorted by order (featured first, followed by remaining projects).
  */
 export function getAllProjects(): Project[] {
-  return sortProjectsByOrder(projects);
+  const featured = getFeaturedProjects();
+  const projectsTier = getProjectsTier();
+  return [...featured, ...projectsTier];
 }
 
 /**

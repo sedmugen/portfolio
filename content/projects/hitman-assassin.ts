@@ -4,7 +4,7 @@ export const hitmanAssassin: Project = {
   slug: "hitman-assassin",
   title: "Hitman Assassin",
   tier: "featured",
-  order: 2,
+  order: 6,
   category: "Game",
   // TODO: Confirm year
   year: "TODO: Confirm year",
