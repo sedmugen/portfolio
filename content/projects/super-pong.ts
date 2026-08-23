@@ -14,6 +14,7 @@ export const superPong: Project = {
   heroMedia: {
     type: "video",
     src: "/videos/super-pong/super-pong.mp4",
+    poster: "/images/super-pong/hero.svg",
     alt: "Super Pong gameplay showcase — time moves only when you move",
   },
   links: [

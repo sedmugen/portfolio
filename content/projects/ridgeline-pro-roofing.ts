@@ -14,6 +14,7 @@ export const ridgelineProRoofing: Project = {
   heroMedia: {
     type: "video",
     src: "/videos/ridgeline-pro-roofing/ridgeline-pro-showcase.mp4",
+    poster: "/images/ridgeline-pro-roofing/hero.svg",
     alt: "Ridgeline Pro Roofing marketing concept website walkthrough showcase",
   },
   links: [

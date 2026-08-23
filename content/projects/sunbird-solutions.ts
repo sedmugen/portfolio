@@ -14,6 +14,7 @@ export const sunbirdSolutions: Project = {
   heroMedia: {
     type: "video",
     src: "/videos/sunbird-solutions/sunbird-showcase.mp4",
+    poster: "/images/sunbird-solutions/hero.svg",
     alt: "Sunbird Solutions website structure and redesign showcase",
   },
   links: [

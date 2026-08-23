@@ -17,7 +17,7 @@ export const urbanRun: Project = {
     type: "video",
     src: "/videos/urban-run/trailer.mp4",
     poster: "/images/urban-run/hero.png",
-    alt: "Urban Run POV-style short film showcase",
+    alt: "Urban Run 2D endless runner gameplay showcase",
   },
   links: [
     {
