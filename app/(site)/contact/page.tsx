@@ -42,7 +42,7 @@ export default function ContactPage() {
       {/* 1. Page Header */}
       <ScrollReveal
         as="section"
-        className="w-full pt-6 sm:pt-8 md:pt-10 pb-4 sm:pb-6 flex flex-col md:flex-row md:items-end justify-between gap-3 md:gap-8 border-b border-black/70"
+        className="w-full pt-32 sm:pt-44 md:pt-56 lg:pt-64 pb-4 sm:pb-6 flex flex-col md:flex-row md:items-end justify-between gap-3 md:gap-8 border-b border-black/70"
       >
         <div>
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal uppercase tracking-[-0.03em] leading-none text-ink">
