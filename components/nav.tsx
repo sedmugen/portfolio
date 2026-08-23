@@ -77,8 +77,8 @@ export function Nav() {
       {/* ========================================================= */}
       <div className="md:hidden w-full">
         {isSubheaderOnlyPage ? (
-          /* On PROJECTS & CONTACT: Simple, clean subheader only */
-          <div className="w-full px-2 sm:px-4 border-b border-black/70 bg-canvas">
+          /* On PROJECTS & CONTACT: Clean, borderless subheader only */
+          <div className="w-full px-2 sm:px-4 bg-canvas">
             <div className="w-full pt-3 pb-3 flex items-center justify-between">
               <nav aria-label="Mobile Sub-Navigation" className="w-full">
                 <ul className="flex items-center justify-between text-[11px] font-bold tracking-[0.14em] uppercase text-ink">
@@ -89,16 +89,10 @@ export function Nav() {
                         className="group relative inline-block py-0.5 text-ink"
                       >
                         <span className="relative z-10">{item.label}</span>
+                        {/* Hover-only underline (not underlined when selected) */}
                         <span
                           aria-hidden="true"
-                          className={cn(
-                            "absolute left-0 bottom-0 block h-[1.5px] w-full bg-ink origin-left transition-transform duration-250 ease-out",
-                            (item.href === "/"
-                              ? pathname === "/"
-                              : pathname.startsWith(item.href))
-                              ? "scale-x-100"
-                              : "scale-x-0 group-hover:scale-x-100"
-                          )}
+                          className="absolute left-0 bottom-0 block h-[1.5px] w-full bg-ink origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-250 ease-out"
                         />
                       </Link>
                     </li>
@@ -210,16 +204,10 @@ export function Nav() {
                             className="group relative inline-block py-0.5 text-ink"
                           >
                             <span className="relative z-10">{item.label}</span>
+                            {/* Hover-only underline (not underlined when selected) */}
                             <span
                               aria-hidden="true"
-                              className={cn(
-                                "absolute left-0 bottom-0 block h-[1.5px] w-full bg-ink origin-left transition-transform duration-250 ease-out",
-                                (item.href === "/"
-                                  ? pathname === "/"
-                                  : pathname.startsWith(item.href))
-                                  ? "scale-x-100"
-                                  : "scale-x-0 group-hover:scale-x-100"
-                              )}
+                              className="absolute left-0 bottom-0 block h-[1.5px] w-full bg-ink origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-250 ease-out"
                             />
                           </Link>
                         </li>
@@ -312,9 +300,9 @@ export function Nav() {
           className={cn(
             "w-full px-2 sm:px-4 md:px-6 bg-canvas transition-all duration-200 z-50",
             isSubheaderOnlyPage
-              ? "relative border-b border-black/70"
+              ? "relative"
               : isScrolled
-              ? "fixed top-0 left-0 right-0 shadow-none border-b border-black/10"
+              ? "fixed top-0 left-0 right-0 shadow-none"
               : "relative"
           )}
         >
@@ -335,17 +323,10 @@ export function Nav() {
                     >
                       <span className="relative z-10">{item.label}</span>
 
-                      {/* Underline indicator */}
+                      {/* Underline indicator: Hover-only, not underlined when selected */}
                       <span
                         aria-hidden="true"
-                        className={cn(
-                          "absolute left-0 bottom-0 block h-[1.5px] w-full bg-ink origin-left transition-transform duration-300 ease-[cubic-bezier(0.25,1,0.5,1)]",
-                          (item.href === "/"
-                            ? pathname === "/"
-                            : pathname.startsWith(item.href))
-                            ? "scale-x-100"
-                            : "scale-x-0 group-hover:scale-x-100"
-                        )}
+                        className="absolute left-0 bottom-0 block h-[1.5px] w-full bg-ink origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-[cubic-bezier(0.25,1,0.5,1)]"
                       />
                     </Link>
                   </li>
