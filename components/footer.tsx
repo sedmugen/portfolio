@@ -46,7 +46,7 @@ export function Footer() {
               <span className="absolute left-0 bottom-0 block h-[1px] w-0 bg-white group-hover:w-full transition-all duration-200 ease-out" />
             </a>
             <a
-              href="https://linkedin.com/in/sedmugen"
+              href="https://www.linkedin.com/in/saadmughal321"
               target="_blank"
               rel="noopener noreferrer"
               className="relative group text-[#8C8983] hover:text-white transition-colors duration-200"

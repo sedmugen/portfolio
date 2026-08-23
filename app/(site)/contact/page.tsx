@@ -5,7 +5,7 @@ import { ScrollReveal } from "@/components/scroll-reveal";
 
 const SOCIALS = [
   { label: "GitHub", href: "https://github.com/sedmugen", handle: "github.com/sedmugen" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/sedmugen", handle: "linkedin.com/in/sedmugen" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/saadmughal321", handle: "linkedin.com/in/saadmughal321" },
   { label: "Behance", href: "https://www.behance.net/sedmugen", handle: "behance.net/sedmugen" },
   { label: "Itch.io", href: "https://sedmugen.itch.io/", handle: "sedmugen.itch.io" },
 ];

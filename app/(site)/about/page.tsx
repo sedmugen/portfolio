@@ -33,7 +33,7 @@ const DISCIPLINES = [
 const CONNECT_LINKS = [
   { label: "Email", href: "mailto:saadmughal321@gmail.com", display: "saadmughal321@gmail.com" },
   { label: "GitHub", href: "https://github.com/sedmugen", display: "github.com/sedmugen" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/sedmugen", display: "linkedin.com/in/sedmugen" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/saadmughal321", display: "linkedin.com/in/saadmughal321" },
   { label: "Behance", href: "https://www.behance.net/sedmugen", display: "behance.net/sedmugen" },
   { label: "Itch.io", href: "https://sedmugen.itch.io/", display: "sedmugen.itch.io" },
 ];

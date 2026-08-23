@@ -16,7 +16,7 @@ const NAV_ITEMS = [
 
 const SOCIAL_LINKS = [
   { label: "GH", full: "GitHub", href: "https://github.com/sedmugen" },
-  { label: "LI", full: "LinkedIn", href: "https://linkedin.com/in/sedmugen" },
+  { label: "LI", full: "LinkedIn", href: "https://www.linkedin.com/in/saadmughal321" },
   { label: "BE", full: "Behance", href: "https://www.behance.net/sedmugen" },
   { label: "IT", full: "Itch.io", href: "https://sedmugen.itch.io/" },
   { label: "EM", full: "Email", href: "mailto:saadmughal321@gmail.com" },
