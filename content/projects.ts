@@ -22,14 +22,14 @@ export const projects: Project[] = [
   moralMatrix,
   classSyncAi,
   gisellesVeganKitchen,
-  onePercent,
+  urbanRun,
 
   // 2. Projects Tier (9 items)
   foremanKanban,
   superPong,
   ridgelineProRoofing,
   sunbirdSolutions,
-  urbanRun,
+  onePercent,
   rakatCounter,
   himalayanSalt,
   blenderSwordRender,

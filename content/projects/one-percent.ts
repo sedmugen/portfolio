@@ -3,8 +3,8 @@ import { Project } from "@/lib/types";
 export const onePercent: Project = {
   slug: "one-percent",
   title: "One Percent",
-  tier: "featured",
-  order: 6,
+  tier: "projects",
+  order: 5,
   category: "Web",
   year: "2025-2026",
   role: "Designer & developer",

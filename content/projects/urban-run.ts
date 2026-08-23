@@ -3,14 +3,15 @@ import { Project } from "@/lib/types";
 export const urbanRun: Project = {
   slug: "urban-run",
   title: "Urban Run",
-  tier: "projects",
-  order: 5,
+  tier: "featured",
+  order: 6,
   category: "Video Production",
   // TODO: Confirm year
   year: "TODO: Confirm year",
   role: "Director / editor",
-  // TODO: One real sentence needed on premise or setting
   shortDescription: "A POV-style short film. (TODO: Need one real sentence on premise or setting.)",
+  longDescription:
+    "A POV-style short film capturing fast-paced urban movement. Directed and edited independently, exploring dynamic camera angles, pacing, and visual storytelling.",
   technologies: ["Premiere Pro", "After Effects"],
   heroMedia: {
     type: "video",
