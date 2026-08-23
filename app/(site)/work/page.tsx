@@ -4,7 +4,7 @@ import { FeaturedProjectCard } from "@/components/project-card";
 import { ScrollReveal } from "@/components/scroll-reveal";
 
 export const metadata: Metadata = {
-  title: "Projects - Saad",
+  title: "Projects",
   description:
     "Curated index of software, games, AI systems, and design projects by Saad Mughal.",
 };

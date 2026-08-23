@@ -5,7 +5,9 @@ import { FeaturedProjectCard } from "@/components/project-card";
 import { ScrollReveal } from "@/components/scroll-reveal";
 
 export const metadata: Metadata = {
-  title: "Saad - Portfolio",
+  title: {
+    absolute: "Saad - Portfolio",
+  },
 };
 
 export default function HomePage() {

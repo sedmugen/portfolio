@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "404 - Saad",
+  title: "404",
   description: "Page not found.",
 };
 
