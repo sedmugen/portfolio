@@ -4,7 +4,7 @@ export const ridgelineProRoofing: Project = {
   slug: "ridgeline-pro-roofing",
   title: "Ridgeline Pro Roofing",
   tier: "projects",
-  order: 3,
+  order: 4,
   category: "Web / Design",
   year: "2026",
   role: "Designer & developer",

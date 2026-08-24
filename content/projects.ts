@@ -14,17 +14,19 @@ import { rakatCounter } from "./projects/rakat-counter";
 import { himalayanSalt } from "./projects/himalayan-salt";
 import { blenderSwordRender } from "./projects/blender-sword-render";
 import { climateActionLogo } from "./projects/climate-action-logo";
+import { rescueThePrisoner } from "./projects/rescue-the-prisoner";
 
 export const projects: Project[] = [
   // 1. Featured Tier (6 items)
   bench,
   hitmanAssassin,
   moralMatrix,
+  rescueThePrisoner,
   classSyncAi,
-  gisellesVeganKitchen,
   urbanRun,
 
-  // 2. Projects Tier (9 items)
+  // 2. Projects Tier (10 items)
+  gisellesVeganKitchen,
   foremanKanban,
   superPong,
   ridgelineProRoofing,

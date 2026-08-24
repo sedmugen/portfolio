@@ -2,9 +2,9 @@ import { Project } from "@/lib/types";
 
 export const climateActionLogo: Project = {
   slug: "climate-action-logo",
-  title: "Climate Action Coalition Logo",
+  title: "Climate Action Logo",
   tier: "projects",
-  order: 9,
+  order: 10,
   category: "Design",
   year: "2024",
   shortDescription: "A logo and brand mark designed for Climate Action Coalition.",

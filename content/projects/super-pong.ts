@@ -4,7 +4,7 @@ export const superPong: Project = {
   slug: "super-pong",
   title: "Super Pong",
   tier: "projects",
-  order: 2,
+  order: 3,
   category: "Game",
   year: "2024",
   role: "Game Developer",

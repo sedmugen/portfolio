@@ -4,7 +4,7 @@ export const rakatCounter: Project = {
   slug: "rakat-counter",
   title: "Rakat Counter (UI/UX Project)",
   tier: "projects",
-  order: 6,
+  order: 7,
   category: "Design",
   year: "2024",
   shortDescription:

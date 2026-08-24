@@ -4,7 +4,7 @@ export const onePercent: Project = {
   slug: "one-percent",
   title: "One Percent",
   tier: "projects",
-  order: 5,
+  order: 6,
   category: "Web",
   year: "2026",
   role: "Designer & Developer",

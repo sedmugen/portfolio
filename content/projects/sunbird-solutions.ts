@@ -4,7 +4,7 @@ export const sunbirdSolutions: Project = {
   slug: "sunbird-solutions",
   title: "Sunbird Solutions",
   tier: "projects",
-  order: 4,
+  order: 5,
   category: "Web",
   year: "2026",
   role: "Developer",

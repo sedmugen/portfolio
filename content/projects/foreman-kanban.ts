@@ -4,7 +4,7 @@ export const foremanKanban: Project = {
   slug: "foreman-kanban",
   title: "Foreman Kanban",
   tier: "projects",
-  order: 1,
+  order: 2,
   category: "Product",
   year: "2026",
   role: "Full-Stack Developer (Team Project)",

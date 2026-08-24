@@ -2,9 +2,9 @@ import { Project } from "@/lib/types";
 
 export const blenderSwordRender: Project = {
   slug: "blender-sword-render",
-  title: "Blender Sword Render",
+  title: "Blender 3D Sword (Game Asset)",
   tier: "projects",
-  order: 8,
+  order: 9,
   category: "3D",
   year: "2023",
   role: "3D Artist",

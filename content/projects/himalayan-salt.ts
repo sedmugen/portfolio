@@ -4,7 +4,7 @@ export const himalayanSalt: Project = {
   slug: "himalayan-salt",
   title: "Himalayan Salt Product Design",
   tier: "projects",
-  order: 7,
+  order: 8,
   category: "Design",
   year: "2023",
   role: "Product Designer",

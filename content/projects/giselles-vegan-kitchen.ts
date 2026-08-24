@@ -3,8 +3,8 @@ import { Project } from "@/lib/types";
 export const gisellesVeganKitchen: Project = {
   slug: "giselles-vegan-kitchen",
   title: "Giselle's Vegan Kitchen",
-  tier: "featured",
-  order: 5,
+  tier: "projects",
+  order: 1,
   category: "Design / Web",
   year: "2026",
   role: "Designer & developer",
